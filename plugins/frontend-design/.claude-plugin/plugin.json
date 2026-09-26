@@ -1,0 +1,18 @@
+{
+  "name": "frontend-design",
+  "description": "Anthropic's official frontend-design skill: distinctive, intentional aesthetic direction instead of templated AI defaults.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "homepage": "https://github.com/anthropics/skills",
+  "repository": "https://github.com/JaimeJunr/claude-code-frontend-skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "frontend",
+    "design",
+    "ui",
+    "ux",
+    "claude-code",
+    "skills"
+  ]
+}

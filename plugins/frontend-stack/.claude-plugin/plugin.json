@@ -1,0 +1,12 @@
+{
+  "name": "frontend-stack",
+  "description": "The glue: a router skill that picks the right skill for each frontend task, resolves the rules that conflict between packs, and ships design-director and ui-reviewer agents.",
+  "author": {
+    "name": "Jaime Basso",
+    "url": "https://github.com/JaimeJunr"
+  },
+  "homepage": "https://github.com/JaimeJunr/claude-code-frontend-skills",
+  "repository": "https://github.com/JaimeJunr/claude-code-frontend-skills",
+  "license": "MIT",
+  "keywords": ["frontend", "design", "ui", "ux", "claude-code", "skills"]
+}

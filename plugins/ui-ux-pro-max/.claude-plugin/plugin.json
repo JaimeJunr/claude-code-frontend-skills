@@ -1,0 +1,19 @@
+{
+  "name": "ui-ux-pro-max",
+  "description": "UI UX Pro Max: searchable local database of 79 styles, 192 palettes, 74 font pairings, charts and 22 stack guidelines, plus design-system, brand, banner and slides skills.",
+  "author": {
+    "name": "Next Level Builder"
+  },
+  "homepage": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+  "repository": "https://github.com/JaimeJunr/claude-code-frontend-skills",
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "design",
+    "ui",
+    "ux",
+    "claude-code",
+    "skills"
+  ],
+  "skills": "./.claude/skills/"
+}

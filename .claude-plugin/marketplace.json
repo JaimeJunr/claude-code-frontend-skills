@@ -1,0 +1,166 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "frontend-stack",
+  "owner": {
+    "name": "Jaime Basso",
+    "url": "https://github.com/JaimeJunr"
+  },
+  "metadata": {
+    "description": "The frontend design stack for Claude Code: Anthropic frontend-design, Impeccable, UI UX Pro Max, Taste and Emil Kowalski's design engineering skills, curated, de-conflicted and kept in sync."
+  },
+  "plugins": [
+    {
+      "name": "frontend-stack",
+      "source": "./plugins/frontend-stack",
+      "description": "The glue: a router skill that picks the right skill for each frontend task, resolves the rules that conflict between packs, and ships design-director and ui-reviewer agents.",
+      "author": {
+        "name": "Jaime Basso",
+        "url": "https://github.com/JaimeJunr"
+      },
+      "category": "design",
+      "license": "MIT",
+      "homepage": "https://github.com/JaimeJunr/claude-code-frontend-skills",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
+      "name": "frontend-design",
+      "source": "./plugins/frontend-design",
+      "description": "Anthropic's official frontend-design skill: distinctive, intentional aesthetic direction instead of templated AI defaults.",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "design",
+      "license": "Apache-2.0",
+      "homepage": "https://github.com/anthropics/skills",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
+      "name": "impeccable",
+      "source": "./plugins/impeccable",
+      "description": "Impeccable by Paul Bakaus: 1 skill with 24 commands (/impeccable polish, audit, critique, harden, ...), design agents, anti-pattern detection hooks.",
+      "author": {
+        "name": "Paul Bakaus"
+      },
+      "category": "design",
+      "license": "Apache-2.0",
+      "homepage": "https://impeccable.style",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "source": "./plugins/ui-ux-pro-max",
+      "description": "UI UX Pro Max: searchable local database of 79 styles, 192 palettes, 74 font pairings, charts and 22 stack guidelines, plus design-system, brand, banner and slides skills.",
+      "author": {
+        "name": "Next Level Builder"
+      },
+      "category": "design",
+      "license": "MIT",
+      "homepage": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
+      "name": "taste",
+      "source": "./plugins/taste",
+      "description": "Taste skills by Leonxlnx: anti-slop landing pages and redesigns, plus opt-in aesthetic presets (minimalist, brutalist, high-end, Stitch).",
+      "author": {
+        "name": "Leonxlnx"
+      },
+      "category": "design",
+      "license": "MIT",
+      "homepage": "https://github.com/leonxlnx/taste-skill",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
+      "name": "taste-imagegen",
+      "source": "./plugins/taste-imagegen",
+      "description": "Optional. Taste image-first skills (image-to-code, web/mobile design concepts, brand kits). Needs an image-generation tool in your environment.",
+      "author": {
+        "name": "Leonxlnx"
+      },
+      "category": "design",
+      "license": "MIT",
+      "homepage": "https://github.com/leonxlnx/taste-skill",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
+      "name": "emil-design-eng",
+      "source": "./plugins/emil-design-eng",
+      "description": "Emil Kowalski's design engineering skills: UI polish, animation craft (animate, review, improve, find opportunities), Apple-style motion, prototypes, native-feeling mobile web, library picks.",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "design",
+      "license": "MIT",
+      "homepage": "https://github.com/emilkowalski/skills",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
+      "name": "emil-native",
+      "source": "./plugins/emil-native",
+      "description": "Optional. Emil Kowalski's native skills: React Native / Expo animation and modern Swift.",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "mobile",
+      "license": "MIT",
+      "homepage": "https://github.com/emilkowalski/skills",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    }
+  ]
+}

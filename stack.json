@@ -1,0 +1,175 @@
+{
+  "$comment": "Source of truth for the stack. scripts/sync.py reads this, pulls each upstream at `ref`, copies the selected paths into plugins/<plugin>, applies the patches and regenerates .claude-plugin/marketplace.json, THIRD_PARTY_NOTICES.md and UPSTREAM.lock.",
+  "marketplace": {
+    "name": "frontend-stack",
+    "owner": { "name": "Jaime Basso", "url": "https://github.com/JaimeJunr" },
+    "description": "The frontend design stack for Claude Code: Anthropic frontend-design, Impeccable, UI UX Pro Max, Taste and Emil Kowalski's design engineering skills, curated, de-conflicted and kept in sync.",
+    "repository": "https://github.com/JaimeJunr/claude-code-frontend-skills"
+  },
+  "sources": [
+    {
+      "id": "anthropic",
+      "repo": "anthropics/skills",
+      "ref": "main",
+      "license": "Apache-2.0",
+      "author": "Anthropic",
+      "plugin": "frontend-design",
+      "description": "Anthropic's official frontend-design skill: distinctive, intentional aesthetic direction instead of templated AI defaults.",
+      "category": "design",
+      "copy": [
+        { "from": "skills/frontend-design", "to": "skills/frontend-design" }
+      ],
+      "license_files": ["skills/frontend-design/LICENSE.txt"]
+    },
+    {
+      "id": "impeccable",
+      "repo": "pbakaus/impeccable",
+      "ref": "main",
+      "license": "Apache-2.0",
+      "author": "Paul Bakaus",
+      "homepage": "https://impeccable.style",
+      "plugin": "impeccable",
+      "description": "Impeccable by Paul Bakaus: 1 skill with 24 commands (/impeccable polish, audit, critique, harden, ...), design agents, anti-pattern detection hooks.",
+      "category": "design",
+      "copy": [
+        { "from": "plugin/skills", "to": "skills" },
+        { "from": "plugin/agents", "to": "agents" },
+        { "from": "plugin/hooks", "to": "hooks" }
+      ],
+      "license_files": ["LICENSE", "NOTICE.md"]
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "ref": "main",
+      "license": "MIT",
+      "author": "Next Level Builder",
+      "plugin": "ui-ux-pro-max",
+      "description": "UI UX Pro Max: searchable local database of 79 styles, 192 palettes, 74 font pairings, charts and 22 stack guidelines, plus design-system, brand, banner and slides skills.",
+      "category": "design",
+      "$comment": "Upstream layout (.claude/skills) is kept on purpose: the skill scripts resolve ${CLAUDE_PLUGIN_ROOT}/.claude/skills/... and would break if moved.",
+      "skills_path": "./.claude/skills/",
+      "copy": [
+        { "from": ".claude/skills/ui-ux-pro-max", "to": ".claude/skills/ui-ux-pro-max" },
+        { "from": ".claude/skills/design-system", "to": ".claude/skills/design-system" },
+        { "from": ".claude/skills/ui-styling", "to": ".claude/skills/ui-styling" },
+        { "from": ".claude/skills/design", "to": ".claude/skills/design" },
+        { "from": ".claude/skills/brand", "to": ".claude/skills/brand" },
+        { "from": ".claude/skills/banner-design", "to": ".claude/skills/banner-design" },
+        { "from": ".claude/skills/slides", "to": ".claude/skills/slides" }
+      ],
+      "license_files": ["LICENSE"]
+    },
+    {
+      "id": "taste",
+      "repo": "leonxlnx/taste-skill",
+      "ref": "main",
+      "license": "MIT",
+      "author": "Leonxlnx",
+      "plugin": "taste",
+      "description": "Taste skills by Leonxlnx: anti-slop landing pages and redesigns, plus opt-in aesthetic presets (minimalist, brutalist, high-end, Stitch).",
+      "category": "design",
+      "$comment": "Excluded on purpose: taste-skill-v1 (duplicate of design-taste-frontend) and gpt-tasteskill (tuned for GPT models). Image-generation skills live in taste-imagegen.",
+      "copy": [
+        { "from": "skills/taste-skill", "to": "skills/taste-skill" },
+        { "from": "skills/redesign-skill", "to": "skills/redesign-skill" },
+        { "from": "skills/minimalist-skill", "to": "skills/minimalist-skill" },
+        { "from": "skills/brutalist-skill", "to": "skills/brutalist-skill" },
+        { "from": "skills/soft-skill", "to": "skills/soft-skill" },
+        { "from": "skills/stitch-skill", "to": "skills/stitch-skill" },
+        { "from": "skills/output-skill", "to": "skills/output-skill" }
+      ],
+      "license_files": ["LICENSE"],
+      "patches": [
+        {
+          "file": "skills/minimalist-skill/SKILL.md",
+          "why": "Aesthetic preset. Without narrowing it fires on every UI task and fights the other direction skills.",
+          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a minimalist / editorial / Notion-like look. Clean editorial-style interfaces. Warm monochrome palette, typographic contrast, flat bento grids, muted pastels. No gradients, no heavy shadows."
+        },
+        {
+          "file": "skills/brutalist-skill/SKILL.md",
+          "why": "Aesthetic preset.",
+          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a brutalist / industrial / terminal look. Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects."
+        },
+        {
+          "file": "skills/soft-skill/SKILL.md",
+          "why": "Aesthetic preset. Its purple mesh gradients and banned-font list contradict design-taste-frontend's defaults, so it must not auto-trigger.",
+          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a premium agency / Awwwards / 'make it feel expensive' look. Defines the exact fonts, spacing, shadows, card structures, and animations of a high-end agency site."
+        },
+        {
+          "file": "skills/stitch-skill/SKILL.md",
+          "why": "Writes DESIGN.md in Stitch format, which collides with Impeccable's DESIGN.md. Only for Google Stitch users.",
+          "description": "Use ONLY when the user is working with Google Stitch and asks for a Stitch DESIGN.md. Generates Stitch-optimized DESIGN.md files with premium, anti-generic UI rules. Do not use to create or edit a project's regular DESIGN.md (Impeccable owns that file)."
+        },
+        {
+          "file": "skills/output-skill/SKILL.md",
+          "why": "Global behavior override; must be opt-in.",
+          "description": "Use ONLY when the user explicitly asks for complete, untruncated output (no placeholders, no '// rest of code'). Enforces complete code generation and handles token-limit splits cleanly."
+        }
+      ]
+    },
+    {
+      "id": "taste-imagegen",
+      "repo": "leonxlnx/taste-skill",
+      "ref": "main",
+      "license": "MIT",
+      "author": "Leonxlnx",
+      "plugin": "taste-imagegen",
+      "description": "Optional. Taste image-first skills (image-to-code, web/mobile design concepts, brand kits). Needs an image-generation tool in your environment.",
+      "category": "design",
+      "copy": [
+        { "from": "skills/image-to-code-skill", "to": "skills/image-to-code-skill" },
+        { "from": "skills/imagegen-frontend-web", "to": "skills/imagegen-frontend-web" },
+        { "from": "skills/imagegen-frontend-mobile", "to": "skills/imagegen-frontend-mobile" },
+        { "from": "skills/brandkit", "to": "skills/brandkit" }
+      ],
+      "license_files": ["LICENSE"]
+    },
+    {
+      "id": "emil",
+      "repo": "emilkowalski/skills",
+      "ref": "main",
+      "license": "MIT",
+      "author": "Emil Kowalski",
+      "plugin": "emil-design-eng",
+      "description": "Emil Kowalski's design engineering skills: UI polish, animation craft (animate, review, improve, find opportunities), Apple-style motion, prototypes, native-feeling mobile web, library picks.",
+      "category": "design",
+      "copy": [
+        { "from": "skills/emil-design-eng", "to": "skills/emil-design-eng" },
+        { "from": "skills/animate", "to": "skills/animate" },
+        { "from": "skills/animation-vocabulary", "to": "skills/animation-vocabulary" },
+        { "from": "skills/apple-design", "to": "skills/apple-design" },
+        { "from": "skills/find-animation-opportunities", "to": "skills/find-animation-opportunities" },
+        { "from": "skills/improve-animations", "to": "skills/improve-animations" },
+        { "from": "skills/review-animations", "to": "skills/review-animations" },
+        { "from": "skills/mobile-native", "to": "skills/mobile-native" },
+        { "from": "skills/pick-ui-library", "to": "skills/pick-ui-library" },
+        { "from": "skills/prototype", "to": "skills/prototype" },
+        { "from": "skills/ask-sonner", "to": "skills/ask-sonner" }
+      ],
+      "license_files": ["LICENSE"]
+    },
+    {
+      "id": "emil-native",
+      "repo": "emilkowalski/skills",
+      "ref": "main",
+      "license": "MIT",
+      "author": "Emil Kowalski",
+      "plugin": "emil-native",
+      "description": "Optional. Emil Kowalski's native skills: React Native / Expo animation and modern Swift.",
+      "category": "mobile",
+      "copy": [
+        { "from": "skills/animate-expo", "to": "skills/animate-expo" },
+        { "from": "skills/write-swift", "to": "skills/write-swift" }
+      ],
+      "license_files": ["LICENSE"]
+    }
+  ],
+  "local_plugins": [
+    {
+      "plugin": "frontend-stack",
+      "description": "The glue: a router skill that picks the right skill for each frontend task, resolves the rules that conflict between packs, and ships design-director and ui-reviewer agents.",
+      "category": "design"
+    }
+  ]
+}
