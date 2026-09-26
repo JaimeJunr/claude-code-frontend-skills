@@ -76,6 +76,48 @@ copy first so the skill is not loaded twice.
 Every plugin is independent. Install only the ones you want; the router
 falls back gracefully when a pack is missing.
 
+### For a team project
+
+To share the stack with everyone on a repo, commit this to
+`.claude/settings.json`:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "frontend-stack": {
+      "source": {
+        "source": "github",
+        "repo": "JaimeJunr/claude-code-frontend-skills"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "frontend-stack@frontend-stack": true,
+    "frontend-design@frontend-stack": true,
+    "impeccable@frontend-stack": true,
+    "ui-ux-pro-max@frontend-stack": true,
+    "taste@frontend-stack": true,
+    "emil-design-eng@frontend-stack": true
+  }
+}
+```
+
+**Enabled is not installed.** That file says which plugins the project wants.
+The install itself is recorded per machine in
+`~/.claude/plugins/installed_plugins.json`, which is not in git. So on every
+new machine (a teammate, a fresh laptop, CI), the plugins show up as enabled
+but do not load until they are installed there once. From the repo root:
+
+```bash
+for p in frontend-stack frontend-design impeccable ui-ux-pro-max taste emil-design-eng; do claude plugin install "$p@frontend-stack" --scope project; done
+```
+
+The command may rewrite the formatting of `.claude/settings.json` without
+changing its content; `git checkout .claude/settings.json` keeps the diff
+clean. Then check with `claude plugin list` and **start a new session**: plugins
+load when a session starts, so the one you ran the install from will not see
+them.
+
 ## What's inside
 
 <!-- SKILLS:START -->

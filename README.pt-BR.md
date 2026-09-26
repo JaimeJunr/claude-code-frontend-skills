@@ -32,6 +32,49 @@ imagem) e `emil-native@frontend-stack` (React Native/Expo e Swift).
 Se você já tem algum desses instalado pelo repo original, desinstale antes
 pra skill não carregar duas vezes.
 
+### Num projeto de time
+
+Pra todo mundo do repositório usar a stack, versione isto em
+`.claude/settings.json`:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "frontend-stack": {
+      "source": {
+        "source": "github",
+        "repo": "JaimeJunr/claude-code-frontend-skills"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "frontend-stack@frontend-stack": true,
+    "frontend-design@frontend-stack": true,
+    "impeccable@frontend-stack": true,
+    "ui-ux-pro-max@frontend-stack": true,
+    "taste@frontend-stack": true,
+    "emil-design-eng@frontend-stack": true
+  }
+}
+```
+
+**Ligado não é instalado.** Esse arquivo diz quais plugins o projeto quer. A
+instalação fica registrada em cada máquina, em
+`~/.claude/plugins/installed_plugins.json`, que não vai pro git. Então, em
+toda máquina nova (colega de time, notebook novo, CI), os plugins aparecem
+como ligados mas só carregam depois de instalados ali uma vez. Na raiz do
+repositório:
+
+```bash
+for p in frontend-stack frontend-design impeccable ui-ux-pro-max taste emil-design-eng; do claude plugin install "$p@frontend-stack" --scope project; done
+```
+
+O comando pode reformatar o `.claude/settings.json` sem mudar o conteúdo;
+`git checkout .claude/settings.json` deixa o diff limpo. Confira com
+`claude plugin list` e **abra uma sessão nova**: os plugins só
+carregam quando a sessão começa, então a sessão onde você rodou o comando não
+enxerga eles.
+
 ## O que a camada de compatibilidade resolve
 
 - O Taste pede micro-animação o tempo todo; o Emil pergunta se deveria animar
