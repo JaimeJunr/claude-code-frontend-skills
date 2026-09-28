@@ -14,20 +14,20 @@
   "ui-ux-pro-max": {
     "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
     "ref": "main",
-    "commit": "dcc40ff5133ef78276117db0cc34e7b83cc8aeba",
-    "synced_at": "2026-09-26"
+    "commit": "09170eec67eefd46a7ae85de61b40c194020f997",
+    "synced_at": "2026-09-28"
   },
   "taste": {
     "repo": "leonxlnx/taste-skill",
     "ref": "main",
-    "commit": "c184364c58658b2f131b4ae8bd3d206cabb3deee",
-    "synced_at": "2026-09-26"
+    "commit": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
+    "synced_at": "2026-09-28"
   },
   "taste-imagegen": {
     "repo": "leonxlnx/taste-skill",
     "ref": "main",
-    "commit": "c184364c58658b2f131b4ae8bd3d206cabb3deee",
-    "synced_at": "2026-09-26"
+    "commit": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
+    "synced_at": "2026-09-28"
   },
   "emil": {
     "repo": "emilkowalski/skills",
