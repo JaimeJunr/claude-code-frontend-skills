@@ -15,12 +15,21 @@ competing rulebooks.
 Before picking anything, look for what the project already decided:
 
 - `PRODUCT.md` / `DESIGN.md` at the repo root (Impeccable's context files)
+- `design-system/*/MASTER.md` (UI UX Pro Max `--persist` output)
+- `docs/brand-guidelines.md`, `assets/design-tokens.*` (UI UX Pro Max `brand`
+  and `design-system`)
 - an existing design system: tokens, `tailwind.config.*`, `components/ui/`, a
   component library in `package.json`
 - a brand guide the user pointed at
 
 If any of these exist, they outrank every skill below (see rule 1 of the
 precedence ladder). Your job becomes extending that system, not replacing it.
+
+Keep one source of truth. If two of these files exist and disagree (palette,
+fonts, spacing), ask the user which one wins before writing code. When the
+project has none, `DESIGN.md` is the one to create (Impeccable `init`); do not
+also run `--persist` or generate `docs/brand-guidelines.md` unless the user
+asks, and if they do, keep the values identical to `DESIGN.md`.
 
 ## 2. Pick the lead skill
 
@@ -31,7 +40,7 @@ precedence ladder). Your job becomes extending that system, not replacing it.
 | "Plan it before coding", discovery, UX flow | `impeccable:impeccable` (`shape`) | - |
 | Set up design context for a repo | `impeccable:impeccable` (`init`, then `document`) | - |
 | Redesign an existing site or app | `impeccable:impeccable` (`critique` then `audit`) | `taste:redesign-existing-projects` for marketing pages |
-| Polish before shipping | `impeccable:impeccable` (`polish`) | `emil-design-eng:emil-design-eng` for interaction details |
+| Polish before shipping | `impeccable:impeccable` (`polish`) | `emil-design-eng:review-animations` for interaction details |
 | Accessibility, performance, responsive checks | `impeccable:impeccable` (`audit`, `optimize`, `adapt`) | - |
 | Choose a style, palette, font pairing, chart type | `ui-ux-pro-max:ui-ux-pro-max` | - |
 | Design tokens / design system architecture | `ui-ux-pro-max:design-system` | `impeccable:impeccable` (`extract`) |
@@ -45,7 +54,11 @@ precedence ladder). Your job becomes extending that system, not replacing it.
 | Which library for X (charts, OTP, virtual lists...) | `emil-design-eng:pick-ui-library` | - |
 | Toasts with Sonner | `emil-design-eng:ask-sonner` | - |
 | UX copy, errors, microcopy | `impeccable:impeccable` (`clarify`) | - |
-| Brand identity, logo, banners, slides | `ui-ux-pro-max:brand` / `design` / `banner-design` / `slides` | - |
+| Brand voice, visual identity, brand guidelines | `ui-ux-pro-max:brand` | `ui-ux-pro-max:design-system` for tokens |
+| Logo, icons, corporate identity (CIP), social photos | `ui-ux-pro-max:design` | - |
+| Banners, ads, social images, website hero art | `ui-ux-pro-max:banner-design` | - |
+| Slides, pitch deck | `ui-ux-pro-max:slides` | - |
+| Brand-kit board as a generated image | `taste-imagegen:brandkit` (optional plugin, needs image generation) | - |
 | Explicit look: minimalist, brutalist, "expensive agency" | `taste:minimalist-ui` / `industrial-brutalist-ui` / `high-end-visual-design` | `taste:design-taste-frontend` pre-flight checklist |
 | Google Stitch DESIGN.md | `taste:stitch-design-taste` | - |
 | React Native / Expo motion, Swift | `emil-native:animate-expo` / `write-swift` (optional plugin) | - |
@@ -84,6 +97,10 @@ skill contradicts the lead.
 - Aesthetic presets (`minimalist-ui`, `industrial-brutalist-ui`,
   `high-end-visual-design`) never stack with each other. Pick one or none.
 - `taste:full-output-enforcement` only when the user asks for complete output.
+- The brand, logo, banner and slides skills above overlap (`ui-ux-pro-max:design`
+  and `design-system` also cover slides and branding). Load only the row's lead.
+- Prefer the specific Emil skill over `emil-design-eng:emil-design-eng` as
+  support: without a direct question the umbrella replies with a stock greeting.
 
 ## 5. Finish the same way every time
 

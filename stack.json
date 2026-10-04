@@ -36,7 +36,14 @@
         { "from": "plugin/agents", "to": "agents" },
         { "from": "plugin/hooks", "to": "hooks" }
       ],
-      "license_files": ["LICENSE", "NOTICE.md"]
+      "license_files": ["LICENSE", "NOTICE.md"],
+      "patches": [
+        {
+          "file": "skills/impeccable/SKILL.md",
+          "why": "Upstream claims every UI task, including new landing pages, so it loads next to the lead the frontend-stack router picked and starts its own PRODUCT.md interview. Narrowed to its commands.",
+          "description": "Impeccable design commands for frontend interfaces: plan UX before code (shape), critique, audit, polish, harden, clarify UX copy, adapt, optimize, distill, typeset, colorize, layout, bolder or quieter, delight, onboard, live browser iteration, and design context (init, document, extract). Use when the user asks for one of these, names Impeccable or a /impeccable command, or the frontend-stack router delegates to it. Do not auto-load just to build a new page, landing page or component from scratch: the frontend-stack router picks the lead there. Not for backend-only or non-UI tasks."
+        }
+      ]
     },
     {
       "id": "ui-ux-pro-max",
