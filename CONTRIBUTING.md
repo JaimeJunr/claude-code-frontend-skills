@@ -14,6 +14,14 @@
 
 Never edit files under a generated plugin by hand; the next sync overwrites
 them. Put changes in `stack.json` as a `patches` entry instead, with a `why`.
+A patch targets one `file` and can combine:
+
+- `description`: replace the frontmatter description (single-line only).
+- `drop_keys`: remove frontmatter keys, e.g. `disable-model-invocation`.
+- `replace`: `[{ "pattern": <regex>, "with": <replacement> }]` on the body.
+
+Every patch fails the sync if upstream no longer has what it targets, so a
+fix never silently stops applying.
 
 A skill gets in if it is actively maintained, permissively licensed (MIT,
 Apache-2.0, BSD or similar), and does something the stack does not already
@@ -28,5 +36,6 @@ at the start of every frontend task.
 
 ```bash
 python3 scripts/sync.py --check
+python3 -m unittest discover -s tests
 claude plugin validate .
 ```

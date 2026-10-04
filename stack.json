@@ -58,7 +58,30 @@
         { "from": ".claude/skills/banner-design", "to": ".claude/skills/banner-design" },
         { "from": ".claude/skills/slides", "to": ".claude/skills/slides" }
       ],
-      "license_files": ["LICENSE"]
+      "license_files": ["LICENSE"],
+      "$comment_patches": "Upstream runs `python3 scripts/x.py` relative to the working directory, which is the user's project once installed as a plugin, so the script is not found. ${CLAUDE_SKILL_DIR} is substituted by Claude Code in SKILL.md only, so reference files are left alone.",
+      "patches": [
+        {
+          "file": ".claude/skills/design/SKILL.md",
+          "why": "Script paths made absolute with ${CLAUDE_SKILL_DIR}.",
+          "replace": [{ "pattern": "\\b(python3?|node) (scripts/[\\w./-]+)", "with": "\\1 \"${CLAUDE_SKILL_DIR}/\\2\"" }]
+        },
+        {
+          "file": ".claude/skills/design-system/SKILL.md",
+          "why": "Script paths made absolute with ${CLAUDE_SKILL_DIR}.",
+          "replace": [{ "pattern": "\\b(python3?|node) (scripts/[\\w./-]+)", "with": "\\1 \"${CLAUDE_SKILL_DIR}/\\2\"" }]
+        },
+        {
+          "file": ".claude/skills/brand/SKILL.md",
+          "why": "Script paths made absolute with ${CLAUDE_SKILL_DIR}.",
+          "replace": [{ "pattern": "\\b(python3?|node) (scripts/[\\w./-]+)", "with": "\\1 \"${CLAUDE_SKILL_DIR}/\\2\"" }]
+        },
+        {
+          "file": ".claude/skills/ui-styling/SKILL.md",
+          "why": "Script paths made absolute with ${CLAUDE_SKILL_DIR}.",
+          "replace": [{ "pattern": "\\b(python3?|node) (scripts/[\\w./-]+)", "with": "\\1 \"${CLAUDE_SKILL_DIR}/\\2\"" }]
+        }
+      ]
     },
     {
       "id": "taste",
@@ -147,7 +170,27 @@
         { "from": "skills/prototype", "to": "skills/prototype" },
         { "from": "skills/ask-sonner", "to": "skills/ask-sonner" }
       ],
-      "license_files": ["LICENSE"]
+      "license_files": ["LICENSE"],
+      "patches": [
+        {
+          "file": "skills/review-animations/SKILL.md",
+          "why": "Upstream sets disable-model-invocation, so the Skill tool refuses it and the frontend-stack router and ui-reviewer agent cannot load it. Unlocked with a narrow description instead.",
+          "drop_keys": ["disable-model-invocation"],
+          "description": "Use ONLY when the user asks to review motion, or when the frontend-stack router or ui-reviewer agent delegates a motion review. Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned."
+        },
+        {
+          "file": "skills/pick-ui-library/SKILL.md",
+          "why": "Same as review-animations: the router delegates library picks to it.",
+          "drop_keys": ["disable-model-invocation"],
+          "description": "Use ONLY when the user asks which library to use, or when the frontend-stack router delegates a library pick. Picks the right library for a frontend task from a curated, opinionated list: numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more."
+        },
+        {
+          "file": "skills/prototype/SKILL.md",
+          "why": "Same as review-animations: the router delegates multi-version prototypes to it.",
+          "drop_keys": ["disable-model-invocation"],
+          "description": "Use ONLY when the user explicitly asks for several versions of a UI piece to compare. Builds multiple genuinely different versions behind a visual picker so the user can flip through them live and promote the one that feels right."
+        }
+      ]
     },
     {
       "id": "emil-native",

@@ -219,13 +219,13 @@ Covers:
 ### shadcn_add.py
 Add shadcn/ui components with dependency handling:
 ```bash
-python scripts/shadcn_add.py button card dialog
+python "${CLAUDE_SKILL_DIR}/scripts/shadcn_add.py" button card dialog
 ```
 
 ### tailwind_config_gen.py
 Generate tailwind.config.js with custom theme:
 ```bash
-python scripts/tailwind_config_gen.py --colors brand:blue --fonts display:Inter
+python "${CLAUDE_SKILL_DIR}/scripts/tailwind_config_gen.py" --colors brand:blue --fonts display:Inter
 ```
 
 The generator refuses to create or replace a config when any sibling
@@ -233,7 +233,7 @@ The generator refuses to create or replace a config when any sibling
 reported config first, then pass `--force` only when the competing output is
 intentional:
 ```bash
-python scripts/tailwind_config_gen.py --colors brand:blue --force
+python "${CLAUDE_SKILL_DIR}/scripts/tailwind_config_gen.py" --colors brand:blue --force
 ```
 
 ## Best Practices
