@@ -99,8 +99,8 @@ skill contradicts the lead.
 - `taste:full-output-enforcement` only when the user asks for complete output.
 - The brand, logo, banner and slides skills above overlap (`ui-ux-pro-max:design`
   and `design-system` also cover slides and branding). Load only the row's lead.
-- Never load `emil-design-eng:emil-design-eng` as support: without a direct
-  question it only replies with a stock greeting. Load the specific Emil skill.
+- Prefer the specific Emil skill over `emil-design-eng:emil-design-eng` as
+  support: without a direct question the umbrella replies with a stock greeting.
 
 ## 5. Finish the same way every time
 
