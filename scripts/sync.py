@@ -81,6 +81,40 @@ def patch_description(skill_md: Path, description: str) -> None:
     skill_md.write_text("---\n" + "\n".join(lines) + "\n---\n" + text[m.end():])
 
 
+def drop_frontmatter_keys(skill_md: Path, keys: list[str]) -> None:
+    text = skill_md.read_text()
+    m = FRONTMATTER.match(text)
+    if not m:
+        sys.exit(f"patch: {skill_md} has no frontmatter")
+    lines = m.group(1).splitlines()
+    for key in keys:
+        kept = [l for l in lines if not l.startswith(f"{key}:")]
+        if len(kept) == len(lines):
+            sys.exit(f"patch: {skill_md} has no frontmatter key {key!r}, review the patch")
+        lines = kept
+    skill_md.write_text("---\n" + "\n".join(lines) + "\n---\n" + text[m.end():])
+
+
+def replace_in_body(skill_md: Path, pattern: str, replacement: str) -> None:
+    text = skill_md.read_text()
+    m = FRONTMATTER.match(text)
+    head, body = (text[:m.end()], text[m.end():]) if m else ("", text)
+    new_body, count = re.subn(pattern, replacement, body)
+    # Zero matches means upstream rewrote the text; a silent no-op would ship the bug again.
+    if count == 0:
+        sys.exit(f"patch: {skill_md} has no match for {pattern!r}, review the patch")
+    skill_md.write_text(head + new_body)
+
+
+def apply_patch(skill_md: Path, patch: dict) -> None:
+    if "description" in patch:
+        patch_description(skill_md, patch["description"])
+    if "drop_keys" in patch:
+        drop_frontmatter_keys(skill_md, patch["drop_keys"])
+    for rule in patch.get("replace", []):
+        replace_in_body(skill_md, rule["pattern"], rule["with"])
+
+
 def copy_path(src: Path, dst: Path) -> None:
     dst.parent.mkdir(parents=True, exist_ok=True)
     if src.is_dir():
@@ -133,7 +167,7 @@ def sync(src_dir: Path | None) -> None:
                 if not target.exists():
                     shutil.copy2(upstream / lic, target)
             for p in src.get("patches", []):
-                patch_description(dest / p["file"], p["description"])
+                apply_patch(dest / p["file"], p)
             homepage = src.get("homepage", f"https://github.com/{src['repo']}")
             write_json(dest / ".claude-plugin" / "plugin.json", plugin_manifest(
                 src["plugin"], src["description"], src["author"], src["license"],
@@ -211,8 +245,8 @@ def write_notices(lock: dict) -> None:
         ]
         patches = src.get("patches", [])
         if patches:
-            out.append("- Modifications: the `description` frontmatter of these files was rewritten"
-                       " so they only trigger on explicit request. The body is unchanged.")
+            out.append("- Modifications: these files were patched for Claude Code compatibility;"
+                       " everything else is copied verbatim.")
             out += [f"  - `{p['file']}`: {p['why']}" for p in patches]
         else:
             out.append("- Modifications: none, copied verbatim.")

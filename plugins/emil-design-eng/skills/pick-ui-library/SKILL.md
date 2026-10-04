@@ -1,7 +1,6 @@
 ---
 name: pick-ui-library
-description: Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only runs when explicitly invoked; it does not trigger on its own.
-disable-model-invocation: true
+description: "Use ONLY when the user asks which library to use, or when the frontend-stack router delegates a library pick. Picks the right library for a frontend task from a curated, opinionated list: numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more."
 ---
 
 # Picking The Right Library

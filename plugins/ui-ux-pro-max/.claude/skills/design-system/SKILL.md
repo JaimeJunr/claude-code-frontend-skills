@@ -56,12 +56,12 @@ Script paths in this skill and its `references/` are relative to the directory t
 
 **Generate tokens:**
 ```bash
-node scripts/generate-tokens.cjs --config tokens.json -o tokens.css
+node "${CLAUDE_SKILL_DIR}/scripts/generate-tokens.cjs" --config tokens.json -o tokens.css
 ```
 
 **Validate usage:**
 ```bash
-node scripts/validate-tokens.cjs --dir src/
+node "${CLAUDE_SKILL_DIR}/scripts/validate-tokens.cjs" --dir src/
 ```
 
 ## References
@@ -126,15 +126,15 @@ Brand-compliant presentations using design tokens + Chart.js + contextual decisi
 
 ```bash
 # Basic search (auto-detect domain)
-python scripts/search-slides.py "investor pitch"
+python "${CLAUDE_SKILL_DIR}/scripts/search-slides.py" "investor pitch"
 
 # Domain-specific search
-python scripts/search-slides.py "problem agitation" -d copy
-python scripts/search-slides.py "revenue growth" -d chart
+python "${CLAUDE_SKILL_DIR}/scripts/search-slides.py" "problem agitation" -d copy
+python "${CLAUDE_SKILL_DIR}/scripts/search-slides.py" "revenue growth" -d chart
 
 # Contextual search (Premium System)
-python scripts/search-slides.py "problem slide" --context --position 2 --total 9
-python scripts/search-slides.py "cta" --context --position 9 --prev-emotion frustration
+python "${CLAUDE_SKILL_DIR}/scripts/search-slides.py" "problem slide" --context --position 2 --total 9
+python "${CLAUDE_SKILL_DIR}/scripts/search-slides.py" "cta" --context --position 9 --prev-emotion frustration
 ```
 
 ### Decision System CSVs

@@ -28,19 +28,19 @@ Script paths in this skill and its `references/` are relative to the directory t
 
 **Inject brand context into prompts:**
 ```bash
-node scripts/inject-brand-context.cjs
-node scripts/inject-brand-context.cjs --json
+node "${CLAUDE_SKILL_DIR}/scripts/inject-brand-context.cjs"
+node "${CLAUDE_SKILL_DIR}/scripts/inject-brand-context.cjs" --json
 ```
 
 **Validate an asset:**
 ```bash
-node scripts/validate-asset.cjs <asset-path>
+node "${CLAUDE_SKILL_DIR}/scripts/validate-asset.cjs" <asset-path>
 ```
 
 **Extract/compare colors:**
 ```bash
-node scripts/extract-colors.cjs --palette
-node scripts/extract-colors.cjs <image-path>
+node "${CLAUDE_SKILL_DIR}/scripts/extract-colors.cjs" --palette
+node "${CLAUDE_SKILL_DIR}/scripts/extract-colors.cjs" <image-path>
 ```
 
 ## Brand Sync Workflow
@@ -48,9 +48,9 @@ node scripts/extract-colors.cjs <image-path>
 ```bash
 # 1. Edit docs/brand-guidelines.md (or use /brand update)
 # 2. Sync to design tokens
-node scripts/sync-brand-to-tokens.cjs
+node "${CLAUDE_SKILL_DIR}/scripts/sync-brand-to-tokens.cjs"
 # 3. Verify
-node scripts/inject-brand-context.cjs --json | head -20
+node "${CLAUDE_SKILL_DIR}/scripts/inject-brand-context.cjs" --json | head -20
 ```
 
 The sync stops when it detects existing token files, `:root` custom properties
