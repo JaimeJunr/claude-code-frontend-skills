@@ -21,6 +21,11 @@ jobs:
       - name: Test sync patches
         run: python3 -m unittest discover -s tests
 
+      - name: Token budget of hand-written plugins
+        run: |
+          pip install tiktoken
+          python3 scripts/token_budget.py
+
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
