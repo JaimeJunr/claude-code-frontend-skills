@@ -14,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # create-pull-request pushes with the credentials checkout persisted, so
+          # both steps must use the same token or the push fails with exit 128.
+          token: ${{ secrets.SYNC_TOKEN || github.token }}
 
       - uses: actions/setup-python@v5
         with:
