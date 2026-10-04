@@ -1,7 +1,7 @@
 ---
 name: impeccable
 description: "Impeccable design commands for frontend interfaces: plan UX before code (shape), critique, audit, polish, harden, clarify UX copy, adapt, optimize, distill, typeset, colorize, layout, bolder or quieter, delight, onboard, live browser iteration, and design context (init, document, extract). Use when the user asks for one of these, names Impeccable or a /impeccable command, or the frontend-stack router delegates to it. Do not auto-load just to build a new page, landing page or component from scratch: the frontend-stack router picks the lead there. Not for backend-only or non-UI tasks."
-version: 4.4.0
+version: 4.5.0
 user-invocable: true
 argument-hint: "[shape · audit|critique · animate|bolder|colorize|delight|layout|overdrive|quieter|typeset · adapt|clarify|distill · harden|onboard|optimize|polish · init|document|extract|live|generate] [target]"
 license: Apache 2.0
