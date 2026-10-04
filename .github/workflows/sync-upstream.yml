@@ -40,6 +40,9 @@ jobs:
       - name: Open pull request
         uses: peter-evans/create-pull-request@v7
         with:
+          # PRs opened with the default GITHUB_TOKEN do not trigger workflows, so the
+          # required `validate` check would never report and the PR could not merge.
+          token: ${{ secrets.SYNC_TOKEN || github.token }}
           branch: chore/upstream-sync
           delete-branch: true
           commit-message: "chore: sync upstream skills"

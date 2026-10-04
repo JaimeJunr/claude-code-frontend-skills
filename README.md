@@ -192,6 +192,11 @@ Action runs it every Monday and opens a PR when an upstream changed, so you
 get new skills and fixes without watching five repos. Pinned commits are in
 [`UPSTREAM.lock`](UPSTREAM.lock).
 
+The Action opens that PR with the `SYNC_TOKEN` secret, a fine-grained token
+with Contents and Pull requests write access to the repo. Without it, the PR
+is opened with the default token, which does not trigger CI, so the required
+`validate` check never runs.
+
 ```bash
 python3 scripts/sync.py          # pull upstreams and rebuild
 python3 scripts/sync.py --check  # validate only
