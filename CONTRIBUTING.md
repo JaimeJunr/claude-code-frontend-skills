@@ -31,11 +31,14 @@ cover.
 
 `plugins/frontend-stack/` is hand-written. Keep the router short: it is loaded
 at the start of every frontend task.
+`scripts/token_budget.py` fails CI when a SKILL.md there passes 8k tokens or an
+agent passes 20k (tiktoken `o200k_base`).
 
 ## Before opening a PR
 
 ```bash
 python3 scripts/sync.py --check
 python3 -m unittest discover -s tests
+pip install tiktoken && python3 scripts/token_budget.py
 claude plugin validate .
 ```
