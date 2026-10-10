@@ -65,8 +65,13 @@ At the start, tell the user the phase plan with the skills of each phase, so
 they see the whole route even though only the first phase is loaded.
 
 When the user complains about looks, Diagnose and Direction run together: load
-`impeccable:impeccable` (`critique`) and the Direction lead at the start. A
-critique alone is a list of problems, not the new direction the user asked for.
+`impeccable:impeccable` (`critique`), the Direction lead and
+`ui-ux-pro-max:ui-ux-pro-max` at the start, always, even when the request names
+no stack or style. A critique alone is a list of problems, not the new direction
+the user asked for, and UI UX Pro Max supplies the UX guidelines and the
+style/palette options for this kind of product. When the project already has a
+design system, use UI UX Pro Max for UX and stack rules only, not to replace
+the palette or fonts (rule 2 of the ladder).
 
 Write what Diagnose and Direction decided (in `DESIGN.md` or the plan) before
 Build, so later phases do not need the earlier skills loaded.
