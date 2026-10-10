@@ -114,17 +114,17 @@
         {
           "file": "skills/minimalist-skill/SKILL.md",
           "why": "Aesthetic preset. Without narrowing it fires on every UI task and fights the other direction skills.",
-          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a minimalist / editorial / Notion-like look. Clean editorial-style interfaces. Warm monochrome palette, typographic contrast, flat bento grids, muted pastels. No gradients, no heavy shadows."
+          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a minimalist / editorial / Notion-like look, or picks it from directions the frontend-stack router offered. Clean editorial-style interfaces. Warm monochrome palette, typographic contrast, flat bento grids, muted pastels. No gradients, no heavy shadows."
         },
         {
           "file": "skills/brutalist-skill/SKILL.md",
           "why": "Aesthetic preset.",
-          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a brutalist / industrial / terminal look. Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects."
+          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a brutalist / industrial / terminal look, or picks it from directions the frontend-stack router offered. Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects."
         },
         {
           "file": "skills/soft-skill/SKILL.md",
           "why": "Aesthetic preset. Its purple mesh gradients and banned-font list contradict design-taste-frontend's defaults, so it must not auto-trigger.",
-          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a premium agency / Awwwards / 'make it feel expensive' look. Defines the exact fonts, spacing, shadows, card structures, and animations of a high-end agency site."
+          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a premium agency / Awwwards / 'make it feel expensive' look, or picks it from directions the frontend-stack router offered. Defines the exact fonts, spacing, shadows, card structures, and animations of a high-end agency site."
         },
         {
           "file": "skills/stitch-skill/SKILL.md",
@@ -195,7 +195,7 @@
           "file": "skills/prototype/SKILL.md",
           "why": "Same as review-animations: the router delegates multi-version prototypes to it.",
           "drop_keys": ["disable-model-invocation"],
-          "description": "Use ONLY when the user explicitly asks for several versions of a UI piece to compare. Builds multiple genuinely different versions behind a visual picker so the user can flip through them live and promote the one that feels right."
+          "description": "Use ONLY when the user explicitly asks for several versions of a UI piece to compare, or when the frontend-stack router delegates a comparison of design directions. Builds multiple genuinely different versions behind a visual picker so the user can flip through them live and promote the one that feels right."
         }
       ]
     },

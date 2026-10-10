@@ -64,7 +64,12 @@ phase starts, not all up front. Skip a phase that the task does not need.
 At the start, tell the user the phase plan with the skills of each phase, so
 they see the whole route even though only the first phase is loaded.
 
-When the user complains about looks, Diagnose and Direction run together: load
+If the complaint mentions personality or identity ("no personality", "no
+product feel"), even mixed with "looks rushed / AI-made", skip this paragraph and
+use the identity flow below: its first step loads `impeccable:impeccable` and
+the `frontend-stack:design-director` agent.
+
+For any other complaint about looks, Diagnose and Direction run together: load
 `impeccable:impeccable` (`critique`), the Direction lead and
 `ui-ux-pro-max:ui-ux-pro-max` at the start, always, even when the request names
 no stack or style. A critique alone is a list of problems, not the new direction
@@ -76,6 +81,30 @@ the palette or fonts (rule 2 of the ladder).
 Write what Diagnose and Direction decided (in `DESIGN.md` or the plan) before
 Build, so later phases do not need the earlier skills loaded.
 
+### When the product has no identity
+
+"No personality", "doesn't look like a product", "looks rushed / made with AI"
+ask for an identity, not a prettier screen. Identity is UI (color, type,
+spacing, components, page structure) and UX (navigation, key flows, usability),
+and each product presents them its own way. Run Direction like this:
+
+1. **Diagnose** with `impeccable:impeccable` (`critique`), covering
+   navigation and usability as well as looks.
+2. **Directions.** The `frontend-stack:design-director` agent proposes 2-3
+   genuinely different directions, each covering UI and UX. A direction may
+   start from one `taste` preset (`minimalist-ui`, `industrial-brutalist-ui`,
+   `high-end-visual-design`) or from `ui-ux-pro-max:ui-ux-pro-max` styles for
+   this product type. Name the presets to the user, so they can choose them.
+3. **Compare.** `emil-design-eng:prototype` builds one key screen in each
+   direction behind a picker. Skip it only if the user picks from the text.
+4. **Identity.** For the chosen direction, `ui-ux-pro-max:brand` writes voice
+   and visual identity, with `frontend-design:frontend-design` as support.
+5. **System.** `ui-ux-pro-max:design-system` turns it into tokens and
+   `DESIGN.md`. Then Build, Motion and Review as usual.
+
+The user picks the direction; never pick it alone. If the project already has
+a brand or system, the directions vary only what it leaves open (rule 2).
+
 ## 4. Pick the skills for the task
 
 | The task is... | Lead | Support |
@@ -84,12 +113,13 @@ Build, so later phases do not need the earlier skills loaded.
 | New product UI: dashboard, settings, tables, multi-step flows | `frontend-design:frontend-design` | `ui-ux-pro-max:ui-ux-pro-max` (stack + UX guidelines), `impeccable:impeccable` for `harden` at the end |
 | Redesign or restyle an existing product app | phases: Diagnose → Direction (`frontend-design:frontend-design`) → Build → Review | `ui-ux-pro-max:ui-styling` in Build when shadcn/Tailwind |
 | Redesign an existing marketing site | `taste:redesign-existing-projects` | `impeccable:impeccable` (`critique`) first |
+| No personality, no product identity, "looks rushed" | the identity flow in step 3 | - |
 | "Looks generic / AI-made / slop" | `frontend-design:frontend-design` (anti-template checks) | `impeccable:impeccable` (`critique`); `taste:design-taste-frontend` on marketing pages |
 | Adopt or migrate to a component library or design system ("use our kit", "move to shadcn") | the library itself: its docs, components, tokens | `ui-ux-pro-max:ui-styling` for Tailwind/shadcn mapping, `impeccable:impeccable` (`extract`) to pull tokens |
 | Chat or AI assistant UI | `frontend-design:frontend-design` + the library's chat components if it has them | `impeccable:impeccable` (`harden`) for empty, error, loading and streaming states; `emil-design-eng:animate` for streaming motion |
 | Forms, onboarding, first-run | `impeccable:impeccable` (`onboard`, `harden`) | `frontend-design:frontend-design` |
 | Empty, error, loading states, edge cases | `impeccable:impeccable` (`harden`) | - |
-| Only critique or audit, no rebuild asked | `impeccable:impeccable` (`critique` then `audit`) | - |
+| Only critique or audit, no rebuild asked | `impeccable:impeccable` (`critique` then `audit`) | none: the user asked for a report, not a new direction |
 | "Plan it before coding", discovery, UX flow | `impeccable:impeccable` (`shape`) | - |
 | Vague brief, no direction yet | `frontend-stack:design-director` agent, then route its result here | - |
 | Review a page, component or PR diff | `frontend-stack:ui-reviewer` agent | - |
@@ -170,7 +200,8 @@ skill contradicts the lead.
 - Say in one line which skills each phase loaded, so the user can correct the
   routing early.
 - Aesthetic presets (`minimalist-ui`, `industrial-brutalist-ui`,
-  `high-end-visual-design`) never stack with each other. Pick one or none.
+  `high-end-visual-design`) never stack with each other: one per direction, or
+  none.
 - `taste:full-output-enforcement` only when the user asks for complete output.
 - The brand, logo, banner and slides skills above overlap (`ui-ux-pro-max:design`
   and `design-system` also cover slides and branding). Load only the row's lead.
