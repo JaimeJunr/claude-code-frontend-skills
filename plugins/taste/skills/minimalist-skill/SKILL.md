@@ -1,6 +1,6 @@
 ---
 name: minimalist-ui
-description: "Aesthetic preset, use ONLY when the user explicitly asks for a minimalist / editorial / Notion-like look. Clean editorial-style interfaces. Warm monochrome palette, typographic contrast, flat bento grids, muted pastels. No gradients, no heavy shadows."
+description: "Aesthetic preset, use ONLY when the user explicitly asks for a minimalist / editorial / Notion-like look, or picks it from directions the frontend-stack router offered. Clean editorial-style interfaces. Warm monochrome palette, typographic contrast, flat bento grids, muted pastels. No gradients, no heavy shadows."
 ---
 
 # Protocol: Premium Utilitarian Minimalism UI Architect

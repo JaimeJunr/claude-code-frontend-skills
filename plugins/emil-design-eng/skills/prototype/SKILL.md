@@ -1,6 +1,6 @@
 ---
 name: prototype
-description: "Use ONLY when the user explicitly asks for several versions of a UI piece to compare. Builds multiple genuinely different versions behind a visual picker so the user can flip through them live and promote the one that feels right."
+description: "Use ONLY when the user explicitly asks for several versions of a UI piece to compare, or when the frontend-stack router delegates a comparison of design directions. Builds multiple genuinely different versions behind a visual picker so the user can flip through them live and promote the one that feels right."
 ---
 
 # Prototyping Variants
