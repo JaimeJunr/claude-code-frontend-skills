@@ -78,6 +78,16 @@ the stack applies. Rulings follow the precedence ladder in `../SKILL.md`.
   color, type) before shipping; use Emil's picks for the problems shadcn does
   not cover.
 
+## UX copy
+
+- `ux-research:ux-copy` writes and reviews microcopy, errors, empty states and
+  CTAs as its whole job.
+- `impeccable:impeccable` `clarify` rewrites copy while working on a screen.
+- `ui-ux-pro-max:brand` defines the voice.
+- **Ruling:** `ux-copy` leads any copy task and follows the voice from `brand`
+  (or `PRODUCT.md`) when one exists. Use `clarify` only inside an Impeccable
+  pass on a screen. The em-dash ruling below applies to both.
+
 ## Em dashes in UI copy
 
 - **taste** bans the em dash (`—`) anywhere on the page, calling it the top "AI

@@ -49,6 +49,25 @@
       ]
     },
     {
+      "name": "ux-research",
+      "source": "./plugins/ux-research",
+      "description": "Anthropic's UX research and UX writing skills from the knowledge-work design plugin: plan user research, synthesize findings, write and review interface copy.",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "design",
+      "license": "Apache-2.0",
+      "homepage": "https://github.com/anthropics/knowledge-work-plugins",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
       "name": "impeccable",
       "source": "./plugins/impeccable",
       "description": "Impeccable by Paul Bakaus: 1 skill with 24 commands (/impeccable polish, audit, critique, harden, ...), design agents, anti-pattern detection hooks.",

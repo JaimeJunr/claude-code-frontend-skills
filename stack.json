@@ -22,6 +22,23 @@
       "license_files": ["skills/frontend-design/LICENSE.txt"]
     },
     {
+      "id": "anthropic-design",
+      "repo": "anthropics/knowledge-work-plugins",
+      "ref": "main",
+      "license": "Apache-2.0",
+      "author": "Anthropic",
+      "plugin": "ux-research",
+      "description": "Anthropic's UX research and UX writing skills from the knowledge-work design plugin: plan user research, synthesize findings, write and review interface copy.",
+      "category": "design",
+      "copy": [
+        { "from": "design/skills/ux-copy", "to": "skills/ux-copy" },
+        { "from": "design/skills/user-research", "to": "skills/user-research" },
+        { "from": "design/skills/research-synthesis", "to": "skills/research-synthesis" },
+        { "from": "design/CONNECTORS.md", "to": "CONNECTORS.md" }
+      ],
+      "license_files": ["LICENSE"]
+    },
+    {
       "id": "impeccable",
       "repo": "pbakaus/impeccable",
       "ref": "main",
