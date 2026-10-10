@@ -2,8 +2,8 @@
   "anthropic": {
     "repo": "anthropics/skills",
     "ref": "main",
-    "commit": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
-    "synced_at": "2026-10-04"
+    "commit": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
+    "synced_at": "2026-10-05"
   },
   "anthropic-design": {
     "repo": "anthropics/knowledge-work-plugins",
@@ -14,8 +14,8 @@
   "impeccable": {
     "repo": "pbakaus/impeccable",
     "ref": "main",
-    "commit": "6e802bd0ed99f53180e2359fddab6da8d97970d9",
-    "synced_at": "2026-10-04"
+    "commit": "87a6ab0c145adb85cbd428a99fa1377305e0818d",
+    "synced_at": "2026-10-05"
   },
   "ui-ux-pro-max": {
     "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
