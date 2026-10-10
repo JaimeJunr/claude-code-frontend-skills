@@ -125,13 +125,14 @@ them.
 |---|---|---|
 | `frontend-stack` | `frontend-stack` | 1 |
 | `frontend-design` | `frontend-design` | 1 |
+| `ux-research` | `research-synthesis`, `user-research`, `ux-copy` | 3 |
 | `impeccable` | `impeccable` | 1 |
 | `ui-ux-pro-max` | `banner-design`, `brand`, `design`, `design-system`, `slides`, `ui-styling`, `ui-ux-pro-max` | 7 |
 | `taste` | `industrial-brutalist-ui`, `minimalist-ui`, `full-output-enforcement`, `redesign-existing-projects`, `high-end-visual-design`, `stitch-design-taste`, `design-taste-frontend` | 7 |
 | `taste-imagegen` | `brandkit`, `image-to-code`, `imagegen-frontend-mobile`, `imagegen-frontend-web` | 4 |
 | `emil-design-eng` | `animate`, `animation-vocabulary`, `apple-design`, `ask-sonner`, `emil-design-eng`, `find-animation-opportunities`, `improve-animations`, `mobile-native`, `pick-ui-library`, `prototype`, `review-animations` | 11 |
 | `emil-native` | `animate-expo`, `write-swift` | 2 |
-| **Total** | | **34** |
+| **Total** | | **37** |
 <!-- SKILLS:END -->
 
 | Plugin | Best for |
@@ -139,6 +140,7 @@ them.
 | `frontend-stack` | Routing, conflict rules, `design-director` and `ui-reviewer` agents |
 | `frontend-design` | Aesthetic direction for any new UI, anti-template checklist |
 | `impeccable` | Plan (`shape`), critique, audit, polish, harden, adapt, clarify copy; 24 commands, design agents and live hooks |
+| `ux-research` | Anthropic's UX writing (`ux-copy`) and UX research (`user-research`, `research-synthesis`) skills |
 | `ui-ux-pro-max` | Lookup database: styles, palettes, font pairings, charts, per-stack UX rules; tokens, shadcn/ui + Tailwind, brand, slides |
 | `taste` | Landing pages and redesigns that do not look AI-generated; opt-in aesthetic presets |
 | `emil-design-eng` | Animation craft, motion review, interaction polish, prototypes, native-feeling mobile web, library picks |

@@ -5,7 +5,7 @@ description: Router for the frontend design stack. Use at the start of any front
 
 # Frontend Stack router
 
-Five design packs are installed side by side. Each is good alone and each
+Several design packs are installed side by side. Each is good alone and each
 assumes it is the only one in the room. This skill decides who leads in each
 phase of the work, so the agent loads one lead and at most two supporting
 skills at a time instead of five competing rulebooks.
@@ -149,7 +149,9 @@ a brand or system, the directions vary only what it leaves open (rule 2).
 | Try several versions of a component | `emil-design-eng:prototype` | - |
 | Which library for X (charts, OTP, virtual lists...) | `emil-design-eng:pick-ui-library` | - |
 | Toasts with Sonner | `emil-design-eng:ask-sonner` | - |
-| UX copy, errors, microcopy | `impeccable:impeccable` (`clarify`) | - |
+| UX copy, errors, microcopy, empty-state text | `ux-research:ux-copy` | `ui-ux-pro-max:brand` voice when the project has one; `impeccable:impeccable` (`clarify`) to fix copy in an existing screen |
+| User research plan, interview guide, usability test | `ux-research:user-research` | - |
+| Interviews, usability notes, NPS or tickets turned into UX decisions | `ux-research:research-synthesis` | - |
 | Brand voice, visual identity, brand guidelines | `ui-ux-pro-max:brand` | `ui-ux-pro-max:design-system` for tokens |
 | Logo, icons, corporate identity (CIP), social photos | `ui-ux-pro-max:design` | - |
 | Banners, ads, social images, website hero art | `ui-ux-pro-max:banner-design` | - |
