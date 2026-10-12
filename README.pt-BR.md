@@ -86,5 +86,14 @@ enxerga eles.
 - Os presets de estética (minimalista, brutalista, "cara de agência") só
   disparam quando você pede explicitamente.
 
+Pra pesquisa de referências, o roteador traz uma
+[galeria de interfaces modernas](plugins/frontend-stack/skills/frontend-stack/references/reference-gallery.md)
+inspecionadas (OpenRouter, Vercel, Cloudflare, Rerun, Linear, PostHog, SpaceX
+e outras), organizada pelo problema que cada uma resolve. Serve pra aprender o
+mecanismo, não pra copiar o visual. O que essas páginas têm em comum virou a
+[anatomia de landing](plugins/frontend-stack/skills/frontend-stack/references/landing-anatomy.md):
+ordem da história, navegação, par de botões, como fazer o usuário entender e um
+checklist da primeira dobra.
+
 Detalhes no [README em inglês](README.md) e nas
 [regras de conflito](plugins/frontend-stack/skills/frontend-stack/references/conflicts.md).

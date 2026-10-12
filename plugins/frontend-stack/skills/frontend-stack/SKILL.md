@@ -75,7 +75,9 @@ For any other complaint about looks, Diagnose and Direction run together: load
 `ui-ux-pro-max:ui-ux-pro-max` at the start, always, even when the request names
 no stack or style. A critique alone is a list of problems, not the new direction
 the user asked for. Research references before proposing directions (see
-[identity-flow.md, step 2](references/identity-flow.md#2-research-before-directions)).
+[identity-flow.md, step 2](references/identity-flow.md#2-research-before-directions));
+[reference-gallery.md](references/reference-gallery.md) seeds the board with
+inspected modern sites, grouped by the problem each one solves.
 UI UX Pro Max supplies UX and stack rules; category styles and presets are
 finishing material after the concept, never its source. When the project has a
 design system, use UI UX Pro Max for UX and stack rules only, not to replace
@@ -99,8 +101,8 @@ fixed visual choices. Presets finish a direction; they never generate it.
 | The task is... | Lead | Support |
 |---|---|---|
 | New landing for a product with no brand | the identity flow in step 3, before the landing | `references/identity-flow.md`; brand → system → Build |
-| Landing page for a developer tool / API / AI product | `taste:design-taste-frontend`, or the identity flow first when there is no brand | [devtool-landing.md](references/devtool-landing.md); `impeccable:impeccable` new-work in Build |
-| New landing page, portfolio, marketing site with a brand | `taste:design-taste-frontend` | `frontend-design:frontend-design` for direction; `impeccable:impeccable` new-work in Build |
+| Landing page for a developer tool / API / AI product | `taste:design-taste-frontend`, or the identity flow first when there is no brand | [devtool-landing.md](references/devtool-landing.md) + [landing-anatomy.md](references/landing-anatomy.md); `impeccable:impeccable` new-work in Build |
+| New landing page, portfolio, marketing site with a brand | `taste:design-taste-frontend` | `frontend-design:frontend-design` for direction; [landing-anatomy.md](references/landing-anatomy.md); `impeccable:impeccable` new-work in Build |
 | New product UI: dashboard, settings, tables, multi-step flows | `frontend-design:frontend-design` | `ui-ux-pro-max:ui-ux-pro-max` (stack + UX guidelines), `impeccable:impeccable` for `harden` at the end |
 | Redesign or restyle an existing product app | phases: Diagnose → Direction (`frontend-design:frontend-design`) → Build → Review | `ui-ux-pro-max:ui-styling` in Build when shadcn/Tailwind |
 | Redesign an existing marketing site | `taste:redesign-existing-projects` | `impeccable:impeccable` (`critique`) first |

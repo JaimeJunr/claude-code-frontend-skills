@@ -60,8 +60,23 @@ the stack applies. Rulings follow the precedence ladder in `../SKILL.md`.
   Near-black is allowed when visibly tinted toward the approved brand hue,
   with a named color role and a reason tied to the scene. Neutral `#0B0B0B`,
   `#111` and automatic `zinc-950` are not a brand strategy. Pure black is
-  allowed when the chosen world calls for it. Existing tokens or explicit
+  allowed when the chosen world calls for it, as in photo- or video-led
+  worlds (6 of the 15 sites in `reference-gallery.md` use it this way). Existing tokens or explicit
   user color choices still win. This stops dark-tech defaults deciding identity.
+
+## Centered hero
+
+- **taste** `design-taste-frontend` avoids centered hero / H1 sections when
+  `DESIGN_VARIANCE > 4` and lists "centered hero over dark mesh" as an LLM
+  default, with an override for editorial or launch briefs.
+- **Observed:** 8 of the 15 sites in `reference-gallery.md` (OpenRouter,
+  Cloudflare, Rerun, Perssua, ChatGPT dots, OpenAI Business, Raycast, Modal)
+  center the H1 and put real product proof directly below it.
+- **Ruling:** the cliché is centered text over decoration, not centering.
+  A centered hero is allowed when the first viewport also shows something
+  real from the product (code, UI, its own output, named customer footage).
+  Centered text over a mesh, glow or empty field stays a template tell.
+  Asymmetric layouts remain taste's default when nothing real can sit below.
 
 ## Tech-default fonts
 

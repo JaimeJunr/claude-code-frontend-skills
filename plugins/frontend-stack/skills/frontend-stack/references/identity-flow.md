@@ -44,6 +44,10 @@ for an audience, mechanism or communication device that could reveal a gap.
 Use screenshots from any browser tool the session has when visual structure
 matters. User-supplied screenshots count toward the board.
 
+Seed the board from `reference-gallery.md`: pick 2-4 entries whose lesson
+fits this product's problem and re-inspect them. They add to the live
+research above; they do not count toward it unless re-inspected now.
+
 Inspect sources before proposing any direction. For each reference, record
 its signature element (what distinguishes it from this board), voice (one
 short quoted line), hero device and what makes the whole ownable. Keep a URL
@@ -171,7 +175,8 @@ it does not choose another brand. See `conflicts.md`.
 
 Only after brand and system, load `taste:design-taste-frontend` as the marketing
 lead and `impeccable:impeccable` as workflow support. For developer-tool, API
-or AI-gateway landings, also read `devtool-landing.md`.
+or AI-gateway landings, also read `devtool-landing.md`. For every landing,
+answer the questions in `landing-anatomy.md` with the chosen concept.
 
 Explicitly delegate to Impeccable's `reference/new-work.md`, not just `polish`
 or `audit`. Reuse the research, seed, chosen direction and pinned brand. Follow
