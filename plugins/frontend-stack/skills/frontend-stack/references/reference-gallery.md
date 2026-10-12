@@ -28,6 +28,7 @@ before citing it as visual evidence, and record what you re-inspected.
 | The product is invisible (API, infra, agent) | Vercel AI Gateway, Cloudflare AI Gateway, Rerun, Modal |
 | Too many options to explain (catalog, models, plans) | OpenRouter, Vercel AI Gateway |
 | One promise needs to feel tangible | Perssua, Cluely, Interview Coder (mechanics only) |
+| The product is a loop of steps, not one feature | Final Round AI |
 | A consumer feature needs warmth | ChatGPT dots, Mercury |
 | Selling to many teams at once | OpenAI Business |
 | Brand needs a personality, not a palette | PostHog, Teenage Engineering, SpaceX |
@@ -106,6 +107,22 @@ before citing it as visual evidence, and record what you re-inspected.
 - Watch: the "300ms" and "95%" figures and "fastest available" are
   self-claimed with no source; copy the stat row's layout, never the
   unsourced numbers. Same premise caution as Interview Coder below.
+
+**[Final Round AI](https://www.finalroundai.com/)** · interview copilot
+- Signature: white page, near-black text, Inter 58px semibold H1 with the
+  key phrase ("#1 AI Interview Assistant") highlighted in orange, one dark
+  CTA plus one outlined secondary ("See plans"), a three-number proof row.
+- Lesson: it sells a loop, not a feature. "Prepare. Perform. Review." is a
+  clickable three-step diagram where each step opens a real product fragment
+  (a Goal checklist, a suggested answer, a scored debrief), and the line
+  "each round compounds on the last" explains why the steps belong together.
+  Five features sit under one tab set ("not five products to stitch
+  together"), and pricing says plainly "no free trial" and what is free.
+- Learn the move: the stealth claim is shown as two panes, "What they see"
+  and "What you see", and the OS requirement sits under the CTA.
+- Watch: its testimonial wall (dated, but short and generic) and "10M+",
+  "#1" claims have no source; do not imitate them without real data. Same
+  premise caution as Cluely and Interview Coder.
 
 **[ChatGPT dots](https://chatgpt.com/pt-BR/features/dots/)** · always-on agents
 - Signature: OpenAI Sans, black page, each feature row on its own saturated
