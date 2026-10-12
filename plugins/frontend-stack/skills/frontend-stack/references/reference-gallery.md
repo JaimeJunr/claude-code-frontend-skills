@@ -27,7 +27,7 @@ before citing it as visual evidence, and record what you re-inspected.
 |---|---|
 | The product is invisible (API, infra, agent) | Vercel AI Gateway, Cloudflare AI Gateway, Rerun, Modal |
 | Too many options to explain (catalog, models, plans) | OpenRouter, Vercel AI Gateway |
-| One promise needs to feel tangible | Perssua, Interview Coder (mechanics only) |
+| One promise needs to feel tangible | Perssua, Cluely, Interview Coder (mechanics only) |
 | A consumer feature needs warmth | ChatGPT dots, Mercury |
 | Selling to many teams at once | OpenAI Business |
 | Brand needs a personality, not a palette | PostHog, Teenage Engineering, SpaceX |
@@ -91,6 +91,21 @@ before citing it as visual evidence, and record what you re-inspected.
   interview, cold call, 1:1, call in English); each tab shows the heard
   question and the suggested answer, so the promise is shown in context.
   Download buttons name the visitor's OS and package format.
+
+**[Cluely](https://cluely.com/)** · real-time meeting assistant
+- Signature: white Geist body, an 80px EB Garamond (serif) H1 in white over a
+  pale-blue alpine illustration with a sun, then plain white sections; the
+  product is a small floating overlay shown with its `⌘ ↵` shortcut.
+- Lesson: the one promise (undetectable) is split into three claims, each
+  drawn as a tiny product scene: "No bots detected" in a participant list,
+  an "Invisible to others / Visible to you" split view, and a movable window
+  that "follows your eyes". Each claim is a short title plus one behavior
+  sentence ("Doesn't join meetings"), so the proof is the picture.
+- Learn the move: a serif H1 on a calm landscape makes a utility tool feel
+  trustworthy, and the keyboard shortcut is part of the mock, not a footnote.
+- Watch: the "300ms" and "95%" figures and "fastest available" are
+  self-claimed with no source; copy the stat row's layout, never the
+  unsourced numbers. Same premise caution as Interview Coder below.
 
 **[ChatGPT dots](https://chatgpt.com/pt-BR/features/dots/)** · always-on agents
 - Signature: OpenAI Sans, black page, each feature row on its own saturated
