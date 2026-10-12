@@ -170,15 +170,26 @@ Or call things directly:
 Or use the agents:
 
 - **design-director**: turns a vague brief into a one-page direction (type,
-  color, layout, motion, libraries) before any code is written.
+  color, layout, motion, libraries), grounded in a reference board and
+  product-specific concept devices before UI code.
 - **ui-reviewer**: one prioritized review that combines Impeccable's audit,
-  Emil's motion review and the anti-template checks. Read-only.
+  Emil's motion review and screenshot-backed anti-template checks. Read-only.
+
+For a product with no brand, the router runs product context and naming,
+reference research, concept directions and a user pick, then brand and tokens
+before the landing. Personality or AI-made complaints can replace the affected
+visual world even when `DESIGN.md` exists. New marketing pages use Impeccable's
+direction contract and desktop/mobile finish gate. See the
+[identity flow](plugins/frontend-stack/skills/frontend-stack/references/identity-flow.md)
+and [developer-tool landing patterns](plugins/frontend-stack/skills/frontend-stack/references/devtool-landing.md).
 
 ### Which skill leads
 
 | Task | Lead |
 |---|---|
+| New landing without a brand, or replace an AI-made identity | Router identity flow: research → concept → brand → system → landing |
 | Landing page, portfolio, marketing site | Taste `design-taste-frontend` |
+| Developer-tool / API / AI landing | Identity flow without a brand; otherwise Taste, with product proof and Impeccable new-work |
 | Product UI: dashboards, tables, flows | Anthropic `frontend-design` + UI UX Pro Max |
 | Plan / critique / audit / polish | Impeccable |
 | Style, palette, fonts, charts | UI UX Pro Max |
