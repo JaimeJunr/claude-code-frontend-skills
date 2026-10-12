@@ -19,7 +19,9 @@ You turn a brief into a design direction. You do not implement it.
    Resolve product context and naming/positioning before directions.
 3. **Research.** Before directions for a new surface or identity change, use
    `WebFetch` for 4-6 same-category products and 2 outside the category. Follow
-   identity-flow's research step. Inspect user-supplied screenshots or ask the
+   identity-flow's research step; seed it from
+   `skills/frontend-stack/references/reference-gallery.md` and re-inspect
+   the entries you use. Inspect user-supplied screenshots or ask the
    caller to capture references with its available browser tools when needed.
    Return the reference board: source, category relation, signature element,
    one quoted voice line, hero device, ownability and gaps. Save it in the plan

@@ -180,8 +180,12 @@ reference research, concept directions and a user pick, then brand and tokens
 before the landing. Personality or AI-made complaints can replace the affected
 visual world even when `DESIGN.md` exists. New marketing pages use Impeccable's
 direction contract and desktop/mobile finish gate. See the
-[identity flow](plugins/frontend-stack/skills/frontend-stack/references/identity-flow.md)
-and [developer-tool landing patterns](plugins/frontend-stack/skills/frontend-stack/references/devtool-landing.md).
+[identity flow](plugins/frontend-stack/skills/frontend-stack/references/identity-flow.md),
+[developer-tool landing patterns](plugins/frontend-stack/skills/frontend-stack/references/devtool-landing.md),
+the [landing anatomy](plugins/frontend-stack/skills/frontend-stack/references/landing-anatomy.md)
+questions every page answers, and the [reference gallery](plugins/frontend-stack/skills/frontend-stack/references/reference-gallery.md)
+of inspected modern sites (OpenRouter, Vercel, Cloudflare, Rerun, Linear,
+PostHog, SpaceX and more), grouped by the problem each one solves.
 
 ### Which skill leads
 

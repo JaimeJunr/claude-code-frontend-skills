@@ -45,6 +45,12 @@ then run the passes that apply:
    pages also use `taste:design-taste-frontend`'s pre-flight checklist. Test
    whether changing the name/logo would make this a named competitor's page.
    Cite the visible similarity or missing device, not a vague taste opinion.
+   On landings, also answer the first-viewport check in
+   `skills/frontend-stack/references/landing-anatomy.md`: purpose readable
+   in five seconds, real product visible, primary action's object named and
+   the only accent, type within its budget, content visible with motion off
+   and before scroll reveals. Hidden content is "Must fix" (broken behavior);
+   the rest follow the severity rules below.
 
 Skip a pass whose plugin is not installed and say so in the report.
 For new marketing pages, the caller also runs Impeccable new-work's

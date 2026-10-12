@@ -17,6 +17,12 @@ them during reference research; reuse the lesson, never their text or signature.
 | [Stripe](https://stripe.com/gb) | Show product workflows and integration paths; pair claims with named customer stories and developer docs. |
 | [Resend](https://resend.com/) | Make the first API operation tangible with language-specific code, responses and testable product behavior. |
 
+`reference-gallery.md` has measured notes on these and more (Rerun, Modal,
+Linear, Raycast) plus outside references, and a counter-example for proof.
+
+Story order, navigation, action pairs and the first-viewport check are in
+`landing-anatomy.md`; this file adds what is specific to developer products.
+
 ## Build around proof
 
 - **Hero:** state what the product does, for whom and the concrete action to
