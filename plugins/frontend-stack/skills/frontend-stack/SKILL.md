@@ -22,14 +22,16 @@ Before picking anything, look for what the project already decided:
   component library in `package.json`
 - a brand guide the user pointed at
 
-If any of these exist, they outrank every skill below (see rules 1 and 2 of
-the precedence ladder). Your job becomes extending that system, not replacing it.
+If any of these exist, follow them by default (rules 1 and 2 of the precedence
+ladder). A personality, identity or "looks AI-made" complaint authorizes a
+replacement visual world within the complaint's scope, even with `DESIGN.md`.
 
 Keep one source of truth. If two of these files exist and disagree (palette,
 fonts, spacing), ask the user which one wins before writing code. When the
-project has none, `DESIGN.md` is the one to create (Impeccable `init`); do not
-also run `--persist` or generate `docs/brand-guidelines.md` unless the user
-asks, and if they do, keep the values identical to `DESIGN.md`.
+project has none, use the identity flow below for a new brand, or Impeccable
+`document` to capture an established world. `DESIGN.md` is the source of truth;
+do not also run `--persist` or generate `docs/brand-guidelines.md` unless the
+user asks, and if they do, keep the values identical to `DESIGN.md`.
 
 ## 2. Classify the request
 
@@ -46,7 +48,8 @@ Answer three questions before picking skills:
 
 Complaints about looks ("ugly", "generic", "looks AI-made", "slop", "cluttered")
 mean the job is *change*, not *review*: the user wants a new direction, not only
-a list of problems.
+a list of problems. An explicit review-only request stays read-only, even when
+it names an identity failure.
 
 ## 3. Work in phases
 
@@ -56,25 +59,25 @@ phase starts, not all up front. Skip a phase that the task does not need.
 | Phase | When | Lead | Support |
 |---|---|---|---|
 | Diagnose | the job is *change* | `impeccable:impeccable` (`critique`) | `impeccable:impeccable` (`audit`) for a11y/perf debt |
-| Direction | new work, or any complaint about looks | product: `frontend-design:frontend-design`; marketing: `taste:design-taste-frontend` | `ui-ux-pro-max:ui-ux-pro-max` for palette/font/style lookup when the project has no system |
-| Build | always | the project's component library (its docs, components, tokens, MCP server if any) | `ui-ux-pro-max:ui-styling` when shadcn/Tailwind; the craft skill from the table below |
+| Direction | new work, or any complaint about looks | identity flow below when the product has no brand or its identity is being replaced; otherwise product: `frontend-design:frontend-design`, marketing: `taste:design-taste-frontend` | reference research before directions; `ui-ux-pro-max:ui-ux-pro-max` lookup only after the concept |
+| Build | always | the project's component library (its docs, components, tokens, MCP server if any) | new marketing pages: `impeccable:impeccable` via `reference/new-work.md`; `ui-ux-pro-max:ui-styling` when shadcn/Tailwind |
 | Motion | the change moves | `emil-design-eng:animate` | `emil-design-eng:animation-vocabulary` |
 | Review | anything user-facing | see step 8 | - |
 
 At the start, tell the user the phase plan with the skills of each phase, so
 they see the whole route even though only the first phase is loaded.
 
-If the complaint mentions personality or identity ("no personality", "no
-product feel"), even mixed with "looks rushed / AI-made", skip this paragraph and
-use the identity flow below: its first step loads `impeccable:impeccable` and
-the `frontend-stack:design-director` agent.
+For a new landing with no brand, or a complaint about personality, identity,
+generic output or "looks AI-made", use the identity flow below first.
 
 For any other complaint about looks, Diagnose and Direction run together: load
 `impeccable:impeccable` (`critique`), the Direction lead and
 `ui-ux-pro-max:ui-ux-pro-max` at the start, always, even when the request names
 no stack or style. A critique alone is a list of problems, not the new direction
-the user asked for, and UI UX Pro Max supplies the UX guidelines and the
-style/palette options for this kind of product. When the project already has a
+the user asked for. Research references before proposing directions (see
+[identity-flow.md, step 2](references/identity-flow.md#2-research-before-directions)).
+UI UX Pro Max supplies UX and stack rules; category styles and presets are
+finishing material after the concept, never its source. When the project has a
 design system, use UI UX Pro Max for UX and stack rules only, not to replace
 the palette or fonts (rule 2 of the ladder).
 
@@ -83,45 +86,26 @@ Build, so later phases do not need the earlier skills loaded.
 
 ### When the product has no identity
 
-"No personality", "doesn't look like a product", "looks rushed / made with AI"
-ask for an identity, not a prettier screen. Identity is UI (color, type,
-spacing, components, page structure) and UX (navigation, key flows, usability),
-and each product presents them its own way. Run Direction like this:
+Read [references/identity-flow.md](references/identity-flow.md). It owns the
+full route: product context and naming/positioning → reference board → concept
+devices and Impeccable concept seed → 2-3 directions → prototype and user pick
+→ brand → `DESIGN.md` and tokens → landing → screenshot finish gate.
 
-Before step 1, check `PRODUCT.md`: audience, positioning and personality
-come from the product, not from the screen. If it is missing and
-`indie-dev-stack:product-shaper` is installed, run that agent first and save
-its brief to `PRODUCT.md`. If it is not installed, the directions in step 2
-ask the user those three questions, and the user is told once that
-`JaimeJunr/claude-code-indie-dev-stack` shapes the product before the UI.
-
-1. **Diagnose** with `impeccable:impeccable` (`critique`), covering
-   navigation and usability as well as looks.
-2. **Directions.** The `frontend-stack:design-director` agent proposes 2-3
-   genuinely different directions, each covering UI and UX. A direction may
-   start from one `taste` preset (`minimalist-ui`, `industrial-brutalist-ui`,
-   `high-end-visual-design`) or from `ui-ux-pro-max:ui-ux-pro-max` styles for
-   this product type. Name the presets to the user, so they can choose them.
-3. **Compare.** `emil-design-eng:prototype` builds one key screen in each
-   direction behind a picker. Skip it only if the user picks from the text.
-4. **Identity.** For the chosen direction, `ui-ux-pro-max:brand` writes voice
-   and visual identity, with `frontend-design:frontend-design` as support.
-5. **System.** `ui-ux-pro-max:design-system` turns it into tokens and
-   `DESIGN.md`. Then Build, Motion and Review as usual.
-
-The user picks the direction; never pick it alone. If the project already has
-a brand or system, the directions vary only what it leaves open (rule 2).
+The user picks the direction. Preserve their approved concept and praised or
+fixed visual choices. Presets finish a direction; they never generate it.
 
 ## 4. Pick the skills for the task
 
 | The task is... | Lead | Support |
 |---|---|---|
-| New landing page, portfolio, marketing site | `taste:design-taste-frontend` | `frontend-design:frontend-design` for direction, `ui-ux-pro-max:ui-ux-pro-max` for palette/font lookup |
+| New landing for a product with no brand | the identity flow in step 3, before the landing | `references/identity-flow.md`; brand → system → Build |
+| Landing page for a developer tool / API / AI product | `taste:design-taste-frontend`, or the identity flow first when there is no brand | [devtool-landing.md](references/devtool-landing.md); `impeccable:impeccable` new-work in Build |
+| New landing page, portfolio, marketing site with a brand | `taste:design-taste-frontend` | `frontend-design:frontend-design` for direction; `impeccable:impeccable` new-work in Build |
 | New product UI: dashboard, settings, tables, multi-step flows | `frontend-design:frontend-design` | `ui-ux-pro-max:ui-ux-pro-max` (stack + UX guidelines), `impeccable:impeccable` for `harden` at the end |
 | Redesign or restyle an existing product app | phases: Diagnose → Direction (`frontend-design:frontend-design`) → Build → Review | `ui-ux-pro-max:ui-styling` in Build when shadcn/Tailwind |
 | Redesign an existing marketing site | `taste:redesign-existing-projects` | `impeccable:impeccable` (`critique`) first |
 | No personality, no product identity, "looks rushed" | the identity flow in step 3 | - |
-| "Looks generic / AI-made / slop" | `frontend-design:frontend-design` (anti-template checks) | `impeccable:impeccable` (`critique`); `taste:design-taste-frontend` on marketing pages |
+| "Looks generic / AI-made / slop" | the identity flow in step 3 | `frontend-design:frontend-design` anti-template checks during Review |
 | Adopt or migrate to a component library or design system ("use our kit", "move to shadcn") | the library itself: its docs, components, tokens | `ui-ux-pro-max:ui-styling` for Tailwind/shadcn mapping, `impeccable:impeccable` (`extract`) to pull tokens |
 | Chat or AI assistant UI | `frontend-design:frontend-design` + the library's chat components if it has them | `impeccable:impeccable` (`harden`) for empty, error, loading and streaming states; `emil-design-eng:animate` for streaming motion |
 | Forms, onboarding, first-run | `impeccable:impeccable` (`onboard`, `harden`) | `frontend-design:frontend-design` |
@@ -177,9 +161,9 @@ a row.
   next row's lead or `frontend-design:frontend-design`. Never guess a name.
 - **Not a UI question:** product strategy, positioning, what to build, specs,
   roadmap, metrics, backend architecture or running the business belong to the
-  companion stack. If `indie-dev-stack:indie-dev-stack` is in the session's
-  skill list, hand the request to it. If it is not, do what you can and tell the
-  user once per session that the companion marketplace covers it:
+  companion stack. If its router is in the session's skill list, hand the
+  request to that installed skill. Otherwise do what you can and tell the user
+  once per session that the companion marketplace covers it:
   `/plugin marketplace add JaimeJunr/claude-code-indie-dev-stack`.
 - **A skill not listed here fits better:** a row still wins unless the user
   names the other skill. Use it as support and tell the user this router has no
@@ -193,6 +177,11 @@ When two loaded skills disagree, the higher rule wins:
    brand", "keep it like Linear" beat every skill ban.
 2. **The project's existing system.** `DESIGN.md`, tokens, the component
    library already in use. Extend it; do not swap libraries or mix systems.
+   A complaint about personality, identity or "looks AI-made" authorizes
+   replacing the visual world for what the complaint covers, even if
+   `DESIGN.md` exists. Keep only the visual choices the user explicitly praised
+   or fixed in that scope. Preserve product truth, working behavior,
+   accessibility and the framework/library; leave unrelated surfaces alone.
 3. **Accessibility and correctness.** Contrast, focus states, reduced motion,
    keyboard access, no layout shift. Impeccable `audit` is the referee.
 4. **Scope of the lead skill.** A skill's own "not for X" line is binding:
@@ -215,8 +204,8 @@ skill contradicts the lead.
 - Say in one line which skills each phase loaded, so the user can correct the
   routing early.
 - Aesthetic presets (`minimalist-ui`, `industrial-brutalist-ui`,
-  `high-end-visual-design`) never stack with each other: one per direction, or
-  none.
+  `high-end-visual-design`) never stack: at most one, as finishing material
+  after the concept, or as the user's explicit choice.
 - `taste:full-output-enforcement` only when the user asks for complete output.
 - The brand, logo, banner and slides skills above overlap (`ui-ux-pro-max:design`
   and `design-system` also cover slides and branding). Load only the row's lead.
@@ -227,6 +216,17 @@ skill contradicts the lead.
 
 For anything user-facing, end with a review pass before calling it done:
 
-1. `impeccable:impeccable` `audit` (or delegate to the `ui-reviewer` agent)
-2. if the change has motion, `emil-design-eng:review-animations`
-3. fix what they flag, then summarize what changed and what was left as-is
+1. Capture and open desktop + mobile screenshots with the session's available
+   browser/screenshot tool. Compare the render with the reference board and
+   chosen concept devices. Without tooling, report the missing visual evidence;
+   do not claim the screenshot gate passed.
+2. `impeccable:impeccable` `audit` (or delegate to the `ui-reviewer` agent).
+   For new marketing pages, Build follows Impeccable's `reference/new-work.md`
+   and hands captures + direction contract to `impeccable-finish-reviewer`
+   (`plugins/impeccable/agents/impeccable-finish-reviewer.md` in this repo).
+   Follow its `recapture` / `rebuild` / `fix` / `ship` disposition; use its
+   documented fallback only when agents are unavailable.
+3. If the change has motion, `emil-design-eng:review-animations`.
+4. Fix the findings and recapture affected views. For personality/identity/
+   AI-look requests, a missing signature or a render interchangeable with a
+   named competitor can block completion. Report evidence, verdict and gaps.

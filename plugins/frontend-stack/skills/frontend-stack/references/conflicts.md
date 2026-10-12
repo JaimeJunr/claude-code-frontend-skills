@@ -49,6 +49,45 @@ the stack applies. Rulings follow the precedence ladder in `../SKILL.md`.
 - **Ruling:** the Lila rule is the default. The preset's gradient look only
   applies when the user picked that preset or the brand is purple.
 
+## Near-black grounds
+
+- **taste** `design-taste-frontend` asks for off-black, charcoal or `zinc-950`
+  instead of pure black.
+- **frontend-design** `frontend-design` lists neutral near-black `#0B0B0B`
+  and `#111` standing in for black as template chrome. **Impeccable**
+  `reference/new-work.md` derives neutrals from the chosen world's palette.
+- **Ruling:** frontend-design's anti-template rule wins for a fresh world.
+  Near-black is allowed when visibly tinted toward the approved brand hue,
+  with a named color role and a reason tied to the scene. Neutral `#0B0B0B`,
+  `#111` and automatic `zinc-950` are not a brand strategy. Pure black is
+  allowed when the chosen world calls for it. Existing tokens or explicit
+  user color choices still win. This stops dark-tech defaults deciding identity.
+
+## Tech-default fonts
+
+- **UI UX Pro Max** `data/typography.csv` recommends Space Grotesk + DM Sans
+  for tech/startups, and JetBrains Mono + IBM Plex Sans for developer tools.
+- **Impeccable** `reference/new-work.md` lists Space Grotesk, DM Sans and IBM
+  Plex among training-data defaults; it also rejects "tech wants mono" as a
+  reason. **frontend-design** asks for subject-specific type.
+- **Ruling:** Impeccable's anti-default direction wins for new identities.
+  Space Grotesk, DM Sans, JetBrains Mono and IBM Plex are allowed only when
+  the project already uses them or the user asks. Category lookup is not that
+  permission. Choose new brand type from the concept, legibility and required
+  language coverage; "developer tool" alone does not choose a face.
+
+## Mono labels
+
+- **UI UX Pro Max** developer and dashboard pairings suggest monospace UI;
+  **taste** includes mono pairings and technical treatments.
+- **frontend-design** calls small monospace data labels a template tell;
+  **Impeccable** warns against tracked mono labels in editorial defaults.
+- **Ruling:** frontend-design wins. Mono is for real code, identifiers or
+  values where fixed-width alignment helps. Use the UI/text face for section
+  labels, nav, eyebrows and metadata captions. Technical subject matter does
+  not justify decorative mono. Explicit user type choices still win; the
+  font-family restriction above applies separately.
+
 ## Who owns `DESIGN.md`
 
 - **Impeccable** reads `PRODUCT.md` and `DESIGN.md` as project context and writes
@@ -57,7 +96,45 @@ the stack applies. Rulings follow the precedence ladder in `../SKILL.md`.
   format.
 - **Ruling:** Impeccable owns `DESIGN.md`. The Stitch skill only runs on
   explicit request, and then writes to `DESIGN.stitch.md` unless the user says
-  otherwise, so Impeccable's context is not overwritten.
+  otherwise, so Impeccable's context is not overwritten. The brand-first
+  ruling below defines the identity flow's initial system handoff.
+
+## Brand-first system and finish documentation
+
+- The router's identity flow runs `brand` → `design-system` → landing.
+- **Impeccable** `reference/new-work.md` normally writes a new world's
+  `DESIGN.md` at finish through `impeccable-documenter`.
+- **Ruling:** the router's brand-first order wins on this route. Establish
+  approved brand decisions, `DESIGN.md` and tokens before landing code. The
+  finish documenter reconciles them with the render and maintains
+  `.impeccable/design.json`; it cannot silently replace the approved identity.
+  Impeccable still owns the final durable documentation. A missing filename
+  alone never erases an established brand visible in code.
+
+## Direction comparison
+
+- The router uses `emil-design-eng:prototype` for 2-3 key-screen directions.
+- **Impeccable** `reference/new-work.md` uses concept-seed's dealt hand and a
+  `serve-question` decision page for direction selection.
+- **Ruling:** the router's picker owns selection on the identity route. Run
+  the concept roll first and retain its assignment, seed key, challenger
+  judgments and user overrides, then present the directions through Emil.
+  Do not open a second direction decision page. Reuse the recorded pick in
+  new-work's Build. Comp-led composition approval still runs inside that world.
+  Prototype's immediate promotion step is deferred: selection hands the chosen
+  variant to brand and system; production integration happens only in Build.
+  This gives the user one identity choice grounded in a working key screen.
+
+## Identity replacement with an existing system
+
+- The router defaults to extending the incumbent system. **Impeccable**
+  `reference/new-work.md` replaces the visual world on redesign.
+- **Ruling:** a personality, identity or AI-look complaint is authorization
+  for replacement within its scope. Existing `DESIGN.md` is evidence of the
+  rejected world there. Keep the visual choices the user explicitly praised
+  or fixed, product truth and working behavior; retain technical constraints
+  and unaffected surfaces. This is replacement of identity, not permission
+  to change libraries or capabilities.
 
 ## Scope of design-taste-frontend
 
@@ -103,4 +180,9 @@ the stack applies. Rulings follow the precedence ladder in `../SKILL.md`.
   all review the same page from different angles.
 - **Ruling:** do not run all of them. Impeccable `audit` always; Emil's review
   when the diff touches motion; taste's checklist only on marketing pages it
-  led.
+  led. New marketing pages also follow Impeccable `reference/new-work.md`'s
+  direction contract and `impeccable-finish-reviewer` screenshot gate. The
+  caller supplies desktop/mobile captures; audit alone cannot pass identity.
+  On personality, identity or AI-look requests, a missing signature or
+  screenshot-backed interchangeability with a named competitor can be
+  `Must fix`. Outside that scope, taste preferences remain non-blocking.
