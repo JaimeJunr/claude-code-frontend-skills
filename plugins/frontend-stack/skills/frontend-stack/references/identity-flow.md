@@ -96,9 +96,9 @@ Turn each concept into 3-5 ownable devices across these channels:
 | Iconography | A coherent symbol grammar with a functional role |
 | Micro-interaction | A meaningful response or transition, with reduced motion |
 
-If the owner approved a literal reading of the name, keep it. For
-"Constelação", an approved constellation must extend beyond the logo into at
-least 3 of these 5 channels. Tie the devices to the actual product; decorative
+If the owner approved a literal reading of the name, keep it, but it must
+extend beyond the logo into at least 3 of these 5 channels (e.g. a product
+named after a constellation shows its catalog as stars, not only a star logo). Tie the devices to the actual product; decorative
 stars alone are not a language. The pinned concept outranks the roll; use the
 assignment in dimensions the owner left open.
 

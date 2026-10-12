@@ -161,8 +161,8 @@ a row.
   next row's lead or `frontend-design:frontend-design`. Never guess a name.
 - **Not a UI question:** product strategy, positioning, what to build, specs,
   roadmap, metrics, backend architecture or running the business belong to the
-  companion stack. If its router is in the session's skill list, hand the
-  request to that installed skill. Otherwise do what you can and tell the user
+  companion stack. If `indie-dev-stack:indie-dev-stack` is in the session's
+  skill list, hand the request to it. Otherwise do what you can and tell the user
   once per session that the companion marketplace covers it:
   `/plugin marketplace add JaimeJunr/claude-code-indie-dev-stack`.
 - **A skill not listed here fits better:** a row still wins unless the user
