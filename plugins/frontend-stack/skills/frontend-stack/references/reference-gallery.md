@@ -26,6 +26,7 @@ before citing it as visual evidence, and record what you re-inspected.
 | Problem the page has | Learn from |
 |---|---|
 | The product is invisible (API, infra, agent) | Vercel AI Gateway, Cloudflare AI Gateway, Rerun, Modal |
+| One system must hold home, docs and blog together | Next.js |
 | Too many options to explain (catalog, models, plans) | OpenRouter, Vercel AI Gateway |
 | One promise needs to feel tangible | Perssua, Cluely, Interview Coder (mechanics only) |
 | The product is a loop of steps, not one feature | Final Round AI |
@@ -57,6 +58,67 @@ before citing it as visual evidence, and record what you re-inspected.
   and "show more", framed by the single claim "no markup on tokens".
 - Learn the move: give one brand-level promise its own typographic voice,
   used once.
+
+**[Next.js](https://nextjs.org/)** · React framework (redesign announced 2026-10-13)
+- Signature: pure black `rgb(0,0,0)` with `rgb(237,237,237)` text, Geist Sans
+  and Geist Mono only, a 40px H1 at weight 450 (light for a headline), and a
+  giant outlined "NEXT" wordmark with a blue gradient edge behind the title.
+- Lesson: the hero action is the install command itself, a copyable
+  `npx create-next-app@latest` pill, so the first click is the product. The
+  brand is the wordmark treated as art, not an illustration. The feature list
+  is ten short rows (name, arrow, one sentence), with no icons or cards.
+- Learn the move: the redesign goal was one consistent design across home,
+  docs and blog that "keeps focus on content". Restraint (one family, one
+  weight range, no accent color) is what carries that consistency, and I
+  confirmed it on `/blog` and `/docs` (same black, same Geist, headings at
+  weight 450: 40px home and docs, 48px blog).
+- Blog: "The latest Next.js news" is a card grid, each card with a date, a
+  category tag (Security), a title, one summary sentence and author avatars.
+  The top slot goes to a security notice with a dated promise ("out-of-band
+  update next Wednesday"), so urgency is stated as a fact, not a banner.
+- Docs: a sidebar with a version switcher ("Latest v16.4.0") and a router
+  switcher ("Using App Router"), a "Copy page" button at the top of every
+  page, "Ask AI" plus `⌘K` search in the header, and 16px / 28px body text.
+  The intro tells readers the three sections (Getting Started, Guides, API
+  Reference) before anything else.
+- Home sections, top to bottom: hero, a three-column grid of feature cells
+  (line-art diagram, then a linked title, then one sentence), a foundation
+  trio (React, Turbopack, compiler), customer sites, two quotes, templates,
+  a closing "Ready to deploy?" row. The page is mostly empty space; each
+  band is about 650-1500px tall, so one idea fills one screen.
+- Feature cells: the first three carry monochrome line diagrams on a faint
+  grid frame (stacked images being optimized, a browser wireframe, a node
+  tree), with one blue dot or line as the only color. The tenth cell is a
+  solid blue tile ("Next.js 16 →", `rgb(0,87,255)`, 4px radius) that breaks
+  the grid once, so the release is the loudest thing without a banner.
+- Proof: customer sites appear as real screenshots in a grayscale frame
+  (Notion and a sneaker store), then quotes with a logo, a name and a role. Color is
+  withheld so the product shots do not fight the page.
+- Templates: cards with a 2px radius, a 1px `rgb(41,41,41)` border and a
+  folded top-right corner, a source path in mono at the bottom
+  (`examples/nextjs`). The primary button is a blue pill (`rgb(0,87,255)`,
+  40px high); the secondary is a dark outlined pill next to it.
+- Type: the H1 uses -0.06em letter spacing (-2.88px at 48px) at weight 450,
+  so large headings read tight and calm. The blog article body is 18px /
+  28px, the docs body 16px / 28px, code blocks 16px with an 8px radius.
+- Light theme (measured with a light color scheme): background
+  `rgb(250,250,250)`, text `rgb(23,23,23)`, the same blue tile, the same
+  wordmark with its blue gradient edge. The identity survives the swap
+  because it is shape and one color, not a dark mood.
+- Mobile (375px): the wordmark scales to full width, the H1 wraps in three
+  lines, the install pill stays whole with its copy icon, and the header
+  keeps "Ask AI" plus a round menu button.
+- Blog post: date and "Blog" label above the title, an author avatar stack
+  ("Next.js Team", 9+), then the problem as a three-item list before any
+  heading. Headings carry a "Copy link to heading" control and the right
+  column has "On this page".
+- Docs: callouts ("Good to know") sit on a `rgb(242,242,242)` panel with a
+  6px radius; terminal blocks have a "Terminal" label and a copy button;
+  the install page shows the real CLI prompts, including one that asks to
+  add an `AGENTS.md` for coding agents.
+- Watch: I did not test hover states, keyboard focus or the header menu
+  (my click on the menu missed), and the customer-logo grid was blank until
+  lazy images loaded, so wait before any screenshot.
 
 **[Cloudflare AI Gateway](https://www.cloudflare.com/products/ai-gateway/)** · AI control plane
 - Signature: warm near-black `rgb(25,24,23)` instead of cold black, the brand
