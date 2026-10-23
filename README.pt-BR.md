@@ -35,6 +35,11 @@ imagem), `emil-native@frontend-stack` (React Native/Expo e Swift),
 (HTML vira vídeo: demos, clipes de hero e legendas; pede Node 22 e o CLI
 `hyperframes`).
 
+O Remotion (vídeo como componentes React) não é copiado: o repo de skills dele
+não tem arquivo de licença e o Remotion exige licença paga de empresa para
+organizações com fins lucrativos acima de 3 pessoas. Instale as skills dele
+com `npx skills add remotion-dev/skills`; o roteador as usa quando presentes.
+
 Se você já tem algum desses instalado pelo repo original, desinstale antes
 pra skill não carregar duas vezes.
 

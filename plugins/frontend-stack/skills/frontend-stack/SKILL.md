@@ -154,6 +154,7 @@ fixed visual choices. Presets finish a direction; they never generate it.
 | Mobile app screens designed with Sleek, then built in React Native or HTML | `design-mobile-apps:design-mobile-apps` (optional plugin; needs `SLEEK_API_KEY`, sends the brief to sleek.design, paid beyond a trial) only when the user asks for Sleek | `emil-native:animate-expo` for motion after the build |
 | Video that goes with a UI: product demo, hero or explainer clip, changelog, captions, animated overlay | `hyperframes:hyperframes` (optional plugin; needs Node 22 and the hyperframes CLI) | `hyperframes:media-use` for music, voice and images; `emil-design-eng:animate` stays the owner of in-page UI motion |
 | Mockup image first, then code | `taste-imagegen:imagegen-frontend-web` / `imagegen-frontend-mobile` (optional plugin, needs image generation) | - |
+| Video written as React components (Remotion) | `remotion-best-practices` when it is in the session's skill list (Remotion's own skills, not vendored: `npx skills add remotion-dev/skills`; Remotion needs a paid company license for for-profit organizations above 3 people) | `hyperframes:hyperframes` if the user prefers plain HTML |
 
 A request that mixes jobs ("redesign it and add animations") is several rows:
 run them as phases in the order of step 3.

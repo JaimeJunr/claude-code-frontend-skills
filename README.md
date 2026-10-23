@@ -78,6 +78,11 @@ Optional extras:
 your brief there. `hyperframes` (HeyGen) renders HTML to video for product
 demos, hero clips and captions; it needs Node 22 and the `hyperframes` CLI.
 
+Remotion (video as React components) is not vendored: its skills repo has no
+license file and Remotion itself needs a paid company license for for-profit
+organizations above 3 people. Install its own skills with
+`npx skills add remotion-dev/skills`; the router uses them when present.
+
 Already have one of these installed from its original repo? Uninstall that
 copy first so the skill is not loaded twice.
 
