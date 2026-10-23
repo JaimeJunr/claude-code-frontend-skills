@@ -114,44 +114,51 @@
       "license": "MIT",
       "author": "Leonxlnx",
       "plugin": "taste",
-      "description": "Taste skills by Leonxlnx: anti-slop landing pages and redesigns, plus opt-in aesthetic presets (minimalist, brutalist, high-end, Stitch).",
+      "description": "Taste Skill v2 by Leonxlnx: anti-slop art direction for websites and app screens, with dealt directions, a real-browser inspector and a look-and-fix loop. Needs Node 22 and Chrome, Edge or Chromium.",
       "category": "design",
-      "$comment": "Excluded on purpose: taste-skill-v1 (duplicate of design-taste-frontend) and gpt-tasteskill (tuned for GPT models). Image-generation skills live in taste-imagegen.",
+      "$comment": "Upstream cut this repo down to one skill in v2. The classic presets live in leonxlnx/taste-skill-classics (taste-classics) and the image skills in leonxlnx/imagegen-skills (taste-imagegen). redesign-existing-projects is now part of design-taste-frontend; full-output-enforcement was removed.",
       "copy": [
-        { "from": "skills/taste-skill", "to": "skills/taste-skill" },
-        { "from": "skills/redesign-skill", "to": "skills/redesign-skill" },
+        { "from": "skills/taste-skill", "to": "skills/taste-skill" }
+      ],
+      "license_files": ["LICENSE"]
+    },
+    {
+      "id": "taste-classics",
+      "repo": "leonxlnx/taste-skill-classics",
+      "ref": "main",
+      "license": "MIT",
+      "author": "Leonxlnx",
+      "plugin": "taste-classics",
+      "description": "Optional. The classic Taste style presets: minimalist, industrial brutalist, high-end 'expensive agency' and Google Stitch DESIGN.md. Opt-in, run by name.",
+      "category": "design",
+      "$comment": "Excluded on purpose: taste-skill-v1, taste-skill-v2-experimental (superseded by taste) and gpt-tasteskill (tuned for GPT models). Upstream marks every preset disable-model-invocation, which also stops the frontend-stack router from loading them; the patches drop only that key and keep the upstream opt-in descriptions.",
+      "copy": [
         { "from": "skills/minimalist-skill", "to": "skills/minimalist-skill" },
         { "from": "skills/brutalist-skill", "to": "skills/brutalist-skill" },
         { "from": "skills/soft-skill", "to": "skills/soft-skill" },
-        { "from": "skills/stitch-skill", "to": "skills/stitch-skill" },
-        { "from": "skills/output-skill", "to": "skills/output-skill" }
+        { "from": "skills/stitch-skill", "to": "skills/stitch-skill" }
       ],
       "license_files": ["LICENSE"],
       "patches": [
         {
           "file": "skills/minimalist-skill/SKILL.md",
-          "why": "Aesthetic preset. Without narrowing it fires on every UI task and fights the other direction skills.",
-          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a minimalist / editorial / Notion-like look, or picks it from directions the frontend-stack router offered. Clean editorial-style interfaces. Warm monochrome palette, typographic contrast, flat bento grids, muted pastels. No gradients, no heavy shadows."
+          "why": "The router delegates an explicit minimalist look to it; the Skill tool refuses skills with disable-model-invocation.",
+          "drop_keys": ["disable-model-invocation"]
         },
         {
           "file": "skills/brutalist-skill/SKILL.md",
-          "why": "Aesthetic preset.",
-          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a brutalist / industrial / terminal look, or picks it from directions the frontend-stack router offered. Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects."
+          "why": "Same as minimalist-skill: the router delegates an explicit brutalist look to it.",
+          "drop_keys": ["disable-model-invocation"]
         },
         {
           "file": "skills/soft-skill/SKILL.md",
-          "why": "Aesthetic preset. Its purple mesh gradients and banned-font list contradict design-taste-frontend's defaults, so it must not auto-trigger.",
-          "description": "Aesthetic preset, use ONLY when the user explicitly asks for a premium agency / Awwwards / 'make it feel expensive' look, or picks it from directions the frontend-stack router offered. Defines the exact fonts, spacing, shadows, card structures, and animations of a high-end agency site."
+          "why": "Same as minimalist-skill: the router delegates an explicit 'expensive agency' look to it.",
+          "drop_keys": ["disable-model-invocation"]
         },
         {
           "file": "skills/stitch-skill/SKILL.md",
-          "why": "Writes DESIGN.md in Stitch format, which collides with Impeccable's DESIGN.md. Only for Google Stitch users.",
-          "description": "Use ONLY when the user is working with Google Stitch and asks for a Stitch DESIGN.md. Generates Stitch-optimized DESIGN.md files with premium, anti-generic UI rules. Do not use to create or edit a project's regular DESIGN.md (Impeccable owns that file)."
-        },
-        {
-          "file": "skills/output-skill/SKILL.md",
-          "why": "Global behavior override; must be opt-in.",
-          "description": "Use ONLY when the user explicitly asks for complete, untruncated output (no placeholders, no '// rest of code'). Enforces complete code generation and handles token-limit splits cleanly."
+          "why": "Same as minimalist-skill: the router delegates a Stitch DESIGN.md request to it. It writes DESIGN.md in Stitch format, which collides with Impeccable's, so conflicts.md sends it to DESIGN.stitch.md.",
+          "drop_keys": ["disable-model-invocation"]
         }
       ]
     },
@@ -180,15 +187,15 @@
     },
     {
       "id": "taste-imagegen",
-      "repo": "leonxlnx/taste-skill",
+      "repo": "leonxlnx/imagegen-skills",
       "ref": "main",
       "license": "MIT",
       "author": "Leonxlnx",
       "plugin": "taste-imagegen",
-      "description": "Optional. Taste image-first skills (image-to-code, web/mobile design concepts, brand kits). Needs an image-generation tool in your environment.",
+      "description": "Optional. Image-first design skills by Leonxlnx (image-to-code, web/mobile design concepts, brand kits). Needs an image-generation tool in your environment.",
       "category": "design",
       "copy": [
-        { "from": "skills/image-to-code-skill", "to": "skills/image-to-code-skill" },
+        { "from": "skills/image-to-code", "to": "skills/image-to-code" },
         { "from": "skills/imagegen-frontend-web", "to": "skills/imagegen-frontend-web" },
         { "from": "skills/imagegen-frontend-mobile", "to": "skills/imagegen-frontend-mobile" },
         { "from": "skills/brandkit", "to": "skills/brandkit" }

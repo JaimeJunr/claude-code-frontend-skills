@@ -108,13 +108,32 @@
     {
       "name": "taste",
       "source": "./plugins/taste",
-      "description": "Taste skills by Leonxlnx: anti-slop landing pages and redesigns, plus opt-in aesthetic presets (minimalist, brutalist, high-end, Stitch).",
+      "description": "Taste Skill v2 by Leonxlnx: anti-slop art direction for websites and app screens, with dealt directions, a real-browser inspector and a look-and-fix loop. Needs Node 22 and Chrome, Edge or Chromium.",
       "author": {
         "name": "Leonxlnx"
       },
       "category": "design",
       "license": "MIT",
       "homepage": "https://github.com/leonxlnx/taste-skill",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
+      "name": "taste-classics",
+      "source": "./plugins/taste-classics",
+      "description": "Optional. The classic Taste style presets: minimalist, industrial brutalist, high-end 'expensive agency' and Google Stitch DESIGN.md. Opt-in, run by name.",
+      "author": {
+        "name": "Leonxlnx"
+      },
+      "category": "design",
+      "license": "MIT",
+      "homepage": "https://github.com/leonxlnx/taste-skill-classics",
       "keywords": [
         "frontend",
         "design",
@@ -146,13 +165,13 @@
     {
       "name": "taste-imagegen",
       "source": "./plugins/taste-imagegen",
-      "description": "Optional. Taste image-first skills (image-to-code, web/mobile design concepts, brand kits). Needs an image-generation tool in your environment.",
+      "description": "Optional. Image-first design skills by Leonxlnx (image-to-code, web/mobile design concepts, brand kits). Needs an image-generation tool in your environment.",
       "author": {
         "name": "Leonxlnx"
       },
       "category": "design",
       "license": "MIT",
-      "homepage": "https://github.com/leonxlnx/taste-skill",
+      "homepage": "https://github.com/leonxlnx/imagegen-skills",
       "keywords": [
         "frontend",
         "design",

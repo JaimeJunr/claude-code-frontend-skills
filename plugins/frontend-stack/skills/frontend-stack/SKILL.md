@@ -110,7 +110,7 @@ fixed visual choices. Presets finish a direction; they never generate it.
 | New marketing page where the user names Hallmark, one of its themes, or asks for a themed or custom page | `hallmark:hallmark` (leads instead of Taste, never with it) | with a brand or `DESIGN.md` it reads that as the locked system and deals no theme; [landing-anatomy.md](references/landing-anatomy.md) |
 | New product UI: dashboard, settings, tables, multi-step flows | `frontend-design:frontend-design` | `ui-ux-pro-max:ui-ux-pro-max` (stack + UX guidelines), `impeccable:impeccable` for `harden` at the end |
 | Redesign or restyle an existing product app | phases: Diagnose → Direction (`frontend-design:frontend-design`) → Build → Review | `ui-ux-pro-max:ui-styling` in Build when shadcn/Tailwind |
-| Redesign an existing marketing site | `taste:redesign-existing-projects`, or `hallmark:hallmark` (`redesign <path>`) when the user names Hallmark | `impeccable:impeccable` (`critique`) first |
+| Redesign an existing marketing site | `taste:design-taste-frontend` (it audits the live page before changing it), or `hallmark:hallmark` (`redesign <path>`) when the user names Hallmark | `impeccable:impeccable` (`critique`) first |
 | No personality, no product identity, "looks rushed" | the identity flow in step 3 | - |
 | "Looks generic / AI-made / slop" | the identity flow in step 3 | `frontend-design:frontend-design` anti-template checks during Review |
 | Adopt or migrate to a component library or design system ("use our kit", "move to shadcn") | the library itself: its docs, components, tokens | `ui-ux-pro-max:ui-styling` for Tailwind/shadcn mapping, `impeccable:impeccable` (`extract`) to pull tokens |
@@ -148,8 +148,8 @@ fixed visual choices. Presets finish a direction; they never generate it.
 | Banners, ads, social images, website hero art | `ui-ux-pro-max:banner-design` | - |
 | Slides, pitch deck | `ui-ux-pro-max:slides` | - |
 | Brand-kit board as a generated image | `taste-imagegen:brandkit` (optional plugin, needs image generation) | - |
-| Explicit look: minimalist, brutalist, "expensive agency" | `taste:minimalist-ui` / `industrial-brutalist-ui` / `high-end-visual-design` | `taste:design-taste-frontend` pre-flight checklist |
-| Google Stitch DESIGN.md | `taste:stitch-design-taste` | - |
+| Explicit look: minimalist, brutalist, "expensive agency" | `taste-classics:minimalist-ui` / `industrial-brutalist-ui` / `high-end-visual-design` (optional plugin) | `taste:design-taste-frontend` for the inspector and fix loop |
+| Google Stitch DESIGN.md | `taste-classics:stitch-design-taste` (optional plugin) | - |
 | React Native / Expo motion, Swift | `emil-native:animate-expo` / `write-swift` (optional plugin) | - |
 | Mobile app screens designed with Sleek, then built in React Native or HTML | `design-mobile-apps:design-mobile-apps` (optional plugin; needs `SLEEK_API_KEY`, sends the brief to sleek.design, paid beyond a trial) only when the user asks for Sleek | `emil-native:animate-expo` for motion after the build |
 | Video that goes with a UI: product demo, hero or explainer clip, changelog, captions, animated overlay | `hyperframes:hyperframes` (optional plugin; needs Node 22 and the hyperframes CLI) | `hyperframes:media-use` for music, voice and images; `emil-design-eng:animate` stays the owner of in-page UI motion |
@@ -194,9 +194,9 @@ When two loaded skills disagree, the higher rule wins:
    accessibility and the framework/library; leave unrelated surfaces alone.
 3. **Accessibility and correctness.** Contrast, focus states, reduced motion,
    keyboard access, no layout shift. Impeccable `audit` is the referee.
-4. **Scope of the lead skill.** A skill's own "not for X" line is binding:
-   `design-taste-frontend` says it is not for dashboards, tables or multi-step
-   product UI, so it does not lead those.
+4. **Scope of the lead skill.** A skill's own "not for X" line is binding.
+   `design-taste-frontend` now also covers app screens, but the stack still
+   leads product UI with `frontend-design` unless the user asks for Taste.
 5. **Domain owner.** Motion questions go to Emil's skills, style/palette data to
    UI UX Pro Max, critique/audit/polish to Impeccable, aesthetic direction to
    frontend-design or taste.
@@ -215,12 +215,11 @@ skill contradicts the lead.
   of them at once burns context and produces averaged, generic output.
 - Say in one line which skills each phase loaded, so the user can correct the
   routing early.
-- Aesthetic presets (`minimalist-ui`, `industrial-brutalist-ui`,
+- Aesthetic presets (`taste-classics`: `minimalist-ui`, `industrial-brutalist-ui`,
   `high-end-visual-design`) never stack: at most one, as finishing material
   after the concept, or as the user's explicit choice.
 - One marketing-page lead per task: `taste:design-taste-frontend` or
   `hallmark:hallmark`, never both. Hallmark's Floor binds only pages it leads.
-- `taste:full-output-enforcement` only when the user asks for complete output.
 - The brand, logo, banner and slides skills above overlap (`ui-ux-pro-max:design`
   and `design-system` also cover slides and branding). Load only the row's lead.
 - Prefer the specific Emil skill over `emil-design-eng:emil-design-eng` as
@@ -240,8 +239,9 @@ For anything user-facing, end with a review pass before calling it done:
    (`plugins/impeccable/agents/impeccable-finish-reviewer.md` in this repo).
    Follow its `recapture` / `rebuild` / `fix` / `ship` disposition; use its
    documented fallback only when agents are unavailable.
-   A page `hallmark:hallmark` led ends with its own sloplint and fresh-context
-   review in place of that screenshot gate; still run `audit` for a11y.
+   A page `hallmark:hallmark` or `taste:design-taste-frontend` led ends with
+   that skill's own inspector and fix loop in place of that screenshot gate;
+   still run `audit` for a11y.
 3. If the change has motion, `emil-design-eng:review-animations`.
 4. Fix the findings and recapture affected views. For personality/identity/
    AI-look requests, a missing signature or a render interchangeable with a

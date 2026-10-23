@@ -24,11 +24,11 @@ Each of these packs is great alone, and each one assumes it is the only design
 skill installed. Install all five by hand and Claude loads four rulebooks for
 the same "build me a landing page" prompt, and they disagree:
 
-- Taste wants perpetual micro-motion; Emil Kowalski asks whether it should
-  animate at all and keeps UI motion under 300 ms.
-- Taste's `design-taste-frontend` says it is not for dashboards; nothing stops
-  it from being loaded for one.
-- Impeccable and Taste's Stitch skill both write `DESIGN.md`, in different
+- Taste's classic presets want perpetual micro-motion; Emil Kowalski asks
+  whether it should animate at all and keeps UI motion under 300 ms.
+- Taste v2 now also claims dashboards and app screens, where product UI is
+  better led by `frontend-design`; nothing decides who leads.
+- Impeccable and Taste's classic Stitch skill both write `DESIGN.md`, in different
   formats.
 - One Taste preset uses purple mesh gradients that another Taste skill bans.
 - Aesthetic presets (minimalist, brutalist, "expensive") trigger on every UI
@@ -42,7 +42,7 @@ This repo fixes that:
 | Skills fight over the same prompt | `frontend-stack` router: one lead skill + at most two supporting per task |
 | Contradicting rules | [Precedence ladder and conflict rulings](plugins/frontend-stack/skills/frontend-stack/references/conflicts.md) |
 | Presets hijack every task | Their descriptions are narrowed so they only fire on explicit request |
-| Duplicates and model-specific skills | `taste-skill-v1` and `gpt-tasteskill` left out; image-gen skills are an optional plugin |
+| Duplicates and model-specific skills | `taste-skill-v1` and `gpt-tasteskill` left out; the classic presets and image-gen skills are optional plugins |
 | Scripts break when files move | Upstream layout kept as-is inside each plugin, so bundled scripts still resolve |
 
 ## Install
@@ -68,6 +68,7 @@ Then install the core stack:
 Optional extras:
 
 ```
+/plugin install taste-classics@frontend-stack
 /plugin install taste-imagegen@frontend-stack
 /plugin install emil-native@frontend-stack
 /plugin install design-mobile-apps@frontend-stack
@@ -142,14 +143,15 @@ them.
 | `ux-research` | `research-synthesis`, `user-research`, `ux-copy` | 3 |
 | `impeccable` | `impeccable` | 1 |
 | `ui-ux-pro-max` | `banner-design`, `brand`, `design`, `design-system`, `slides`, `ui-styling`, `ui-ux-pro-max` | 7 |
-| `taste` | `industrial-brutalist-ui`, `minimalist-ui`, `full-output-enforcement`, `redesign-existing-projects`, `high-end-visual-design`, `stitch-design-taste`, `design-taste-frontend` | 7 |
+| `taste` | `design-taste-frontend` | 1 |
+| `taste-classics` | `industrial-brutalist-ui`, `minimalist-ui`, `high-end-visual-design`, `stitch-design-taste` | 4 |
 | `hallmark` | `hallmark` | 1 |
 | `taste-imagegen` | `brandkit`, `image-to-code`, `imagegen-frontend-mobile`, `imagegen-frontend-web` | 4 |
 | `design-mobile-apps` | `design-mobile-apps` | 1 |
 | `hyperframes` | `hyperframes`, `hyperframes-cli`, `hyperframes-registry`, `media-use` | 4 |
 | `emil-design-eng` | `animate`, `animation-vocabulary`, `apple-design`, `ask-sonner`, `emil-design-eng`, `find-animation-opportunities`, `improve-animations`, `mobile-native`, `pick-ui-library`, `prototype`, `review-animations` | 11 |
 | `emil-native` | `animate-expo`, `write-swift` | 2 |
-| **Total** | | **43** |
+| **Total** | | **41** |
 <!-- SKILLS:END -->
 
 | Plugin | Best for |
@@ -159,7 +161,8 @@ them.
 | `impeccable` | Plan (`shape`), critique, audit, polish, harden, adapt, clarify copy; 24 commands, design agents and live hooks |
 | `ux-research` | Anthropic's UX writing (`ux-copy`) and UX research (`user-research`, `research-synthesis`) skills |
 | `ui-ux-pro-max` | Lookup database: styles, palettes, font pairings, charts, per-stack UX rules; tokens, shadcn/ui + Tailwind, brand, slides |
-| `taste` | Landing pages and redesigns that do not look AI-generated; opt-in aesthetic presets |
+| `taste` | Taste v2: anti-slop art direction for websites and app screens, with a real-browser inspector (needs Node 22 and Chrome) |
+| `taste-classics` | Optional: the classic opt-in presets (minimalist, brutalist, high-end, Stitch DESIGN.md) |
 | `hallmark` | Themed marketing pages with a hard anti-AI-look floor (48 themes, browser-rendered lint); `redesign` and `audit` when named |
 | `emil-design-eng` | Animation craft, motion review, interaction polish, prototypes, native-feeling mobile web, library picks |
 | `taste-imagegen` | Optional: generate a design image first, then code it (needs an image-generation tool) |

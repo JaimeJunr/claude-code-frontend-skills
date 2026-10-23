@@ -42,7 +42,7 @@ then run the passes that apply:
 4. **Generic-looking output** (new pages, visible redesigns or identity
    reviews): judge the captures against the reference board, concept devices
    and anti-template list in `frontend-design:frontend-design`; on marketing
-   pages also use `taste:design-taste-frontend`'s pre-flight checklist. Test
+   pages also use `taste:design-taste-frontend`'s tell registry (`references/tells.md`). Test
    whether changing the name/logo would make this a named competitor's page.
    Cite the visible similarity or missing device, not a vague taste opinion.
    On landings, also answer the first-viewport check in

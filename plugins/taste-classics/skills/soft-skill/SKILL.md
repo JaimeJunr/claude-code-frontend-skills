@@ -1,6 +1,6 @@
 ---
 name: high-end-visual-design
-description: "Aesthetic preset, use ONLY when the user explicitly asks for a premium agency / Awwwards / 'make it feel expensive' look, or picks it from directions the frontend-stack router offered. Defines the exact fonts, spacing, shadows, card structures, and animations of a high-end agency site."
+description: "Classic style skill, opt-in: it runs only when called by name. A calm, polished look with soft contrast, generous whitespace and spring motion."
 ---
 
 # Agent Skill: Principal UI/UX Architect & Motion Choreographer (Awwwards-Tier)
