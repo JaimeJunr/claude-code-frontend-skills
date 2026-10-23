@@ -163,6 +163,25 @@
       ]
     },
     {
+      "name": "design-mobile-apps",
+      "source": "./plugins/design-mobile-apps",
+      "description": "Optional. Design mobile app screens with Sleek and implement them in React Native or HTML. Needs a SLEEK_API_KEY and sends briefs to sleek.design; a free account covers about one trial run, sustained use is paid.",
+      "author": {
+        "name": "Designed by AI (Sleek)"
+      },
+      "category": "mobile",
+      "license": "MIT",
+      "homepage": "https://sleek.design",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
       "name": "emil-design-eng",
       "source": "./plugins/emil-design-eng",
       "description": "Emil Kowalski's design engineering skills: UI polish, animation craft (animate, review, improve, find opportunities), Apple-style motion, prototypes, native-feeling mobile web, library picks.",

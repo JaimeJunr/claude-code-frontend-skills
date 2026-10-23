@@ -196,6 +196,28 @@
       "license_files": ["LICENSE"]
     },
     {
+      "id": "designed-by-ai",
+      "repo": "designed-by-ai/skills",
+      "ref": "main",
+      "license": "MIT",
+      "author": "Designed by AI (Sleek)",
+      "homepage": "https://sleek.design",
+      "plugin": "design-mobile-apps",
+      "description": "Optional. Design mobile app screens with Sleek and implement them in React Native or HTML. Needs a SLEEK_API_KEY and sends briefs to sleek.design; a free account covers about one trial run, sustained use is paid.",
+      "category": "mobile",
+      "copy": [
+        { "from": "skills/design-mobile-apps", "to": "skills/design-mobile-apps" }
+      ],
+      "license_files": ["LICENSE"],
+      "patches": [
+        {
+          "file": "skills/design-mobile-apps/SKILL.md",
+          "why": "Calls a paid third-party API (sleek.design) with the user's brief. Must never fire on a generic mobile UI request; only when Sleek is asked for or the router delegates.",
+          "description": "Use ONLY when the user asks to design mobile app screens with Sleek, edit a Sleek project, or implement a Sleek design in React Native or HTML, or when the frontend-stack router delegates it. Needs SLEEK_API_KEY and sends the brief to sleek.design (paid service). Not for generic mobile UI work."
+        }
+      ]
+    },
+    {
       "id": "emil",
       "repo": "emilkowalski/skills",
       "ref": "main",

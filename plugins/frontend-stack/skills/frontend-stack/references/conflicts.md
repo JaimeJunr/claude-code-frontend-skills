@@ -145,6 +145,25 @@ the stack applies. Rulings follow the precedence ladder in `../SKILL.md`.
   and requested, skip Hallmark's comp step. Hallmark's edit-time hook
   (`install-hook.mjs`) is not wired by this plugin; the user opts in.
 
+## The base skill and the lead
+
+- Every pack's rules about look and feel (Taste defaults, Hallmark's Floor,
+  Impeccable's new-work) can disagree with **frontend-design**'s anti-template
+  checks.
+- **Ruling:** `frontend-design` is always loaded and its anti-template rules
+  outrank another lead's taste defaults, below only the user's request, the
+  project's system, accessibility and a skill's own scope line (ladder rules 1
+  to 4). It never leads alone against a named lead; it sets the floor under it.
+
+## Sleek (design-mobile-apps) and local design skills
+
+- **design-mobile-apps** designs screens on sleek.design (paid API, needs
+  `SLEEK_API_KEY`, the brief leaves the machine) and then implements them.
+- **Ruling:** it runs only when the user asks for Sleek. Its output is a
+  starting point: the implementation still follows the project's system and
+  `frontend-design`, and motion goes to `emil-native`. Ask before sending a
+  brief that contains private product details.
+
 ## Brand-first system and finish documentation
 
 - The router's identity flow runs `brand` → `design-system` → landing.

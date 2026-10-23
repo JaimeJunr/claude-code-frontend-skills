@@ -10,6 +10,10 @@ assumes it is the only one in the room. This skill decides who leads in each
 phase of the work, so the agent loads one lead and at most two supporting
 skills at a time instead of five competing rulebooks.
 
+`frontend-design:frontend-design` is the base. Load it first on every frontend
+task, whoever leads, and keep it loaded. It sits outside the lead/support count
+in step 7. If it is not in the session's skill list, say so once and go on.
+
 ## 1. Read the project first
 
 Before picking anything, look for what the project already decided:
@@ -147,6 +151,8 @@ fixed visual choices. Presets finish a direction; they never generate it.
 | Explicit look: minimalist, brutalist, "expensive agency" | `taste:minimalist-ui` / `industrial-brutalist-ui` / `high-end-visual-design` | `taste:design-taste-frontend` pre-flight checklist |
 | Google Stitch DESIGN.md | `taste:stitch-design-taste` | - |
 | React Native / Expo motion, Swift | `emil-native:animate-expo` / `write-swift` (optional plugin) | - |
+| Mobile app screens designed with Sleek, then built in React Native or HTML | `design-mobile-apps:design-mobile-apps` (optional plugin; needs `SLEEK_API_KEY`, sends the brief to sleek.design, paid beyond a trial) only when the user asks for Sleek | `emil-native:animate-expo` for motion after the build |
+| Video from HTML (product demo, changelog, captions) | `hyperframes:hyperframes` (HeyGen's own plugin, not vendored here; `claude plugin marketplace add heygen-com/hyperframes`) when it is in the session's skill list | - |
 | Mockup image first, then code | `taste-imagegen:imagegen-frontend-web` / `imagegen-frontend-mobile` (optional plugin, needs image generation) | - |
 
 A request that mixes jobs ("redesign it and add animations") is several rows:
@@ -193,7 +199,8 @@ When two loaded skills disagree, the higher rule wins:
 5. **Domain owner.** Motion questions go to Emil's skills, style/palette data to
    UI UX Pro Max, critique/audit/polish to Impeccable, aesthetic direction to
    frontend-design or taste.
-6. **The lead skill's taste defaults.**
+6. **The lead skill's taste defaults.** `frontend-design`'s anti-template
+   rules outrank any other lead's taste defaults.
 
 The rules that actually collide between packs, and how each is settled, are in
 [references/conflicts.md](references/conflicts.md). Read it when a supporting
@@ -201,7 +208,8 @@ skill contradicts the lead.
 
 ## 7. Load budget
 
-- Per phase: one lead and at most two supporting skills. Big skills
+- Per phase: the base `frontend-design`, one lead and at most two supporting
+  skills. Big skills
   (`design-taste-frontend`, `ui-ux-pro-max`, `impeccable`) are long; loading all
   of them at once burns context and produces averaged, generic output.
 - Say in one line which skills each phase loaded, so the user can correct the
