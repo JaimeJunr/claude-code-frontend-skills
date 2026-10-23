@@ -8,6 +8,7 @@ sincroniza toda semana com os repositórios originais:
 - [Impeccable](https://github.com/pbakaus/impeccable) (Paul Bakaus)
 - [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (Next Level Builder)
 - [Taste](https://github.com/leonxlnx/taste-skill) (Leonxlnx)
+- [Hallmark](https://github.com/Nutlope/hallmark) (Nutlope, Together AI)
 - [Skills do Emil Kowalski](https://github.com/emilkowalski/skills) (design engineering e animação)
 
 E um plugin de cola, o **`frontend-stack`**, com uma skill roteadora que
@@ -23,6 +24,7 @@ pacotes discordam, e dois agents (`design-director` e `ui-reviewer`).
 /plugin install impeccable@frontend-stack
 /plugin install ui-ux-pro-max@frontend-stack
 /plugin install taste@frontend-stack
+/plugin install hallmark@frontend-stack
 /plugin install emil-design-eng@frontend-stack
 ```
 
@@ -53,6 +55,7 @@ Pra todo mundo do repositório usar a stack, versione isto em
     "impeccable@frontend-stack": true,
     "ui-ux-pro-max@frontend-stack": true,
     "taste@frontend-stack": true,
+    "hallmark@frontend-stack": true,
     "emil-design-eng@frontend-stack": true
   }
 }
@@ -66,7 +69,7 @@ como ligados mas só carregam depois de instalados ali uma vez. Na raiz do
 repositório:
 
 ```bash
-for p in frontend-stack frontend-design impeccable ui-ux-pro-max taste emil-design-eng; do claude plugin install "$p@frontend-stack" --scope project; done
+for p in frontend-stack frontend-design impeccable ui-ux-pro-max taste hallmark emil-design-eng; do claude plugin install "$p@frontend-stack" --scope project; done
 ```
 
 O comando pode reformatar o `.claude/settings.json` sem mudar o conteúdo;

@@ -103,16 +103,17 @@ fixed visual choices. Presets finish a direction; they never generate it.
 | New landing for a product with no brand | the identity flow in step 3, before the landing | `references/identity-flow.md`; brand → system → Build |
 | Landing page for a developer tool / API / AI product | `taste:design-taste-frontend`, or the identity flow first when there is no brand | [devtool-landing.md](references/devtool-landing.md) + [landing-anatomy.md](references/landing-anatomy.md); `impeccable:impeccable` new-work in Build |
 | New landing page, portfolio, marketing site with a brand | `taste:design-taste-frontend` | `frontend-design:frontend-design` for direction; [landing-anatomy.md](references/landing-anatomy.md); `impeccable:impeccable` new-work in Build |
+| New marketing page where the user names Hallmark, one of its themes, or asks for a themed or custom page | `hallmark:hallmark` (leads instead of Taste, never with it) | with a brand or `DESIGN.md` it reads that as the locked system and deals no theme; [landing-anatomy.md](references/landing-anatomy.md) |
 | New product UI: dashboard, settings, tables, multi-step flows | `frontend-design:frontend-design` | `ui-ux-pro-max:ui-ux-pro-max` (stack + UX guidelines), `impeccable:impeccable` for `harden` at the end |
 | Redesign or restyle an existing product app | phases: Diagnose → Direction (`frontend-design:frontend-design`) → Build → Review | `ui-ux-pro-max:ui-styling` in Build when shadcn/Tailwind |
-| Redesign an existing marketing site | `taste:redesign-existing-projects` | `impeccable:impeccable` (`critique`) first |
+| Redesign an existing marketing site | `taste:redesign-existing-projects`, or `hallmark:hallmark` (`redesign <path>`) when the user names Hallmark | `impeccable:impeccable` (`critique`) first |
 | No personality, no product identity, "looks rushed" | the identity flow in step 3 | - |
 | "Looks generic / AI-made / slop" | the identity flow in step 3 | `frontend-design:frontend-design` anti-template checks during Review |
 | Adopt or migrate to a component library or design system ("use our kit", "move to shadcn") | the library itself: its docs, components, tokens | `ui-ux-pro-max:ui-styling` for Tailwind/shadcn mapping, `impeccable:impeccable` (`extract`) to pull tokens |
 | Chat or AI assistant UI | `frontend-design:frontend-design` + the library's chat components if it has them | `impeccable:impeccable` (`harden`) for empty, error, loading and streaming states; `emil-design-eng:animate` for streaming motion |
 | Forms, onboarding, first-run | `impeccable:impeccable` (`onboard`, `harden`) | `frontend-design:frontend-design` |
 | Empty, error, loading states, edge cases | `impeccable:impeccable` (`harden`) | - |
-| Only critique or audit, no rebuild asked | `impeccable:impeccable` (`critique` then `audit`) | none: the user asked for a report, not a new direction |
+| Only critique or audit, no rebuild asked | `impeccable:impeccable` (`critique` then `audit`); `hallmark:hallmark` (`audit <path>`) when the user names Hallmark | none: the user asked for a report, not a new direction |
 | "Plan it before coding", discovery, UX flow | `impeccable:impeccable` (`shape`) | - |
 | Vague brief, no direction yet | `frontend-stack:design-director` agent, then route its result here | - |
 | Review a page, component or PR diff | `frontend-stack:ui-reviewer` agent | - |
@@ -208,6 +209,8 @@ skill contradicts the lead.
 - Aesthetic presets (`minimalist-ui`, `industrial-brutalist-ui`,
   `high-end-visual-design`) never stack: at most one, as finishing material
   after the concept, or as the user's explicit choice.
+- One marketing-page lead per task: `taste:design-taste-frontend` or
+  `hallmark:hallmark`, never both. Hallmark's Floor binds only pages it leads.
 - `taste:full-output-enforcement` only when the user asks for complete output.
 - The brand, logo, banner and slides skills above overlap (`ui-ux-pro-max:design`
   and `design-system` also cover slides and branding). Load only the row's lead.
@@ -228,6 +231,8 @@ For anything user-facing, end with a review pass before calling it done:
    (`plugins/impeccable/agents/impeccable-finish-reviewer.md` in this repo).
    Follow its `recapture` / `rebuild` / `fix` / `ship` disposition; use its
    documented fallback only when agents are unavailable.
+   A page `hallmark:hallmark` led ends with its own sloplint and fresh-context
+   review in place of that screenshot gate; still run `audit` for a11y.
 3. If the change has motion, `emil-design-eng:review-animations`.
 4. Fix the findings and recapture affected views. For personality/identity/
    AI-look requests, a missing signature or a render interchangeable with a

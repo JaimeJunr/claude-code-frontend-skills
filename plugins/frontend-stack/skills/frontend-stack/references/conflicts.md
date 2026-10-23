@@ -109,10 +109,41 @@ the stack applies. Rulings follow the precedence ladder in `../SKILL.md`.
   `DESIGN.md` via `document` / the `impeccable-documenter` agent.
 - **taste** `stitch-design-taste` also writes a `DESIGN.md`, in Google Stitch
   format.
+- **hallmark** reads `design.md` / `DESIGN.md` as a locked system and, on
+  "lock the system", writes `design.md` at the root (or refreshes the
+  `## Exports` of an existing one).
 - **Ruling:** Impeccable owns `DESIGN.md`. The Stitch skill only runs on
   explicit request, and then writes to `DESIGN.stitch.md` unless the user says
-  otherwise, so Impeccable's context is not overwritten. The brand-first
+  otherwise, so Impeccable's context is not overwritten. Hallmark reads the file
+  but does not write it: "lock the system" goes to Impeccable `document`, and
+  Hallmark's `tokens.css` stays beside the project stylesheet. The brand-first
   ruling below defines the identity flow's initial system handoff.
+
+## Hallmark vs Taste: who leads a marketing page
+
+- **taste** `design-taste-frontend` and **hallmark** both claim new landing
+  pages, each with its own rulebook and checklist. Hallmark deals a theme from
+  its catalog of 48, asks four questions in one message and prints a Picks block.
+- **Ruling:** one marketing lead per task. Taste stays the default. Hallmark
+  leads when the user names it, names one of its themes, or asks for a themed or
+  custom page, and `redesign` / `audit` run only when the user names Hallmark.
+  The other pack is not loaded as support. Hallmark's Floor (no eyebrows, no
+  tracked-caps labels, no middle-dot meta strings, 16 mandatory rules in all)
+  binds only pages Hallmark led; it is not imported into Taste or product-UI
+  work. Hallmark is for websites and new pages; app screens, dashboards and
+  product UI stay with `frontend-design`, as for Taste.
+- Hallmark's pre-flight treats `DESIGN.md` as a locked system and deals no
+  theme. After the identity flow the page therefore inherits the approved brand,
+  and Hallmark is only the Build lead. Its "ask once" message is skipped for
+  anything the identity flow or the prompt already answered.
+
+## Hallmark and image-first work
+
+- **hallmark** runs a comp step (generated stills of the first viewport) when
+  `TOGETHER_API_KEY` is set. **taste-imagegen** owns image-first work.
+- **Ruling:** one image-first path per task. With `taste-imagegen` installed
+  and requested, skip Hallmark's comp step. Hallmark's edit-time hook
+  (`install-hook.mjs`) is not wired by this plugin; the user opts in.
 
 ## Brand-first system and finish documentation
 
@@ -201,3 +232,6 @@ the stack applies. Rulings follow the precedence ladder in `../SKILL.md`.
   On personality, identity or AI-look requests, a missing signature or
   screenshot-backed interchangeability with a named competitor can be
   `Must fix`. Outside that scope, taste preferences remain non-blocking.
+  A page Hallmark led replaces that screenshot gate with Hallmark's
+  `sloplint --render` and fresh-context finish review (its own Step 7), plus
+  Impeccable `audit` for accessibility. Do not run both finish reviewers.

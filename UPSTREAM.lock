@@ -29,6 +29,12 @@
     "commit": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
     "synced_at": "2026-09-28"
   },
+  "hallmark": {
+    "repo": "nutlope/hallmark",
+    "ref": "main",
+    "commit": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
+    "synced_at": "2026-10-23"
+  },
   "taste-imagegen": {
     "repo": "leonxlnx/taste-skill",
     "ref": "main",

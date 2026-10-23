@@ -8,6 +8,7 @@ de-conflicted and synced weekly from upstream:
 - [**Impeccable**](https://github.com/pbakaus/impeccable) by Paul Bakaus
 - [**UI UX Pro Max**](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) by Next Level Builder
 - [**Taste**](https://github.com/leonxlnx/taste-skill) by Leonxlnx
+- [**Hallmark**](https://github.com/Nutlope/hallmark) by Nutlope (Together AI)
 - [**Emil Kowalski's skills**](https://github.com/emilkowalski/skills) (design engineering and animation)
 
 Plus a small glue plugin, **`frontend-stack`**, that makes them work
@@ -60,6 +61,7 @@ Then install the core stack:
 /plugin install impeccable@frontend-stack
 /plugin install ui-ux-pro-max@frontend-stack
 /plugin install taste@frontend-stack
+/plugin install hallmark@frontend-stack
 /plugin install emil-design-eng@frontend-stack
 ```
 
@@ -97,6 +99,7 @@ To share the stack with everyone on a repo, commit this to
     "impeccable@frontend-stack": true,
     "ui-ux-pro-max@frontend-stack": true,
     "taste@frontend-stack": true,
+    "hallmark@frontend-stack": true,
     "emil-design-eng@frontend-stack": true
   }
 }
@@ -109,7 +112,7 @@ new machine (a teammate, a fresh laptop, CI), the plugins show up as enabled
 but do not load until they are installed there once. From the repo root:
 
 ```bash
-for p in frontend-stack frontend-design impeccable ui-ux-pro-max taste emil-design-eng; do claude plugin install "$p@frontend-stack" --scope project; done
+for p in frontend-stack frontend-design impeccable ui-ux-pro-max taste hallmark emil-design-eng; do claude plugin install "$p@frontend-stack" --scope project; done
 ```
 
 The command may rewrite the formatting of `.claude/settings.json` without
@@ -129,10 +132,11 @@ them.
 | `impeccable` | `impeccable` | 1 |
 | `ui-ux-pro-max` | `banner-design`, `brand`, `design`, `design-system`, `slides`, `ui-styling`, `ui-ux-pro-max` | 7 |
 | `taste` | `industrial-brutalist-ui`, `minimalist-ui`, `full-output-enforcement`, `redesign-existing-projects`, `high-end-visual-design`, `stitch-design-taste`, `design-taste-frontend` | 7 |
+| `hallmark` | `hallmark` | 1 |
 | `taste-imagegen` | `brandkit`, `image-to-code`, `imagegen-frontend-mobile`, `imagegen-frontend-web` | 4 |
 | `emil-design-eng` | `animate`, `animation-vocabulary`, `apple-design`, `ask-sonner`, `emil-design-eng`, `find-animation-opportunities`, `improve-animations`, `mobile-native`, `pick-ui-library`, `prototype`, `review-animations` | 11 |
 | `emil-native` | `animate-expo`, `write-swift` | 2 |
-| **Total** | | **37** |
+| **Total** | | **38** |
 <!-- SKILLS:END -->
 
 | Plugin | Best for |
@@ -143,6 +147,7 @@ them.
 | `ux-research` | Anthropic's UX writing (`ux-copy`) and UX research (`user-research`, `research-synthesis`) skills |
 | `ui-ux-pro-max` | Lookup database: styles, palettes, font pairings, charts, per-stack UX rules; tokens, shadcn/ui + Tailwind, brand, slides |
 | `taste` | Landing pages and redesigns that do not look AI-generated; opt-in aesthetic presets |
+| `hallmark` | Themed marketing pages with a hard anti-AI-look floor (48 themes, browser-rendered lint); `redesign` and `audit` when named |
 | `emil-design-eng` | Animation craft, motion review, interaction polish, prototypes, native-feeling mobile web, library picks |
 | `taste-imagegen` | Optional: generate a design image first, then code it (needs an image-generation tool) |
 | `emil-native` | Optional: React Native / Expo animation, modern Swift |
@@ -192,7 +197,7 @@ PostHog, SpaceX and more), grouped by the problem each one solves.
 | Task | Lead |
 |---|---|
 | New landing without a brand, or replace an AI-made identity | Router identity flow: research → concept → brand → system → landing |
-| Landing page, portfolio, marketing site | Taste `design-taste-frontend` |
+| Landing page, portfolio, marketing site | Taste `design-taste-frontend`, or Hallmark when named or a themed/custom page is asked |
 | Developer-tool / API / AI landing | Identity flow without a brand; otherwise Taste, with product proof and Impeccable new-work |
 | Product UI: dashboards, tables, flows | Anthropic `frontend-design` + UI UX Pro Max |
 | Plan / critique / audit / polish | Impeccable |

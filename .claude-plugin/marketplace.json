@@ -125,6 +125,25 @@
       ]
     },
     {
+      "name": "hallmark",
+      "source": "./plugins/hallmark",
+      "description": "Hallmark v2 by Nutlope: anti-AI-slop design skill with a hard Floor, 48 themes dealt per prompt, a browser-rendered sloplint and redesign/audit verbs.",
+      "author": {
+        "name": "Nutlope (Together AI)"
+      },
+      "category": "design",
+      "license": "MIT",
+      "homepage": "https://www.usehallmark.com",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
       "name": "taste-imagegen",
       "source": "./plugins/taste-imagegen",
       "description": "Optional. Taste image-first skills (image-to-code, web/mobile design concepts, brand kits). Needs an image-generation tool in your environment.",
