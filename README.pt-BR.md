@@ -28,7 +28,8 @@ pacotes discordam, e dois agents (`design-director` e `ui-reviewer`).
 /plugin install emil-design-eng@frontend-stack
 ```
 
-Opcionais: `taste-imagegen@frontend-stack` (precisa de ferramenta de gerar
+Opcionais: `taste-classics@frontend-stack` (os presets clássicos do Taste),
+`taste-imagegen@frontend-stack` (precisa de ferramenta de gerar
 imagem), `emil-native@frontend-stack` (React Native/Expo e Swift),
 `design-mobile-apps@frontend-stack` (telas mobile no Sleek, API paga com
 `SLEEK_API_KEY`; o briefing sai da sua máquina) e `hyperframes@frontend-stack`
@@ -89,10 +90,10 @@ enxerga eles.
 
 ## O que a camada de compatibilidade resolve
 
-- O Taste pede micro-animação o tempo todo; o Emil pergunta se deveria animar
+- Os presets clássicos do Taste pedem micro-animação o tempo todo; o Emil pergunta se deveria animar
   e mantém animação de UI abaixo de 300 ms. Em UI de produto, vale o Emil.
-- O `design-taste-frontend` diz que não serve pra dashboard. O roteador
-  respeita isso.
+- O Taste v2 agora também reivindica dashboard e telas de app, que o
+  `frontend-design` lidera melhor; nada decidia quem lidera.
 - O Impeccable e a skill Stitch do Taste escrevem `DESIGN.md` em formatos
   diferentes. O `DESIGN.md` fica com o Impeccable.
 - Os presets de estética (minimalista, brutalista, "cara de agência") só

@@ -1,10 +1,10 @@
 {
   "name": "taste-imagegen",
-  "description": "Optional. Taste image-first skills (image-to-code, web/mobile design concepts, brand kits). Needs an image-generation tool in your environment.",
+  "description": "Optional. Image-first design skills by Leonxlnx (image-to-code, web/mobile design concepts, brand kits). Needs an image-generation tool in your environment.",
   "author": {
     "name": "Leonxlnx"
   },
-  "homepage": "https://github.com/leonxlnx/taste-skill",
+  "homepage": "https://github.com/leonxlnx/imagegen-skills",
   "repository": "https://github.com/JaimeJunr/claude-code-frontend-skills",
   "license": "MIT",
   "keywords": [

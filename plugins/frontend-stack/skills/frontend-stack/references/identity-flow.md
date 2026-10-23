@@ -110,8 +110,8 @@ Otherwise follow Impeccable's literal-reading rule: at most one candidate
 comes from the name's literal meaning. Derive the rest elsewhere in the
 audience's world. Avoid replacing one category cliché with its obvious opposite.
 
-Taste presets (`taste:minimalist-ui`, `taste:industrial-brutalist-ui`,
-`taste:high-end-visual-design`) and `ui-ux-pro-max:ui-ux-pro-max` category
+Taste presets (`taste-classics:minimalist-ui`, `taste-classics:industrial-brutalist-ui`,
+`taste-classics:high-end-visual-design`) and `ui-ux-pro-max:ui-ux-pro-max` category
 styles are finishing material only. They may refine a concept's type, spacing
 or craft after it exists; they never supply the direction or override its
 devices. Apply `conflicts.md` to their font, color and mono suggestions.

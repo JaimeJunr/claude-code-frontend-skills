@@ -1,6 +1,6 @@
 ---
 name: industrial-brutalist-ui
-description: "Aesthetic preset, use ONLY when the user explicitly asks for a brutalist / industrial / terminal look, or picks it from directions the frontend-stack router offered. Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects."
+description: "Classic style skill, opt-in: it runs only when called by name. A hard mechanical look with Swiss type, rigid grids, extreme scale contrast and utilitarian colour."
 ---
 
 # SKILL: Industrial Brutalism & Tactical Telemetry UI

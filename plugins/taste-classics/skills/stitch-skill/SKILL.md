@@ -1,6 +1,6 @@
 ---
 name: stitch-design-taste
-description: "Use ONLY when the user is working with Google Stitch and asks for a Stitch DESIGN.md. Generates Stitch-optimized DESIGN.md files with premium, anti-generic UI rules. Do not use to create or edit a project's regular DESIGN.md (Impeccable owns that file)."
+description: "Classic skill for Google Stitch, opt-in: it runs only when called by name. Writes an agent-friendly DESIGN.md with strict type, colour and layout rules."
 ---
 
 # Stitch Design Taste — Semantic Design System Skill
