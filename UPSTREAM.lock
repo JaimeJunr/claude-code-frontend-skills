@@ -47,6 +47,12 @@
     "commit": "03c20aec6dcedb5fabfb03dc37982eb52ef19ed6",
     "synced_at": "2026-10-23"
   },
+  "hyperframes": {
+    "repo": "heygen-com/hyperframes",
+    "ref": "main",
+    "commit": "2ed882ccf22fdf070e21442e0437b3ae57253405",
+    "synced_at": "2026-10-23"
+  },
   "emil": {
     "repo": "emilkowalski/skills",
     "ref": "main",

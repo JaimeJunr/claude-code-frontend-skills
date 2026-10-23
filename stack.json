@@ -218,6 +218,25 @@
       ]
     },
     {
+      "id": "hyperframes",
+      "repo": "heygen-com/hyperframes",
+      "ref": "main",
+      "license": "Apache-2.0",
+      "author": "HeyGen",
+      "homepage": "https://hyperframes.heygen.com",
+      "plugin": "hyperframes",
+      "description": "Optional. HyperFrames by HeyGen: write HTML, render deterministic video. For product demos, hero and explainer clips, captions and animated overlays that go with a UI. Needs Node 22 and the hyperframes CLI; some media steps can use HeyGen services.",
+      "category": "motion",
+      "$comment": "Only the four core skills HeyGen publishes. Left out: slideshow (overlaps ui-ux-pro-max slides), figma and remotion-to-hyperframes (off topic). They cross-link with relative paths, so they must stay siblings.",
+      "copy": [
+        { "from": "skills/hyperframes", "to": "skills/hyperframes" },
+        { "from": "skills/hyperframes-cli", "to": "skills/hyperframes-cli" },
+        { "from": "skills/hyperframes-registry", "to": "skills/hyperframes-registry" },
+        { "from": "skills/media-use", "to": "skills/media-use" }
+      ],
+      "license_files": ["LICENSE"]
+    },
+    {
       "id": "emil",
       "repo": "emilkowalski/skills",
       "ref": "main",

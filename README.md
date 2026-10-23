@@ -71,12 +71,12 @@ Optional extras:
 /plugin install taste-imagegen@frontend-stack
 /plugin install emil-native@frontend-stack
 /plugin install design-mobile-apps@frontend-stack
+/plugin install hyperframes@frontend-stack
 ```
 
 `design-mobile-apps` calls the paid sleek.design API (`SLEEK_API_KEY`) and sends
-your brief there. Video from HTML is covered by HeyGen's own plugin,
-[Hyperframes](https://github.com/heygen-com/hyperframes), which is not vendored
-here: `claude plugin marketplace add heygen-com/hyperframes`.
+your brief there. `hyperframes` (HeyGen) renders HTML to video for product
+demos, hero clips and captions; it needs Node 22 and the `hyperframes` CLI.
 
 Already have one of these installed from its original repo? Uninstall that
 copy first so the skill is not loaded twice.
@@ -141,9 +141,10 @@ them.
 | `hallmark` | `hallmark` | 1 |
 | `taste-imagegen` | `brandkit`, `image-to-code`, `imagegen-frontend-mobile`, `imagegen-frontend-web` | 4 |
 | `design-mobile-apps` | `design-mobile-apps` | 1 |
+| `hyperframes` | `hyperframes`, `hyperframes-cli`, `hyperframes-registry`, `media-use` | 4 |
 | `emil-design-eng` | `animate`, `animation-vocabulary`, `apple-design`, `ask-sonner`, `emil-design-eng`, `find-animation-opportunities`, `improve-animations`, `mobile-native`, `pick-ui-library`, `prototype`, `review-animations` | 11 |
 | `emil-native` | `animate-expo`, `write-swift` | 2 |
-| **Total** | | **39** |
+| **Total** | | **43** |
 <!-- SKILLS:END -->
 
 | Plugin | Best for |
@@ -158,6 +159,7 @@ them.
 | `emil-design-eng` | Animation craft, motion review, interaction polish, prototypes, native-feeling mobile web, library picks |
 | `taste-imagegen` | Optional: generate a design image first, then code it (needs an image-generation tool) |
 | `emil-native` | Optional: React Native / Expo animation, modern Swift |
+| `hyperframes` | Optional: HTML to video (product demos, hero clips, captions) with HeyGen's HyperFrames |
 | `design-mobile-apps` | Optional: design mobile screens with Sleek and build them in React Native or HTML (paid API) |
 
 ## How to use it

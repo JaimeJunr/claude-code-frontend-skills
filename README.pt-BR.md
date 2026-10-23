@@ -29,12 +29,11 @@ pacotes discordam, e dois agents (`design-director` e `ui-reviewer`).
 ```
 
 Opcionais: `taste-imagegen@frontend-stack` (precisa de ferramenta de gerar
-imagem), `emil-native@frontend-stack` (React Native/Expo e Swift) e
+imagem), `emil-native@frontend-stack` (React Native/Expo e Swift),
 `design-mobile-apps@frontend-stack` (telas mobile no Sleek, API paga com
-`SLEEK_API_KEY`; o briefing sai da sua máquina). Vídeo a partir de HTML fica
-com o plugin próprio da HeyGen, o
-[Hyperframes](https://github.com/heygen-com/hyperframes), que não é copiado
-aqui: `claude plugin marketplace add heygen-com/hyperframes`.
+`SLEEK_API_KEY`; o briefing sai da sua máquina) e `hyperframes@frontend-stack`
+(HTML vira vídeo: demos, clipes de hero e legendas; pede Node 22 e o CLI
+`hyperframes`).
 
 Se você já tem algum desses instalado pelo repo original, desinstale antes
 pra skill não carregar duas vezes.
