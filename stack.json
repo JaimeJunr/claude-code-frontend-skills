@@ -156,6 +156,29 @@
       ]
     },
     {
+      "id": "hallmark",
+      "repo": "nutlope/hallmark",
+      "ref": "main",
+      "license": "MIT",
+      "author": "Nutlope (Together AI)",
+      "homepage": "https://www.usehallmark.com",
+      "plugin": "hallmark",
+      "description": "Hallmark v2 by Nutlope: anti-AI-slop design skill with a hard Floor, 48 themes dealt per prompt, a browser-rendered sloplint and redesign/audit verbs.",
+      "category": "design",
+      "$comment": "Only skills/hallmark is copied. The edit-time hook (install-hook.mjs) is not wired by the plugin; the user opts in.",
+      "copy": [
+        { "from": "skills/hallmark", "to": "skills/hallmark" }
+      ],
+      "license_files": ["LICENSE"],
+      "patches": [
+        {
+          "file": "skills/hallmark/SKILL.md",
+          "why": "Upstream writes scripts as node <skill-dir>/scripts/..., a placeholder the agent has to guess once installed as a plugin. ${CLAUDE_SKILL_DIR} is substituted by Claude Code in SKILL.md only.",
+          "replace": [{ "pattern": "<skill-dir>", "with": "${CLAUDE_SKILL_DIR}" }]
+        }
+      ]
+    },
+    {
       "id": "taste-imagegen",
       "repo": "leonxlnx/taste-skill",
       "ref": "main",
@@ -169,6 +192,47 @@
         { "from": "skills/imagegen-frontend-web", "to": "skills/imagegen-frontend-web" },
         { "from": "skills/imagegen-frontend-mobile", "to": "skills/imagegen-frontend-mobile" },
         { "from": "skills/brandkit", "to": "skills/brandkit" }
+      ],
+      "license_files": ["LICENSE"]
+    },
+    {
+      "id": "designed-by-ai",
+      "repo": "designed-by-ai/skills",
+      "ref": "main",
+      "license": "MIT",
+      "author": "Designed by AI (Sleek)",
+      "homepage": "https://sleek.design",
+      "plugin": "design-mobile-apps",
+      "description": "Optional. Design mobile app screens with Sleek and implement them in React Native or HTML. Needs a SLEEK_API_KEY and sends briefs to sleek.design; a free account covers about one trial run, sustained use is paid.",
+      "category": "mobile",
+      "copy": [
+        { "from": "skills/design-mobile-apps", "to": "skills/design-mobile-apps" }
+      ],
+      "license_files": ["LICENSE"],
+      "patches": [
+        {
+          "file": "skills/design-mobile-apps/SKILL.md",
+          "why": "Calls a paid third-party API (sleek.design) with the user's brief. Must never fire on a generic mobile UI request; only when Sleek is asked for or the router delegates.",
+          "description": "Use ONLY when the user asks to design mobile app screens with Sleek, edit a Sleek project, or implement a Sleek design in React Native or HTML, or when the frontend-stack router delegates it. Needs SLEEK_API_KEY and sends the brief to sleek.design (paid service). Not for generic mobile UI work."
+        }
+      ]
+    },
+    {
+      "id": "hyperframes",
+      "repo": "heygen-com/hyperframes",
+      "ref": "main",
+      "license": "Apache-2.0",
+      "author": "HeyGen",
+      "homepage": "https://hyperframes.heygen.com",
+      "plugin": "hyperframes",
+      "description": "Optional. HyperFrames by HeyGen: write HTML, render deterministic video. For product demos, hero and explainer clips, captions and animated overlays that go with a UI. Needs Node 22 and the hyperframes CLI; some media steps can use HeyGen services.",
+      "category": "motion",
+      "$comment": "Only the four core skills HeyGen publishes. Left out: slideshow (overlaps ui-ux-pro-max slides), figma and remotion-to-hyperframes (off topic). They cross-link with relative paths, so they must stay siblings.",
+      "copy": [
+        { "from": "skills/hyperframes", "to": "skills/hyperframes" },
+        { "from": "skills/hyperframes-cli", "to": "skills/hyperframes-cli" },
+        { "from": "skills/hyperframes-registry", "to": "skills/hyperframes-registry" },
+        { "from": "skills/media-use", "to": "skills/media-use" }
       ],
       "license_files": ["LICENSE"]
     },

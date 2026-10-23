@@ -29,11 +29,29 @@
     "commit": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
     "synced_at": "2026-09-28"
   },
+  "hallmark": {
+    "repo": "nutlope/hallmark",
+    "ref": "main",
+    "commit": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
+    "synced_at": "2026-10-23"
+  },
   "taste-imagegen": {
     "repo": "leonxlnx/taste-skill",
     "ref": "main",
     "commit": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
     "synced_at": "2026-09-28"
+  },
+  "designed-by-ai": {
+    "repo": "designed-by-ai/skills",
+    "ref": "main",
+    "commit": "03c20aec6dcedb5fabfb03dc37982eb52ef19ed6",
+    "synced_at": "2026-10-23"
+  },
+  "hyperframes": {
+    "repo": "heygen-com/hyperframes",
+    "ref": "main",
+    "commit": "2ed882ccf22fdf070e21442e0437b3ae57253405",
+    "synced_at": "2026-10-23"
   },
   "emil": {
     "repo": "emilkowalski/skills",

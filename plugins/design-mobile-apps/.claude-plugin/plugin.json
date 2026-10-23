@@ -1,0 +1,18 @@
+{
+  "name": "design-mobile-apps",
+  "description": "Optional. Design mobile app screens with Sleek and implement them in React Native or HTML. Needs a SLEEK_API_KEY and sends briefs to sleek.design; a free account covers about one trial run, sustained use is paid.",
+  "author": {
+    "name": "Designed by AI (Sleek)"
+  },
+  "homepage": "https://sleek.design",
+  "repository": "https://github.com/JaimeJunr/claude-code-frontend-skills",
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "design",
+    "ui",
+    "ux",
+    "claude-code",
+    "skills"
+  ]
+}

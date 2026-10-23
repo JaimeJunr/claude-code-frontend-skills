@@ -125,6 +125,25 @@
       ]
     },
     {
+      "name": "hallmark",
+      "source": "./plugins/hallmark",
+      "description": "Hallmark v2 by Nutlope: anti-AI-slop design skill with a hard Floor, 48 themes dealt per prompt, a browser-rendered sloplint and redesign/audit verbs.",
+      "author": {
+        "name": "Nutlope (Together AI)"
+      },
+      "category": "design",
+      "license": "MIT",
+      "homepage": "https://www.usehallmark.com",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
       "name": "taste-imagegen",
       "source": "./plugins/taste-imagegen",
       "description": "Optional. Taste image-first skills (image-to-code, web/mobile design concepts, brand kits). Needs an image-generation tool in your environment.",
@@ -134,6 +153,44 @@
       "category": "design",
       "license": "MIT",
       "homepage": "https://github.com/leonxlnx/taste-skill",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
+      "name": "design-mobile-apps",
+      "source": "./plugins/design-mobile-apps",
+      "description": "Optional. Design mobile app screens with Sleek and implement them in React Native or HTML. Needs a SLEEK_API_KEY and sends briefs to sleek.design; a free account covers about one trial run, sustained use is paid.",
+      "author": {
+        "name": "Designed by AI (Sleek)"
+      },
+      "category": "mobile",
+      "license": "MIT",
+      "homepage": "https://sleek.design",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
+      "name": "hyperframes",
+      "source": "./plugins/hyperframes",
+      "description": "Optional. HyperFrames by HeyGen: write HTML, render deterministic video. For product demos, hero and explainer clips, captions and animated overlays that go with a UI. Needs Node 22 and the hyperframes CLI; some media steps can use HeyGen services.",
+      "author": {
+        "name": "HeyGen"
+      },
+      "category": "motion",
+      "license": "Apache-2.0",
+      "homepage": "https://hyperframes.heygen.com",
       "keywords": [
         "frontend",
         "design",
