@@ -2,32 +2,32 @@
   "anthropic": {
     "repo": "anthropics/skills",
     "ref": "main",
-    "commit": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
-    "synced_at": "2026-10-05"
+    "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+    "synced_at": "2026-10-26"
   },
   "anthropic-design": {
     "repo": "anthropics/knowledge-work-plugins",
     "ref": "main",
-    "commit": "95bdacc803aa5cfdb10f35e5b9fb2d4b11100133",
-    "synced_at": "2026-10-10"
+    "commit": "33d3dea41a341b341d4f5da2e8801ae0c89be2b8",
+    "synced_at": "2026-10-26"
   },
   "impeccable": {
     "repo": "pbakaus/impeccable",
     "ref": "main",
-    "commit": "87a6ab0c145adb85cbd428a99fa1377305e0818d",
-    "synced_at": "2026-10-05"
+    "commit": "6743a347db6229848348024388033e830ae4af42",
+    "synced_at": "2026-10-26"
   },
   "ui-ux-pro-max": {
     "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
     "ref": "main",
-    "commit": "477bcb28c9812b385cb51a4605ddf30d7b2266e2",
-    "synced_at": "2026-10-04"
+    "commit": "28b3b8dee8c976df4fa3e94aed4e092ad43fcb03",
+    "synced_at": "2026-10-26"
   },
   "taste": {
     "repo": "leonxlnx/taste-skill",
     "ref": "main",
-    "commit": "6010f91a9935f1c167dfc500fb1a475681892e6b",
-    "synced_at": "2026-10-23"
+    "commit": "12af471f627f866411b4bd785b19646d3672784c",
+    "synced_at": "2026-10-26"
   },
   "taste-classics": {
     "repo": "leonxlnx/taste-skill-classics",
@@ -56,19 +56,19 @@
   "hyperframes": {
     "repo": "heygen-com/hyperframes",
     "ref": "main",
-    "commit": "2ed882ccf22fdf070e21442e0437b3ae57253405",
-    "synced_at": "2026-10-23"
+    "commit": "7d6c02f85ae59b5b1ebd647faf90a1b04c8e0017",
+    "synced_at": "2026-10-26"
   },
   "emil": {
     "repo": "emilkowalski/skills",
     "ref": "main",
-    "commit": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
-    "synced_at": "2026-10-04"
+    "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+    "synced_at": "2026-10-26"
   },
   "emil-native": {
     "repo": "emilkowalski/skills",
     "ref": "main",
-    "commit": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
-    "synced_at": "2026-10-04"
+    "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+    "synced_at": "2026-10-26"
   }
 }
