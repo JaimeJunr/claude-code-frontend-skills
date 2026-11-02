@@ -2,32 +2,32 @@
   "anthropic": {
     "repo": "anthropics/skills",
     "ref": "main",
-    "commit": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
-    "synced_at": "2026-10-05"
+    "commit": "ca45fc496a3436251f191354091d557da31c15b5",
+    "synced_at": "2026-11-02"
   },
   "anthropic-design": {
     "repo": "anthropics/knowledge-work-plugins",
     "ref": "main",
-    "commit": "95bdacc803aa5cfdb10f35e5b9fb2d4b11100133",
-    "synced_at": "2026-10-10"
+    "commit": "2574e29377c7173d0cecffef29a6ecbd7f8ccb5d",
+    "synced_at": "2026-11-02"
   },
   "impeccable": {
     "repo": "pbakaus/impeccable",
     "ref": "main",
-    "commit": "87a6ab0c145adb85cbd428a99fa1377305e0818d",
-    "synced_at": "2026-10-05"
+    "commit": "c3c94b960276a42a235d1ff68e9954a342e5407e",
+    "synced_at": "2026-11-02"
   },
   "ui-ux-pro-max": {
     "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
     "ref": "main",
-    "commit": "477bcb28c9812b385cb51a4605ddf30d7b2266e2",
-    "synced_at": "2026-10-04"
+    "commit": "713eef51b04efc98d6fa565323b495f7c9c89fd4",
+    "synced_at": "2026-11-02"
   },
   "taste": {
     "repo": "leonxlnx/taste-skill",
     "ref": "main",
-    "commit": "6010f91a9935f1c167dfc500fb1a475681892e6b",
-    "synced_at": "2026-10-23"
+    "commit": "12af471f627f866411b4bd785b19646d3672784c",
+    "synced_at": "2026-11-02"
   },
   "taste-classics": {
     "repo": "leonxlnx/taste-skill-classics",
@@ -38,8 +38,8 @@
   "hallmark": {
     "repo": "nutlope/hallmark",
     "ref": "main",
-    "commit": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
-    "synced_at": "2026-10-23"
+    "commit": "4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
+    "synced_at": "2026-11-02"
   },
   "taste-imagegen": {
     "repo": "leonxlnx/imagegen-skills",
@@ -56,19 +56,19 @@
   "hyperframes": {
     "repo": "heygen-com/hyperframes",
     "ref": "main",
-    "commit": "2ed882ccf22fdf070e21442e0437b3ae57253405",
-    "synced_at": "2026-10-23"
+    "commit": "0bcd816d5b79c4b037ab351acec331b0fad7e55f",
+    "synced_at": "2026-11-02"
   },
   "emil": {
     "repo": "emilkowalski/skills",
     "ref": "main",
-    "commit": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
-    "synced_at": "2026-10-04"
+    "commit": "f1090bec277140d02ed202440185ad9d02ac1490",
+    "synced_at": "2026-11-02"
   },
   "emil-native": {
     "repo": "emilkowalski/skills",
     "ref": "main",
-    "commit": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
-    "synced_at": "2026-10-04"
+    "commit": "f1090bec277140d02ed202440185ad9d02ac1490",
+    "synced_at": "2026-11-02"
   }
 }
