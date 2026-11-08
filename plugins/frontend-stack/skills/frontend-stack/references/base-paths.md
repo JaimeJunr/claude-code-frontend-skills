@@ -15,6 +15,13 @@ a pasted screenshot, the open URL, or the page the session changed last; ask
 Load the routed skills only after the answers. An answer that fits another path
 switches to it. Several answers become phases (SKILL.md step 3).
 
+"You decide" or no answer, on a path without its own fallback: run
+`impeccable:impeccable` (`critique`) on the page the path most likely means,
+scoped to the path's area (navigation, hierarchy, flow, identity, copy or
+mobile) and paired with that area's owner below. Then ask which finding to fix
+first. A new product with no identity has nothing to critique: start the
+identity flow at step 0 instead.
+
 If the request names no area ("the site is bad"), first ask which area, with the
 paths below as options.
 
@@ -136,7 +143,9 @@ Ask:
 - What exists already: name, logo, colors, nothing.
 - Scope: landing only, or landing and app.
 
-Route: [identity-flow.md](identity-flow.md) from step 1; brand assets →
+Route: [identity-flow.md](identity-flow.md) from step 0 (product context and
+naming), skipping only the decisions the answers or the project already
+settle; brand assets →
 `ui-ux-pro-max:brand`.
 
 ## Improving an existing identity

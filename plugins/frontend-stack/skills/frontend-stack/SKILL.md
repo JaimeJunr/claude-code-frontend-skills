@@ -85,7 +85,7 @@ path. Then do the basics only:
 Before the answers: no critique, list of problems found, direction,
 prototype, recommendation or other skill load. Describe the project in one
 neutral line (what pages exist), not what is wrong with them. If the user declines to answer or says "you decide", follow
-the path's own fallback; on the looks path or with no area named, treat it as
+the path's fallback, or the shared one in base-paths.md; on the looks path or with no area named, treat it as
 a looks complaint about the main page and run the gate in step 3.
 
 ## 3. Work in phases
