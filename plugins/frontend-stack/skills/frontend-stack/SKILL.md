@@ -55,6 +55,39 @@ mean the job is *change*, not *review*: the user wants a new direction, not only
 a list of problems. An explicit review-only request stays read-only, even when
 it names an identity failure.
 
+### Vague complaint: ask before loading
+
+A complaint is vague when it names no concrete problem, no "what" is wrong
+("your site is still bad", "this screen is ugly", "the UX is not good",
+"improve the identity"). A known target ("this screen", a named page) does not
+make it concrete: it only skips the "where" question. A broad word (UX, usability,
+experience, design, identity, navigation) is still vague, but it picks a base
+path. Then do the basics only:
+
+1. Load `frontend-design:frontend-design` and nothing else. Read the project
+   (step 1) and the conversation: "still" means an earlier round failed, so
+   find what that round changed.
+2. Pick the base path in [base-paths.md](references/base-paths.md) from the
+   complaint's words: UX, navigation, reading and hierarchy, flows and forms,
+   starting or improving an identity, looks, copy, mobile. No area named:
+   the first question asks which one.
+3. If a browser or screenshot tool is at hand and the app runs, look at the
+   current render of the page the user most likely means, to ground the
+   questions. What you saw in the code or the render only shapes the
+   options; do not list problems yet.
+4. Ask the path's questions in one message, with the question tool when the
+   session has one: at most four, each with options. Skip what the context
+   answers ("this screen" with a screenshot, an open URL or the last page
+   changed). If an earlier round failed, ask what in it missed.
+5. Wait for the answers. Route each answer as its path says; several answers
+   become phases (step 3).
+
+Before the answers: no critique, list of problems found, direction,
+prototype, recommendation or other skill load. Describe the project in one
+neutral line (what pages exist), not what is wrong with them. If the user declines to answer or says "you decide", follow
+the path's own fallback; on the looks path or with no area named, treat it as
+a looks complaint about the main page and run the gate in step 3.
+
 ## 3. Work in phases
 
 Bigger tasks run in phases, in this order. Load each phase's skills when the
@@ -82,7 +115,9 @@ the user asked for. This is a gate: call the Skill tool for each of them, plus
 `frontend-design:frontend-design`, before the first diagnosis, direction,
 prototype or recommendation, and name them in the phase plan. Directions
 proposed without them loaded are void: load them and redo the work. This
-overrides "load each phase's skills when the phase starts" above. Research references before proposing directions (see
+overrides "load each phase's skills when the phase starts" above. A vague
+complaint (step 2) runs its questions first; the gate applies once the answers
+place it here. Research references before proposing directions (see
 [identity-flow.md, step 2](references/identity-flow.md#2-research-before-directions));
 [reference-gallery.md](references/reference-gallery.md) seeds the board with
 inspected modern sites, grouped by the problem each one solves.
@@ -123,6 +158,7 @@ fixed visual choices. Presets finish a direction; they never generate it.
 | Empty, error, loading states, edge cases | `impeccable:impeccable` (`harden`) | - |
 | Only critique or audit, no rebuild asked | `impeccable:impeccable` (`critique` then `audit`); `hallmark:hallmark` (`audit <path>`) when the user names Hallmark | none: the user asked for a report, not a new direction |
 | "Plan it before coding", discovery, UX flow | `impeccable:impeccable` (`shape`) | - |
+| Broad area, no detail ("improve the UX", "the navigation is bad", "work on the identity") | its base path in [base-paths.md](references/base-paths.md): questions first | the skills the answers route to |
 | Vague brief, no direction yet | `frontend-stack:design-director` agent, then route its result here | - |
 | Review a page, component or PR diff | `frontend-stack:ui-reviewer` agent | - |
 | Set up design context for a repo | `impeccable:impeccable` (`init`, then `document`) | - |
@@ -217,6 +253,9 @@ skill contradicts the lead.
   skills. Big skills
   (`design-taste-frontend`, `ui-ux-pro-max`, `impeccable`) are long; loading all
   of them at once burns context and produces averaged, generic output.
+- Pick support from other packs than the lead when they own part of the
+  subject (rule 5 of the ladder): one pack alone loses the knowledge only the
+  others carry, even when it has a command for everything.
 - Say in one line which skills each phase loaded, so the user can correct the
   routing early.
 - Aesthetic presets (`taste-classics`: `minimalist-ui`, `industrial-brutalist-ui`,
