@@ -63,7 +63,7 @@ phase starts, not all up front. Skip a phase that the task does not need.
 | Phase | When | Lead | Support |
 |---|---|---|---|
 | Diagnose | the job is *change* | `impeccable:impeccable` (`critique`) | `impeccable:impeccable` (`audit`) for a11y/perf debt |
-| Direction | new work, or any complaint about looks | identity flow below when the product has no brand or its identity is being replaced; otherwise product: `frontend-design:frontend-design`, marketing: `taste:design-taste-frontend` | reference research before directions; `ui-ux-pro-max:ui-ux-pro-max` lookup only after the concept |
+| Direction | new work, or any complaint about looks | identity flow below when the product has no brand or its identity is being replaced; otherwise product: `frontend-design:frontend-design`, marketing: `taste:design-taste-frontend` | reference research before directions; `ui-ux-pro-max:ui-ux-pro-max` loaded at the start for UX and stack rules, its styles and presets only after the concept |
 | Build | always | the project's component library (its docs, components, tokens, MCP server if any) | new marketing pages: `impeccable:impeccable` via `reference/new-work.md`; `ui-ux-pro-max:ui-styling` when shadcn/Tailwind |
 | Motion | the change moves | `emil-design-eng:animate` | `emil-design-eng:animation-vocabulary` |
 | Review | anything user-facing | see step 8 | - |
@@ -78,7 +78,11 @@ For any other complaint about looks, Diagnose and Direction run together: load
 `impeccable:impeccable` (`critique`), the Direction lead and
 `ui-ux-pro-max:ui-ux-pro-max` at the start, always, even when the request names
 no stack or style. A critique alone is a list of problems, not the new direction
-the user asked for. Research references before proposing directions (see
+the user asked for. This is a gate: call the Skill tool for each of them, plus
+`frontend-design:frontend-design`, before the first diagnosis, direction,
+prototype or recommendation, and name them in the phase plan. Directions
+proposed without them loaded are void: load them and redo the work. This
+overrides "load each phase's skills when the phase starts" above. Research references before proposing directions (see
 [identity-flow.md, step 2](references/identity-flow.md#2-research-before-directions));
 [reference-gallery.md](references/reference-gallery.md) seeds the board with
 inspected modern sites, grouped by the problem each one solves.
