@@ -101,7 +101,8 @@ enxerga eles.
 
 Pra pesquisa de referências, o roteador traz uma
 [galeria de interfaces modernas](plugins/frontend-stack/skills/frontend-stack/references/reference-gallery.md)
-inspecionadas (OpenRouter, Vercel, Cloudflare, Rerun, Linear, PostHog, SpaceX
+inspecionadas (OpenRouter, Vercel, Cloudflare, Rerun, Linear, PostHog, SpaceX,
+e também pagamentos e educação: Wise, Stripe, Nubank, Khan Academy, Duolingo
 e outras), organizada pelo problema que cada uma resolve. Serve pra aprender o
 mecanismo, não pra copiar o visual. O que essas páginas têm em comum virou a
 [anatomia de landing](plugins/frontend-stack/skills/frontend-stack/references/landing-anatomy.md):

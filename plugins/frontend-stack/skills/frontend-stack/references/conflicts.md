@@ -65,7 +65,7 @@ the stack applies. Rulings follow the precedence ladder in `../SKILL.md`.
   with a named color role and a reason tied to the scene. Neutral `#0B0B0B`,
   `#111` and automatic `zinc-950` are not a brand strategy. Pure black is
   allowed when the chosen world calls for it, as in photo- or video-led
-  worlds (6 of the 15 sites in `reference-gallery.md` use it this way). Existing tokens or explicit
+  worlds (6 of the 15 sites first inspected for `reference-gallery.md` on 2026-10-12 use it this way). Existing tokens or explicit
   user color choices still win. This stops dark-tech defaults deciding identity.
 
 ## Centered hero
@@ -73,7 +73,7 @@ the stack applies. Rulings follow the precedence ladder in `../SKILL.md`.
 - **taste** `design-taste-frontend` v2 has no rule against the centered
   headline-plus-screenshot hero, but its draw avoids it and it warns when
   more than 72% of a page is centered (`references/tells.md`).
-- **Observed:** 8 of the 15 sites in `reference-gallery.md` (OpenRouter,
+- **Observed:** 8 of the 15 sites first inspected for `reference-gallery.md` on 2026-10-12 (OpenRouter,
   Cloudflare, Rerun, Perssua, ChatGPT dots, OpenAI Business, Raycast, Modal)
   center the H1 and put real product proof directly below it.
 - **Ruling:** the cliché is centered text over decoration, not centering.

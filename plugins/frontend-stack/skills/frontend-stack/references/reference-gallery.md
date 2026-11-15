@@ -5,8 +5,15 @@ A seed list for the reference board in `identity-flow.md` step 2 and for
 so a direction can learn the mechanism without copying the look.
 
 Inspected in a 1440px browser on 2026-10-12: computed fonts, background
-colors, heading outline and desktop captures. Sites change; recheck an entry
-before citing it as visual evidence, and record what you re-inspected.
+colors, heading outline and desktop captures. The payments, education and
+Clonvo entries were inspected the same way on 2026-11-15. Sites change;
+recheck an entry before citing it as visual evidence, and record what you
+re-inspected.
+
+Not inspected: Revolut and Codecademy answered with a bot check (HTTP 403)
+on 2026-11-15, so they have no entry. App-first products (Nubank, Monzo)
+are judged from their public site only; their app screens need a gallery of
+real app captures, not this file.
 
 ## How to use it
 
@@ -34,6 +41,13 @@ before citing it as visual evidence, and record what you re-inspected.
 | Selling to many teams at once | OpenAI Business |
 | Brand needs a personality, not a palette | PostHog, Teenage Engineering, SpaceX |
 | Product UI must look premium and calm | Linear, Mercury, Raycast |
+| Money changes hands and the cost must be clear before the click | Wise, Clonvo pricing, Stripe Checkout |
+| Sign-up must start with almost nothing | Nubank, Mercado Pago, Duolingo |
+| One product serves several audiences (learner, parent, teacher) | Khan Academy, Brilliant |
+| Progress must mean skill, not time watched | Khan Academy, Brilliant |
+| A course or plan must show its real cost in time | Coursera, Udemy, Alura |
+| Comparing yourself with competitors honestly | Clonvo compare |
+| Finance or risk copy must stay plain and complete | Monzo, Mercado Pago FAQ |
 
 ## Entries
 
@@ -145,6 +159,30 @@ before citing it as visual evidence, and record what you re-inspected.
   built from that unit; the page carries real code samples and closes on
   "Ship your first app in minutes".
 
+**[Clonvo](https://clonvo.com/)** · AI gateway for agents
+- Signature: warm near-black `rgb(18,17,16)` with warm off-white text
+  `rgb(236,232,223)`, an 84px Geist Serif H1 at weight 400 over Inter
+  Variable body; section headings stay at weight 400 too.
+- Lesson: the home page embeds the product with sample data. A model picker
+  drives a Python / Node.js / curl tab set, the response shows its own
+  `usage.cost`, and a full dashboard mock ("Good afternoon, Priya", balance,
+  spend by model, latest requests) links into real app routes. Features
+  are six numbered rows ("01 / 06") with one plain sentence each, and the
+  last one is a privacy default ("Prompts aren't stored by default").
+- Pricing (`/pricing`): three plans, then "What you'd pay" worked examples:
+  one request priced line by line (12,000 input tokens × $2.00 / 1M =
+  $0.0240), a table of what each credit purchase costs with its fee, and a
+  table of the bring-your-own-key fee at different usage levels. The
+  minimum fee's threshold is stated ("applies below $14.55").
+- Compare (`/compare`): a feature matrix against five named gateways that
+  shows where a rival wins (OpenRouter 600+ models against 150+) and writes
+  "Not stated" instead of "No" when a rival's docs are silent. Each
+  rival then gets one fair paragraph.
+- Learn the move: price with arithmetic, not adjectives; compare with
+  "not stated", not with red crosses.
+- Watch: the hero captured blank except the heading until its reveal ran,
+  the same finish-gate issue as Cloudflare.
+
 ### Consumer and business AI
 
 **[Perssua](https://perssua.com/pt)** · real-time meeting copilot (PT-BR)
@@ -232,6 +270,132 @@ before citing it as visual evidence, and record what you re-inspected.
 - Lesson: the voice is the system. Under the main CTA a mono line offers
   "Install via Homebrew" for the audience that prefers it.
 
+### Payments and banking
+
+**[Nubank](https://nubank.com.br/)** · digital bank (PT-BR)
+- Signature: its own face (nuSansDisplay) for display and body, H1 48px
+  weight 600 with -1.4px tracking, one purple `rgb(141,13,227)` used only for
+  pill buttons (999px radius, 56px tall in the page body).
+- Lesson: sign-up starts in the hero with one field ("Digite seu CPF") and
+  "Continuar", so the first action costs one number. Products are four
+  cards, one sentence each ("Controle total da sua vida financeira").
+  Security gets its own block with the emergency path first, in plain words
+  ("Me roubaram"), then report and support channels.
+- Watch: the real product is the app; this page shows only its marketing.
+
+**[Wise](https://wise.com/br/send-money/)** · international transfers (PT-BR)
+- Signature: Wise Sans 88px weight 800 H1 in lime `rgb(159,232,112)`, Inter
+  body, lime pill CTAs with dark-green text `rgb(22,51,0)`.
+- Lesson: the transfer calculator shows everything before the button: the
+  rate (1 EUR = 6,2517 BRL), what the recipient gets, the delivery estimate
+  ("Hoje — em segundos"), taxes and fees in BRL, the discount for large
+  amounts and the effective rate (VET). The home page compares its cost with
+  a credit card on a US$1.000 conversion and states method and date of the
+  comparison ("coletadas em 6 de agosto de 2025").
+- Learn the move: put the fee, the rate and the arrival time in the same
+  card as the amount; a comparison carries its method and date.
+
+**[Stripe Checkout](https://stripe.com/payments/checkout)** · payment pages
+- Signature: söhne (sohne-var), a 56px weight 500 H1, violet
+  `rgb(153,102,255)` CTA pills, a cyan `rgb(13,228,228)` pill for developer
+  actions ("Confira a documentação").
+- Lesson: the hero is a working checkout demo in a browser frame: product,
+  price, express pay, card fields, and a pay button that repeats the amount
+  ("Pagar R$ 350,00"). It cycles through variants (embedded form, address
+  autocomplete, localized for the US, the Netherlands, Poland and Japan), so
+  each claim ("Feito para reduzir o atrito", "Criado para clientes globais")
+  has its own screen.
+- Learn the move: the pay button names the amount; never a bare "Pay".
+
+**[Mercado Pago](https://www.mercadopago.com.br/)** · digital bank and payments (PT-BR)
+- Signature: Proxima Nova, a 72px weight 700 H2 with -2.88px tracking, a
+  celebrity photo hero, dark translucent nav pills `rgba(40,40,52,0.7)`.
+- Lesson: like Nubank, the hero holds a CPF field, plus a consent checkbox
+  that links the privacy statement before the account starts. The FAQ
+  answers money questions directly: is it safe (biometrics, "Modo
+  Blindado", alerts), how much it yields (105% / 140% of CDI), does the card
+  charge an annual fee (no, nor issue or replacement fees).
+- Watch: checkout pages redirected to the home page, so the payment flow
+  itself was not inspected.
+
+**[Monzo](https://monzo.com/)** · UK bank
+- Signature: MonzoSansDisplay weight 800 headings, MonzoSansText body, navy
+  `rgb(9,23,35)` pill buttons, a real photo of the app and card in a hand.
+- Lesson: features are named as outcomes with a verb ("Sort your salary",
+  "Put bills in their place", "Round up your spare change"). Conditions sit
+  next to the product, not in a footer: "Age 18+", "Ages 18-70",
+  "investments could go up or down", "Missed payments may negatively impact
+  credit scores". The cookie banner gives "Accept all" and "Reject all" the
+  same weight.
+
+**[Ramp](https://ramp.com/)** · corporate cards and spend
+- Signature: Lausanne at weight 400 for every heading (64px H1), off-black
+  text, a lime-yellow CTA in `lab()` color, 6px radius buttons.
+- Lesson: the pain is drawn before the cure ("Systems that never spoke": the
+  five systems needed to reimburse one flight). A recommendation form asks
+  "What would you like to spend less time on?" with chips (chasing
+  receipts, approving spend, paying bills), so the visitor picks the problem.
+- Watch: the live counters ("RECEIPTS PROCESSED", "TOTAL AI ACTIONS")
+  captured empty; numbers loaded by script need a wait before any capture.
+
+### Education
+
+**[Duolingo](https://www.duolingo.com/)** · language and chess lessons
+- Signature: duolingo-sans weight 700, lowercase section headings ("grátis.
+  divertido. eficaz."), 12px-radius buttons with a thick bottom edge, a
+  mascot that also sends the reminders.
+- Lesson: "Comece agora" opens "Eu quero aprender..." with learner counts
+  per course (Inglês 23,6 mi), then a daily goal, all before any account is
+  asked for. The value is learned before the sign-up costs anything.
+
+**[Khan Academy](https://pt.khanacademy.org/)** · free courses and practice
+- Signature: Source Serif Pro 40px H1 over Lato body, one blue
+  `rgb(24,101,242)`, 4px radius buttons.
+- Lesson: sign-up splits by role in three large cards (Aluno, Família,
+  Professor). The catalog follows the curriculum people already know (BNCC,
+  1° ao 9° ano). A course page shows five mastery levels (Não iniciado,
+  Tentativa, Familiar, Proficiente, Dominado) and the total points possible
+  (19.400), with a test after each group of lessons and a course challenge.
+- Learn the move: measure progress by what the learner can do, and say so.
+
+**[Brilliant](https://brilliant.org/)** · math and coding tutor
+- Signature: CoFo Robert 54px weight 500 H1, CoFo Brilliant body, white,
+  black pill tabs with a soft 4px shadow.
+- Lesson: it answers the parent's fear in the headline of a feature ("A
+  visual, interactive tutor, not a cheating machine": it guides without
+  giving the answer). Two entry buttons split the audience ("I'm a learner",
+  "I'm a parent or teacher"), and trust markers are specific (kidSAFE COPPA,
+  accredited by ACS WASC, 5,000 schools).
+
+**[Coursera](https://www.coursera.org/learn/machine-learning)** · university courses
+- Signature: Source Sans Pro, a 44px weight 600 H1, blue `rgb(0,86,210)`.
+- Lesson: the course header answers "what will this cost me" in time and
+  level: "3 semanas em 10 horas uma semana", "Nível Básico", "Cronograma
+  flexível", the start date inside the CTA ("Inicia em 15 de nov"), and the
+  language with its method ("Português (Dublagem de IA)"). Modules are
+  "Semana 1, 2, 3", and the certificate is listed as a deliverable.
+- Watch: some strings are machine-translated and read badly; write the
+  copy, do not translate it automatically.
+
+**[Udemy](https://www.udemy.com/course/the-complete-web-development-bootcamp/)** · course marketplace
+- Signature: Udemy Sans, a 32px weight 500 H1 on a dark band, violet
+  `oklch(0.48 0.23 294)` buttons with 8px radius.
+- Lesson: the course page is the template: rating with count, students,
+  instructor, last updated date, "What you'll learn", what the course
+  includes (61 hours, 7 exercises, 194 resources), then "45 sections • 374
+  lectures • 61h 53m" with free preview lectures inside the curriculum.
+- Do not learn its urgency: a top banner counts down ("Ends in 5h 59m
+  58s") a new-student price. Fake or rolling deadlines are a dark pattern.
+
+**[Alura](https://www.alura.com.br/)** · tech school (PT-BR)
+- Signature: encodeSans, light (300) display headings, dark promo bands.
+- Lesson: a career page opens with its real size ("50 Cursos, 554h de
+  Aulas"), and the looping offer banner has a "Pausar animação da oferta"
+  control, which is the accessible way to ship a marquee.
+- Watch: inspected during "Black November": the home page was a countdown
+  (14 days), a prize draw, "278 bônus escolhidos" and an "esgotado" bonus.
+  Recheck after the campaign before using it as a structure reference.
+
 ### Brands with a world of their own (outside references)
 
 **[PostHog](https://posthog.com/)** · product analytics
@@ -264,7 +428,11 @@ before citing it as visual evidence, and record what you re-inspected.
 | Node graph of the product's logic | Cloudflare | edges carry real conditions | it is a decorative flowchart |
 | One accent color on near-black | OpenRouter, Cloudflare, Modal, Interview Coder | the accent marks the one action | the accent is a generic "AI" purple |
 | Mono face as a secondary voice | Vercel, Cloudflare, Rerun, Linear | it carries real code, identifiers and values | it decorates section labels and eyebrows (see the mono-labels ruling in `conflicts.md`) |
-| Scroll-revealed sections | Cloudflare, Linear, Perssua | content still loads without motion | screenshots and reduced-motion users see blank space |
+| Scroll-revealed sections | Cloudflare, Linear, Perssua, Clonvo | content still loads without motion | screenshots and reduced-motion users see blank space |
+| One identity field in the hero (CPF, email) | Nubank, Mercado Pago, Ramp | the next step is short and the consent is visible | it hides a long form behind "Continuar" |
+| Cost shown before the action | Wise, Clonvo, Stripe | fee, rate and total are in the same card as the button | the fee appears only on the last step |
+| Sign-up split by role | Khan Academy, Brilliant | each role gets a different path | the cards lead to the same form |
+| Countdown to a price | Udemy, Alura | a real, dated campaign end | the deadline resets or never ends |
 
 The last row is a finish-gate issue: several of these pages captured blank
 until their reveal ran. Build reveals so content is visible without
