@@ -208,7 +208,8 @@ direction contract and desktop/mobile finish gate. See the
 the [landing anatomy](plugins/frontend-stack/skills/frontend-stack/references/landing-anatomy.md)
 questions every page answers, and the [reference gallery](plugins/frontend-stack/skills/frontend-stack/references/reference-gallery.md)
 of inspected modern sites (OpenRouter, Vercel, Cloudflare, Rerun, Linear,
-PostHog, SpaceX and more), grouped by the problem each one solves.
+PostHog, SpaceX, plus payments and education: Wise, Stripe, Nubank, Khan
+Academy, Duolingo and more), grouped by the problem each one solves.
 
 ### Which skill leads
 
