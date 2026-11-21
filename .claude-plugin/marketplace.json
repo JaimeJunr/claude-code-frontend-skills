@@ -68,6 +68,25 @@
       ]
     },
     {
+      "name": "design-handoff",
+      "source": "./plugins/design-handoff",
+      "description": "Optional. Anthropic's design handoff and design-file critique skills from the knowledge-work design plugin: developer handoff specs from a Figma file or mockup, structured feedback on a design before code exists.",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "design",
+      "license": "Apache-2.0",
+      "homepage": "https://github.com/anthropics/knowledge-work-plugins",
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "ux",
+        "claude-code",
+        "skills"
+      ]
+    },
+    {
       "name": "impeccable",
       "source": "./plugins/impeccable",
       "description": "Impeccable by Paul Bakaus: 1 skill with 24 commands (/impeccable polish, audit, critique, harden, ...), design agents, anti-pattern detection hooks.",

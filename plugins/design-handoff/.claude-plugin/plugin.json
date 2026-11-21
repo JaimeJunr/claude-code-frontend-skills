@@ -1,0 +1,18 @@
+{
+  "name": "design-handoff",
+  "description": "Optional. Anthropic's design handoff and design-file critique skills from the knowledge-work design plugin: developer handoff specs from a Figma file or mockup, structured feedback on a design before code exists.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "homepage": "https://github.com/anthropics/knowledge-work-plugins",
+  "repository": "https://github.com/JaimeJunr/claude-code-frontend-skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "frontend",
+    "design",
+    "ui",
+    "ux",
+    "claude-code",
+    "skills"
+  ]
+}
