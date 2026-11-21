@@ -24,6 +24,9 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # The action defaults to 8.24.3, which ignores the [[allowlists]]
+          # syntax of .gitleaks.toml (added in 8.25.0). Keep in step with local.
+          GITLEAKS_VERSION: "8.30.1"
 
       - uses: actions/setup-python@v5
         with:
