@@ -1,0 +1,3 @@
+#!/bin/sh
+# The full local gate (about 15 s). CI repeats it as the required `validate` check.
+exec sh scripts/check.sh

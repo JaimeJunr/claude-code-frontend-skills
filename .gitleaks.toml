@@ -1,0 +1,13 @@
+# Default rules plus one narrow exception.
+[extend]
+useDefault = true
+
+# The vendored hyperframes plugin ships two public client identifiers (an OAuth
+# client ID and a PostHog project key). They are meant to be public and are not
+# ours to rotate; the line must name the identifier and live in that folder.
+[[allowlists]]
+description = "Public client identifiers in vendored hyperframes media-use"
+condition = "AND"
+paths = ['''^plugins/hyperframes/skills/media-use/''']
+regexTarget = "line"
+regexes = ['''HYPERFRAMES_OAUTH_CLIENT_ID''', '''POSTHOG_API_KEY''']

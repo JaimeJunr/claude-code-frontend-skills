@@ -34,11 +34,29 @@ at the start of every frontend task.
 `scripts/token_budget.py` fails CI when a SKILL.md there passes 8k tokens or an
 agent passes 20k (tiktoken `o200k_base`).
 
+## Commit, push and PR
+
+Turn on the hooks once per clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+- `pre-commit` (seconds): gitleaks on the staged changes, then
+  `sync.py --check`. Without gitleaks installed it warns and the scan runs in CI.
+- `pre-push` (about 15 s): `scripts/check.sh`, the same gate CI runs.
+
+Work on a branch, never on `main`; `main` requires the `validate` check. Open
+PRs with the `ship` project skill (`.claude/skills/ship/`): it runs the gate,
+commits, pushes and writes the PR body.
+
 ## Before opening a PR
 
 ```bash
-python3 scripts/sync.py --check
-python3 -m unittest discover -s tests
-pip install tiktoken && python3 scripts/token_budget.py
-claude plugin validate .
+sh scripts/check.sh
 ```
+
+It runs, in CI order: `sync.py --check`, the unit tests, the token budget
+(through `uv` when tiktoken is not importable; `pip install -r
+requirements-dev.txt` otherwise) and `claude plugin validate` on the
+marketplace and on every plugin.
