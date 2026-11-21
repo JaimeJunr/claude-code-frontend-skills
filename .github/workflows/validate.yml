@@ -5,15 +5,31 @@ on:
     branches: [main]
   pull_request:
 
+# A new push to the same PR or branch cancels the run it made obsolete.
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # gitleaks scans the commits of the push or PR
+
+      # Cheapest first: a leaked secret fails before anything is installed.
+      - name: Secret scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
 
       - name: Check stack
         run: python3 scripts/sync.py --check
@@ -23,7 +39,7 @@ jobs:
 
       - name: Token budget of hand-written plugins
         run: |
-          pip install tiktoken
+          pip install -r requirements-dev.txt
           python3 scripts/token_budget.py
 
       - uses: actions/setup-node@v4

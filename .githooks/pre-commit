@@ -1,0 +1,9 @@
+#!/bin/sh
+# Seconds only: secret scan of what is staged, then the sync check.
+set -e
+if command -v gitleaks >/dev/null; then
+  gitleaks git --pre-commit --staged --no-banner --redact
+else
+  echo "pre-commit: gitleaks not installed; the secret scan still runs in CI" >&2
+fi
+python3 scripts/sync.py --check
