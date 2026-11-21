@@ -8,8 +8,14 @@
   "anthropic-design": {
     "repo": "anthropics/knowledge-work-plugins",
     "ref": "main",
-    "commit": "e91a134584eb798bac7fb0379358006a2b63b965",
-    "synced_at": "2026-11-16"
+    "commit": "0e0fcacddcc892eb92a1b7873ff9d68159c47571",
+    "synced_at": "2026-11-21"
+  },
+  "anthropic-design-handoff": {
+    "repo": "anthropics/knowledge-work-plugins",
+    "ref": "main",
+    "commit": "0e0fcacddcc892eb92a1b7873ff9d68159c47571",
+    "synced_at": "2026-11-21"
   },
   "impeccable": {
     "repo": "pbakaus/impeccable",

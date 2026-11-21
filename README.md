@@ -73,11 +73,16 @@ Optional extras:
 /plugin install emil-native@frontend-stack
 /plugin install design-mobile-apps@frontend-stack
 /plugin install hyperframes@frontend-stack
+/plugin install design-handoff@frontend-stack
 ```
 
 `design-mobile-apps` calls the paid sleek.design API (`SLEEK_API_KEY`) and sends
 your brief there. `hyperframes` (HeyGen) renders HTML to video for product
 demos, hero clips and captions; it needs Node 22 and the `hyperframes` CLI.
+`design-handoff` brings only two skills of Anthropic's `design` plugin
+(`design-handoff`, `design-critique`) and none of its connectors. For the
+Figma, Slack, Linear and other MCP servers, install the official plugin:
+`claude plugin install design@knowledge-work-plugins`.
 
 Remotion (video as React components) is not vendored: its skills repo has no
 license file and Remotion itself needs a paid company license for for-profit
@@ -141,6 +146,7 @@ them.
 | `frontend-stack` | `frontend-stack` | 1 |
 | `frontend-design` | `frontend-design` | 1 |
 | `ux-research` | `research-synthesis`, `user-research`, `ux-copy` | 3 |
+| `design-handoff` | `design-critique`, `design-handoff` | 2 |
 | `impeccable` | `impeccable` | 1 |
 | `ui-ux-pro-max` | `banner-design`, `brand`, `design`, `design-system`, `slides`, `ui-styling`, `ui-ux-pro-max` | 7 |
 | `taste` | `design-taste-frontend` | 1 |
@@ -151,7 +157,7 @@ them.
 | `hyperframes` | `hyperframes`, `hyperframes-cli`, `hyperframes-registry`, `media-use` | 4 |
 | `emil-design-eng` | `animate`, `animation-vocabulary`, `apple-design`, `ask-sonner`, `emil-design-eng`, `find-animation-opportunities`, `improve-animations`, `mobile-native`, `pick-ui-library`, `prototype`, `review-animations` | 11 |
 | `emil-native` | `animate-expo`, `write-swift` | 2 |
-| **Total** | | **41** |
+| **Total** | | **43** |
 <!-- SKILLS:END -->
 
 | Plugin | Best for |
@@ -169,6 +175,7 @@ them.
 | `emil-native` | Optional: React Native / Expo animation, modern Swift |
 | `hyperframes` | Optional: HTML to video (product demos, hero clips, captions) with HeyGen's HyperFrames |
 | `design-mobile-apps` | Optional: design mobile screens with Sleek and build them in React Native or HTML (paid API) |
+| `design-handoff` | Optional: developer handoff specs from a Figma file or mockup, and critique of a design before code exists |
 
 ## How to use it
 

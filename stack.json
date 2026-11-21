@@ -39,6 +39,30 @@
       "license_files": ["LICENSE"]
     },
     {
+      "id": "anthropic-design-handoff",
+      "repo": "anthropics/knowledge-work-plugins",
+      "ref": "main",
+      "license": "Apache-2.0",
+      "author": "Anthropic",
+      "plugin": "design-handoff",
+      "description": "Optional. Anthropic's design handoff and design-file critique skills from the knowledge-work design plugin: developer handoff specs from a Figma file or mockup, structured feedback on a design before code exists.",
+      "category": "design",
+      "$comment": "Left out on purpose: accessibility-review (Impeccable audit is the a11y referee), design-system (tokens belong to ui-ux-pro-max:design-system, DESIGN.md to Impeccable, and the name collides) and .mcp.json (it would install 9 OAuth MCP servers; users who want them install design@knowledge-work-plugins). CONNECTORS.md is copied because both skills link ../../CONNECTORS.md.",
+      "copy": [
+        { "from": "design/skills/design-handoff", "to": "skills/design-handoff" },
+        { "from": "design/skills/design-critique", "to": "skills/design-critique" },
+        { "from": "design/CONNECTORS.md", "to": "CONNECTORS.md" }
+      ],
+      "license_files": ["LICENSE"],
+      "patches": [
+        {
+          "file": "skills/design-critique/SKILL.md",
+          "why": "Upstream fires on any 'review this design', which overlaps Impeccable critique on built pages. Narrowed to design files without code.",
+          "description": "Structured design feedback on usability, hierarchy, consistency and accessibility for a design that has no code yet: a Figma link, mockup, screenshot or description. Use when the user shares one of these for feedback, or the frontend-stack router delegates it. Not for a built page, component file or URL: Impeccable critique owns those."
+        }
+      ]
+    },
+    {
       "id": "impeccable",
       "repo": "pbakaus/impeccable",
       "ref": "main",

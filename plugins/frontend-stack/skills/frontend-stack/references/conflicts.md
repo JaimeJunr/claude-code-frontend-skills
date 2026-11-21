@@ -235,6 +235,27 @@ the stack applies. Rulings follow the precedence ladder in `../SKILL.md`.
   (or `PRODUCT.md`) when one exists. Use `clarify` only inside an Impeccable
   pass on a screen. The em-dash ruling below applies to both.
 
+## Critique: design file or built page
+
+- `design-handoff:design-critique` reviews a Figma link, mockup, screenshot
+  or description.
+- `impeccable:impeccable` `critique` needs a file or URL and runs its detector
+  in the browser.
+- **Ruling:** with code or a running page, Impeccable owns the critique. With
+  no code yet, `design-critique` owns it. Never run both on the same target.
+  A screenshot of a page that exists in the repo counts as a built page.
+
+## Handoff spec and tokens
+
+- `design-handoff:design-handoff` says "use tokens, not values".
+- `DESIGN.md` and the project's token files are the source of truth (see
+  "Who owns `DESIGN.md`").
+- **Ruling:** the spec names the project's existing tokens and never invents
+  token names. With no system, it writes the raw value and proposes a token
+  next to it; `ui-ux-pro-max:design-system` designs the token set if the user
+  wants one. The spec's accessibility section lists requirements; Impeccable
+  `audit` still checks them in code.
+
 ## Em dashes in UI copy
 
 - **taste** v2 treats the em dash as a habit to avoid: one or two on a page

@@ -97,7 +97,7 @@ phase starts, not all up front. Skip a phase that the task does not need.
 |---|---|---|---|
 | Diagnose | the job is *change* | `impeccable:impeccable` (`critique`) | `impeccable:impeccable` (`audit`) for a11y/perf debt |
 | Direction | new work, or any complaint about looks | identity flow below when the product has no brand or its identity is being replaced; otherwise product: `frontend-design:frontend-design`, marketing: `taste:design-taste-frontend` | reference research before directions; `ui-ux-pro-max:ui-ux-pro-max` loaded at the start for UX and stack rules, its styles and presets only after the concept |
-| Build | always | the project's component library (its docs, components, tokens, MCP server if any) | new marketing pages: `impeccable:impeccable` via `reference/new-work.md`; `ui-ux-pro-max:ui-styling` when shadcn/Tailwind |
+| Build | always | the project's component library (its docs, components, tokens, MCP server if any) | new marketing pages: `impeccable:impeccable` via `reference/new-work.md`; `ui-ux-pro-max:ui-styling` when shadcn/Tailwind; `design-handoff:design-handoff` (optional plugin) when the input is a Figma file or mockup |
 | Motion | the change moves | `emil-design-eng:animate` | `emil-design-eng:animation-vocabulary` |
 | Review | anything user-facing | see step 8 | - |
 
@@ -157,7 +157,9 @@ fixed visual choices. Presets finish a direction; they never generate it.
 | Chat or AI assistant UI | `frontend-design:frontend-design` + the library's chat components if it has them | `impeccable:impeccable` (`harden`) for empty, error, loading and streaming states; `emil-design-eng:animate` for streaming motion |
 | Forms, onboarding, first-run | `impeccable:impeccable` (`onboard`, `harden`) | `frontend-design:frontend-design` |
 | Empty, error, loading states, edge cases | `impeccable:impeccable` (`harden`) | - |
-| Only critique or audit, no rebuild asked | `impeccable:impeccable` (`critique` then `audit`); `hallmark:hallmark` (`audit <path>`) when the user names Hallmark | none: the user asked for a report, not a new direction |
+| Only critique or audit of a built page, no rebuild asked | `impeccable:impeccable` (`critique` then `audit`); `hallmark:hallmark` (`audit <path>`) when the user names Hallmark | none: the user asked for a report, not a new direction |
+| Critique a Figma frame, mockup or screenshot that has no code yet | `design-handoff:design-critique` (optional plugin) | none; once built, Impeccable `critique` owns it |
+| Design ready for engineering: handoff spec from a Figma file or mockup | `design-handoff:design-handoff` (optional plugin) | `ui-ux-pro-max:design-system` when the project has no tokens |
 | "Plan it before coding", discovery, UX flow | `impeccable:impeccable` (`shape`) | - |
 | Broad area, no detail ("improve the UX", "the navigation is bad", "work on the identity") | its base path in [base-paths.md](references/base-paths.md): questions first | the skills the answers route to |
 | Vague brief, no direction yet | `frontend-stack:design-director` agent, then route its result here | - |
