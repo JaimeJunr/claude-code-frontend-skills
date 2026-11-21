@@ -1,8 +1,8 @@
 # Settings with many sections: sites, desktop apps, CLIs and TUIs
 
-Read during Direction and Build when a product has a settings or preferences
-area large enough to need its own navigation, in a web app, a desktop app, a
-CLI or a TUI. These are product patterns, not a visual preset: take the
+Read when a product needs a settings or preferences area large enough to
+have its own navigation, in a web app, a desktop app, a CLI or a TUI. From
+scratch, run the flow below; for a smaller change, use the sections after it. These are product patterns, not a visual preset: take the
 mechanism, never the signature.
 
 Researched on 2026-11-21 from official product docs, design-system guidance
@@ -11,6 +11,96 @@ pages, Linux, taken by the maintainer). Settings live behind a login, so the
 web entries were not inspected in a browser the way `reference-gallery.md`
 entries were. Rows marked "from memory" had no primary doc confirming the
 detail; open the real screen before citing them as evidence.
+
+## Flow: settings from scratch
+
+Run this when the user asks to design or build a settings, preferences or
+configuration area, or to redo one from zero. Tell the user the step plan
+with each step's skills at the start; load each step's skills when it starts.
+Write each step's result in the plan or `DESIGN.md` before the next step, so
+later steps do not need earlier skills loaded.
+
+### 0. Ask
+
+Load `frontend-design:frontend-design`, read the project (SKILL.md step 1),
+then ask in one message, with options, at most four. Skip what the project
+already answers.
+
+- **Platform:** web app, desktop app, CLI, TUI (several allowed).
+- **Scopes:** personal only; personal + organization or workspace; also
+  project or resource; also device-only values.
+- **Roles:** one kind of user; admin and member; more roles.
+- **Inventory:** a list exists (config schema, env vars, feature flags,
+  backlog), or discover it from the code.
+
+"You decide" or no answer: web app, personal + workspace, admin and member,
+discover from the code. A product with no design system and no identity runs
+the identity flow (SKILL.md step 3) before step 4, scoped to the product UI.
+
+### 1. Inventory
+
+Lead: `impeccable:impeccable` (`shape`), no code yet. Build one table with a
+row per setting, sourced from the code (config schema, env vars, flags,
+existing forms) and the answers:
+
+| Setting | Scope | Type | Default | Who can change | Consequence or cost | Save | Restart | Frequency |
+|---|---|---|---|---|---|---|---|---|
+
+Type is boolean, choice (how many options), text, secret, action or
+destructive action. Frequency is daily, rare or advanced. A setting nobody
+can name a reason for is a candidate to cut (Apple HIG: add a setting only
+when people need it); list cuts for the user, do not drop them silently.
+
+### 2. Structure
+
+Lead: `impeccable:impeccable` (`shape`, then `layout`). Using "Decide these
+first" and "Layout rules" below, decide: scope areas, groups by the user's
+task, sidebar or index page by catalog size, search, one URL or command per
+section, contextual entry points, where advanced and destructive settings go.
+Labels and one-line descriptions (what it does and what it costs) →
+`ux-research:ux-copy`. When the grouping is contested or users are known to
+get lost, plan a card sort with `ux-research:user-research` before Build.
+
+### 3. Row and control spec
+
+Map each inventory type to a control and save model, following "The settings
+row": toggle, segmented control (2-4 options), select (more), text field in a
+card with Save, secret with reveal and copy, action button, destructive
+action in the danger zone with typed confirmation. Write how inherited values,
+device-only values, missing permission and restart-required are shown.
+
+### 4. Build
+
+- **Web or desktop:** the project's component library leads (SKILL.md
+  step 3 Build); `ui-ux-pro-max:ui-ux-pro-max` for stack rules on forms,
+  toggles and navigation; `ui-ux-pro-max:ui-styling` when shadcn/Tailwind.
+  Desktop adds `Cmd+,` / `Ctrl+,`, Esc to close and, when the product has a
+  config file, a link to it with the precedence stated.
+- **CLI:** no pack in this stack covers CLIs; follow "CLIs" below: layered
+  files with written precedence, `config get | set | list` with origin,
+  a defaults dump with docs, one env var to move the config. Help text and
+  error messages → `impeccable:impeccable` (`clarify`).
+- **TUI:** follow "TUIs" below, with the same row anatomy as the GUI.
+
+### 5. Harden
+
+`impeccable:impeccable` (`harden`) for: save failure, unsaved edits on
+leave, two sessions editing the same value, loading a slow section, a
+section the user has no permission for, search with no results, invalid
+input with the expected format in the message. Then `audit` for keyboard,
+focus, labelled toggles and Esc.
+
+### 6. Review
+
+`frontend-stack:ui-reviewer` with this acceptance list as the contract:
+
+- every inventory row is reachable by search and has a URL or command;
+- scope is visible on every setting that is not personal;
+- each control's save feedback matches its row in the inventory;
+- every destructive action is last in its section and asks for confirmation;
+- missing permission shows the reason, not an absent control;
+- the longest label (and its translation, when the product is translated)
+  fits at the narrowest supported width.
 
 ## Decide these first
 

@@ -52,6 +52,12 @@ then run the passes that apply:
    and before scroll reveals. Hidden content is "Must fix" (broken behavior);
    the rest follow the severity rules below.
 
+5. **Settings acceptance** (only when the scope is a settings, preferences
+   or configuration area): check the acceptance list in step 6 of
+   `skills/frontend-stack/references/settings-pages.md` against the
+   inventory in the plan or `DESIGN.md`. A setting unreachable by search or
+   a destructive action without confirmation is "Must fix".
+
 Skip a pass whose plugin is not installed and say so in the report.
 For new marketing pages, the caller also runs Impeccable new-work's
 `impeccable-finish-reviewer` handoff with captures and the direction contract.

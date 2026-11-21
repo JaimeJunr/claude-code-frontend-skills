@@ -1,6 +1,6 @@
 ---
 name: frontend-stack
-description: Router for the frontend design stack. Use at the start of any frontend UI task (build a page or component, redesign or restyle an app, "it looks ugly / generic / AI-made", migrate to a component library or design system, pick a style or palette, polish, audit, animate, review UI) to decide which installed skills lead each phase of the work, which ones support, and which rule wins when the packs disagree. Also use when two design skills give contradicting advice. Points to the companion indie dev stack when the request is about the product or business rather than the UI.
+description: Router for the frontend design stack. Use at the start of any frontend UI task (build a page or component, a settings or preferences area for a web app, desktop app, CLI or TUI, redesign or restyle an app, "it looks ugly / generic / AI-made", migrate to a component library or design system, pick a style or palette, polish, audit, animate, review UI) to decide which installed skills lead each phase of the work, which ones support, and which rule wins when the packs disagree. Also use when two design skills give contradicting advice. Points to the companion indie dev stack when the request is about the product or business rather than the UI.
 ---
 
 # Frontend Stack router
@@ -69,7 +69,7 @@ path. Then do the basics only:
    find what that round changed.
 2. Pick the base path in [base-paths.md](references/base-paths.md) from the
    complaint's words: UX, navigation, reading and hierarchy, flows and forms,
-   starting or improving an identity, looks, copy, mobile. No area named:
+   starting or improving an identity, looks, copy, mobile, settings. No area named:
    the first question asks which one.
 3. If a browser or screenshot tool is at hand and the app runs, look at the
    current render of the page the user most likely means, to ground the
@@ -148,7 +148,7 @@ fixed visual choices. Presets finish a direction; they never generate it.
 | New landing page, portfolio, marketing site with a brand | `taste:design-taste-frontend` | `frontend-design:frontend-design` for direction; [landing-anatomy.md](references/landing-anatomy.md); `impeccable:impeccable` new-work in Build |
 | New marketing page where the user names Hallmark, one of its themes, or asks for a themed or custom page | `hallmark:hallmark` (leads instead of Taste, never with it) | with a brand or `DESIGN.md` it reads that as the locked system and deals no theme; [landing-anatomy.md](references/landing-anatomy.md) |
 | New product UI: dashboard, settings, tables, multi-step flows | `frontend-design:frontend-design` | `ui-ux-pro-max:ui-ux-pro-max` (stack + UX guidelines), `impeccable:impeccable` for `harden` at the end |
-| Settings or preferences with many sections (web, desktop app, CLI, TUI) | `frontend-design:frontend-design` | [settings-pages.md](references/settings-pages.md) for scope, navigation and save model; `impeccable:impeccable` for `harden` at the end |
+| Settings, preferences or configuration area, new or redone from scratch (web, desktop app, CLI, TUI) | the settings flow in [settings-pages.md](references/settings-pages.md): ask, inventory, structure, row spec, build, harden, review | the skills each step of the flow names |
 | Redesign or restyle an existing product app | phases: Diagnose → Direction (`frontend-design:frontend-design`) → Build → Review | `ui-ux-pro-max:ui-styling` in Build when shadcn/Tailwind |
 | Redesign an existing marketing site | `taste:design-taste-frontend` (it audits the live page before changing it), or `hallmark:hallmark` (`redesign <path>`) when the user names Hallmark | `impeccable:impeccable` (`critique`) first |
 | No personality, no product identity, "looks rushed" | the identity flow in step 3 | - |
