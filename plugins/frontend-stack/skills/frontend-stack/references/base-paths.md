@@ -186,6 +186,17 @@ colors or only type → `ui-ux-pro-max:ui-ux-pro-max` leads. A marketing page �
 named). Offer a mockup image before code when the session can generate images:
 `taste-imagegen:imagegen-frontend-web` (or `-mobile`), optional plugin.
 
+## Settings
+
+Words: settings, preferences, configuration, config, options, "admin area".
+
+Route: the flow in [settings-pages.md](settings-pages.md) from step 0, which
+has its own questions and fallback. A complaint about an existing settings
+area that is not a redo goes by what is wrong: ugly but well organized →
+**Looks**, keeping the structure and using "The settings row" and the
+reference table in settings-pages.md as the board; can't find a setting →
+**Navigation**; saving fails or confuses → **Flows and forms**.
+
 ## Copy
 
 Words: text, labels, "confusing message", microcopy, tone.
