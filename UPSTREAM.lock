@@ -8,32 +8,32 @@
   "anthropic-design": {
     "repo": "anthropics/knowledge-work-plugins",
     "ref": "main",
-    "commit": "0e0fcacddcc892eb92a1b7873ff9d68159c47571",
-    "synced_at": "2026-11-21"
+    "commit": "2baf6d1eded3cd7aeff0b5c5918601a5799189b4",
+    "synced_at": "2026-11-23"
   },
   "anthropic-design-handoff": {
     "repo": "anthropics/knowledge-work-plugins",
     "ref": "main",
-    "commit": "0e0fcacddcc892eb92a1b7873ff9d68159c47571",
-    "synced_at": "2026-11-21"
+    "commit": "2baf6d1eded3cd7aeff0b5c5918601a5799189b4",
+    "synced_at": "2026-11-23"
   },
   "impeccable": {
     "repo": "pbakaus/impeccable",
     "ref": "main",
-    "commit": "d41d9860b0094dcb68030657da63461212835aaa",
-    "synced_at": "2026-11-16"
+    "commit": "b49177d32788f2dc585c42831d845dacf1ebed2c",
+    "synced_at": "2026-11-23"
   },
   "ui-ux-pro-max": {
     "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
     "ref": "main",
-    "commit": "e59ff376a41f7ca47b7541ad5c116495cbade3ee",
-    "synced_at": "2026-11-16"
+    "commit": "e8b065f0f3aaf2e680fd125f000e4f5e351ed108",
+    "synced_at": "2026-11-23"
   },
   "taste": {
     "repo": "leonxlnx/taste-skill",
     "ref": "main",
-    "commit": "f6b76575f949707b4e3c37cd86cb44b0b98643e8",
-    "synced_at": "2026-11-16"
+    "commit": "6c0b5c78f5d31776e2210305abaa210cdc0030bf",
+    "synced_at": "2026-11-23"
   },
   "taste-classics": {
     "repo": "leonxlnx/taste-skill-classics",
@@ -62,8 +62,8 @@
   "hyperframes": {
     "repo": "heygen-com/hyperframes",
     "ref": "main",
-    "commit": "ce8d55d302c3d9949d839cff7043feaf5fd56020",
-    "synced_at": "2026-11-16"
+    "commit": "457cc5692685712c73c7358442b2484fbd1c321a",
+    "synced_at": "2026-11-23"
   },
   "emil": {
     "repo": "emilkowalski/skills",
