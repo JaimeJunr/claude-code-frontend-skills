@@ -102,6 +102,14 @@ class FingerprintTest(unittest.TestCase):
         rival.write_text("---\nname: r\ndescription: rival\n---\n")
         self.assertNotEqual(before, te.fingerprint(SUITE, self.root))
 
+    def test_skill_in_a_custom_directory_changes_it(self) -> None:
+        # ui-ux-pro-max ships its skills under .claude/skills.
+        before = self.write("one")
+        custom = self.root / "q" / ".claude" / "skills" / "r" / "SKILL.md"
+        custom.parent.mkdir(parents=True)
+        custom.write_text("---\nname: r\ndescription: rival\n---\n")
+        self.assertNotEqual(before, te.fingerprint(SUITE, self.root))
+
     def test_skill_without_frontmatter_is_an_error(self) -> None:
         self.skill.write_text("no frontmatter")
         with self.assertRaises(ValueError):

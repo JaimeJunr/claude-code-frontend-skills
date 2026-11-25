@@ -36,7 +36,7 @@ PARALLEL = 4
 
 def fingerprint(suite: dict[str, Any], plugins: Path) -> str:
     digest = hashlib.sha256(json.dumps(suite, sort_keys=True).encode())
-    for path in sorted(plugins.glob("*/skills/*/SKILL.md")):
+    for path in sorted(plugins.rglob("SKILL.md")):
         front = re.match(r"---\n(.*?)\n---", path.read_text(), re.S)
         if front is None:
             raise ValueError(f"invalid skill: {path} has no frontmatter, expected a --- block")
