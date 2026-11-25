@@ -6,9 +6,9 @@ so a direction can learn the mechanism without copying the look.
 
 Inspected in a 1440px browser on 2026-10-12: computed fonts, background
 colors, heading outline and desktop captures. The payments, education and
-Clonvo entries were inspected the same way on 2026-11-15; MeetAssist and
-TechScreen were added, and Perssua and Interview Coder re-inspected, on
-2026-11-24 (1440px, plus the first screen at 390px). Sites change; recheck an
+Clonvo entries were inspected the same way on 2026-11-15; MeetAssist,
+TechScreen and Natively were added, and Perssua and Interview Coder
+re-inspected, on 2026-11-24 (1440px, plus the first screen at 390px). Sites change; recheck an
 entry before citing it as visual evidence, and record what you re-inspected.
 
 Not inspected: Revolut and Codecademy answered with a bot check (HTTP 403)
@@ -37,7 +37,7 @@ real app captures, not this file.
 | One system must hold home, docs and blog together | Next.js |
 | Too many options to explain (catalog, models, plans) | OpenRouter, Vercel AI Gateway |
 | One promise needs to feel tangible | Perssua, Cluely, TechScreen and Interview Coder (mechanics only) |
-| Two people see different things (privacy, roles, before/after) | TechScreen, MeetAssist, Cluely |
+| Two people see different things (privacy, roles, before/after) | TechScreen, MeetAssist, Natively, Cluely |
 | Reviews must be checkable | MeetAssist |
 | The product is a loop of steps, not one feature | Final Round AI |
 | A consumer feature needs warmth | ChatGPT dots, Mercury |
@@ -276,6 +276,29 @@ real app captures, not this file.
   many quotes are anonymous. Same premise caution as Cluely and Interview
   Coder.
 
+**[Natively](https://heynatively.com/)** · meeting and interview copilot
+- Signature: white to lilac, PP Neue Montreal 70px weight 500 with the second
+  H1 line in a violet italic serif, a violet mountain range in mist, and the
+  product overlay resting on the peak.
+- Lesson: one overlay, the same in every scene. The bar with its five actions
+  (What to answer?, Clarify, Recap, Follow Up Question, Answer) appears in the
+  hero, inside a scroll-opened laptop and in each feature card, so the page
+  teaches the interface by repetition.
+- "Four ways" is a sequence of offset cards with a side index that marks the
+  current step; each card holds a filled-in artifact (summary, action items,
+  a ready follow-up email), not an empty panel. "Nine modes" shows the actual
+  prompt behind each mode.
+- Learn the move: "View on GitHub" is the hero's second action, so the open
+  code is a check the visitor can make before installing.
+- Learn the move: testimonials are a pulled phrase at heading size with the
+  whole quote beside it, alternating sides.
+- Watch: headings and quotes are painted word by word on scroll, so captures
+  catch half-gray text; the primary button is pale violet on lilac and weaker
+  than the art. Serif italic on a landscape is close to Cluely's device. The
+  "0 security breaches" and user counters have no source, and quotes are
+  unnamed ("Premium user"). FAQ and footer were not captured. Same premise
+  caution as Cluely and Interview Coder.
+
 **[ChatGPT dots](https://chatgpt.com/pt-BR/features/dots/)** · always-on agents
 - Signature: OpenAI Sans, black page, each feature row on its own saturated
   gradient tile (orange, blue, violet) with real UI in front.
@@ -483,10 +506,10 @@ real app captures, not this file.
 | Live usage numbers as proof | OpenRouter, Rerun | the data is real and current | numbers are placeholders |
 | Node graph of the product's logic | Cloudflare | edges carry real conditions | it is a decorative flowchart |
 | One accent color on near-black | OpenRouter, Cloudflare, Modal, Interview Coder | the accent marks the one action | the accent is a generic "AI" purple |
-| Draggable divider between two views | TechScreen, MeetAssist, Interview Coder | both sides are the same moment and the handle works by keyboard | it compares a mockup with an empty box |
-| Two-tone heading (claim, then gray) | TechScreen, MeetAssist, Rerun | the gray half still passes contrast and adds information | the gray half is filler or unreadable |
+| Draggable divider between two views | TechScreen, MeetAssist, Natively, Interview Coder | both sides are the same moment and the handle works by keyboard | it compares a mockup with an empty box |
+| Two-tone heading (claim, then gray) | TechScreen, MeetAssist, Natively, Rerun | the gray half still passes contrast and adds information | the gray half is filler or unreadable |
 | Mono face as a secondary voice | Vercel, Cloudflare, Rerun, Linear | it carries real code, identifiers and values | it decorates section labels and eyebrows (see the mono-labels ruling in `conflicts.md`) |
-| Scroll-revealed sections | Cloudflare, Linear, Perssua, Clonvo | content still loads without motion | screenshots and reduced-motion users see blank space |
+| Scroll-revealed sections | Cloudflare, Linear, Perssua, Clonvo, TechScreen, Natively | content still loads without motion | screenshots and reduced-motion users see blank space |
 | One identity field in the hero (CPF, email) | Nubank, Mercado Pago, Ramp | the next step is short and the consent is visible | it hides a long form behind "Continuar" |
 | Cost shown before the action | Wise, Clonvo, Stripe | fee, rate and total are in the same card as the button | the fee appears only on the last step |
 | Sign-up split by role | Khan Academy, Brilliant | each role gets a different path | the cards lead to the same form |
