@@ -21,10 +21,12 @@ python3 - "$CLAUDE_CONFIG_DIR" "$sha" <<'PY'
 import json, sys
 config, sha = sys.argv[1:]
 expected = set(open(f"{config}/expected").read().split())
-installed = {p["id"].split("@")[0]: p["version"] for p in json.load(open(f"{config}/installed.json"))}
+listed = json.load(open(f"{config}/installed.json"))
+installed = {p["id"].split("@")[0]: p["version"] for p in listed}
+broken = {p["id"]: p["errors"] for p in listed if p.get("errors")}
 missing = sorted(expected - installed.keys())
 wrong = {n: v for n, v in installed.items() if sha and v != sha[:12]}
-if not expected or missing or wrong:
-    sys.exit(f"install smoke: missing {missing}, wrong version {wrong}, expected {len(expected)} plugins at {sha[:12] or 'any version'}")
+if not expected or missing or wrong or broken:
+    sys.exit(f"install smoke: missing {missing}, wrong version {wrong}, load errors {broken}, expected {len(expected)} plugins at {sha[:12] or 'any version'}")
 print(f"install smoke: {len(expected)} plugins ok")
 PY

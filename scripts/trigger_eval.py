@@ -14,7 +14,9 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
+import signal
 import subprocess
 import sys
 import tempfile
@@ -22,15 +24,18 @@ import threading
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Callable, Iterable
 
 ROOT = Path(__file__).resolve().parent.parent
 PLUGINS = ROOT / "plugins"
 SUITE_FILE = ROOT / "evals/trigger/cases.json"
 RESULTS_FILE = ROOT / "evals/trigger/results.json"
 WRITES = {"Write", "Edit", "NotebookEdit"}
+# A redirect to a file (not to /dev/null or another descriptor, not `=>`), tee, or an in-place edit.
+SHELL_WRITE = re.compile(r"(?<![=\-])>{1,2}\s*(?!&|>|\s|/dev/null)|\btee\s|\bsed\s+(-\S+\s+)*-\w*i")
 MAX_TURNS = "4"
 RUN_SECONDS = 240
+STOP_SECONDS = 10
 PARALLEL = 4
 
 
@@ -44,6 +49,12 @@ def fingerprint(suite: dict[str, Any], plugins: Path) -> str:
     return digest.hexdigest()
 
 
+def writes_code(block: dict[str, Any]) -> bool:
+    if block["name"] == "Bash":
+        return bool(SHELL_WRITE.search(block["input"].get("command", "")))
+    return block["name"] in WRITES
+
+
 def classify(lines: Iterable[str], router: str) -> bool | None:
     """True: router loaded. False: answered or wrote code without it. None: invalid run."""
     for line in lines:
@@ -51,13 +62,15 @@ def classify(lines: Iterable[str], router: str) -> bool | None:
             event = json.loads(line)
         except json.JSONDecodeError:
             continue
+        if event.get("parent_tool_use_id"):
+            continue  # a subagent's event says nothing about the main agent
         if event.get("type") == "assistant":
             for block in event["message"]["content"]:
                 if block["type"] != "tool_use":
                     continue
                 if block["name"] == "Skill" and block["input"].get("skill") == router:
                     return True
-                if block["name"] in WRITES:
+                if writes_code(block):
                     return False
         elif event.get("type") == "result":
             if event.get("subtype") == "error_max_turns":
@@ -86,6 +99,20 @@ def problems(suite: dict[str, Any], results: dict[str, Any], current: str) -> li
     return found
 
 
+def stop(process: subprocess.Popen[str]) -> None:
+    """Ends the run and what it started: SIGTERM lets the CLI clean up, SIGKILL is the last resort."""
+    for sig in (signal.SIGTERM, signal.SIGKILL):
+        try:
+            os.killpg(process.pid, sig)
+        except ProcessLookupError:
+            break
+        try:
+            process.wait(STOP_SECONDS)
+        except subprocess.TimeoutExpired:
+            continue
+    process.wait()
+
+
 def run_case(suite: dict[str, Any], prompt: str, plugins: Path) -> bool | None:
     with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as project:
         Path(project, "package.json").write_text('{"name":"notaviva","private":true,"dependencies":{"react":"^19.0.0"}}')
@@ -96,53 +123,71 @@ def run_case(suite: dict[str, Any], prompt: str, plugins: Path) -> bool | None:
              "--model", suite["model"], "--output-format", "stream-json", "--verbose",
              "--max-turns", MAX_TURNS, "--permission-mode", "bypassPermissions", "--", prompt],
             cwd=project, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL, text=True)
-        killer = threading.Timer(RUN_SECONDS, process.kill)
+            stderr=subprocess.DEVNULL, text=True, start_new_session=True)
+        killer = threading.Timer(RUN_SECONDS, stop, [process])
         killer.start()
         try:
             # Stops reading, and paying, at the first decisive event.
             return classify(process.stdout or [], suite["router"])
         finally:
             killer.cancel()
-            process.kill()
-            process.wait()
+            stop(process)
+            if process.stdout:
+                process.stdout.close()
 
 
-def measure(suite: dict[str, Any], plugins: Path) -> dict[str, Any]:
+def measure(suite: dict[str, Any], plugins: Path,
+            run: Callable[[dict[str, Any], str, Path], bool | None], version: str) -> dict[str, Any]:
+    measured = fingerprint(suite, plugins)
     with ThreadPoolExecutor(PARALLEL) as pool:
-        futures = {c["id"]: [pool.submit(run_case, suite, c["prompt"], plugins)
+        futures = {c["id"]: [pool.submit(run, suite, c["prompt"], plugins)
                              for _ in range(suite["runs"])] for c in suite["cases"]}
         hits = {case: [f.result() for f in runs] for case, runs in futures.items()}
-    version = subprocess.run(["claude", "--version"], capture_output=True, text=True, check=True)
-    return {"fingerprint": fingerprint(suite, plugins), "model": suite["model"],
-            "claude_code": version.stdout.split()[0], "measured": date.today().isoformat(), "hits": hits}
+    if fingerprint(suite, plugins) != measured:
+        raise RuntimeError(f"a description in {plugins} changed during the run, expected no edits; run again")
+    return {"fingerprint": measured, "model": suite["model"], "claude_code": version,
+            "measured": date.today().isoformat(), "hits": hits}
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--run", action="store_true")
     mode.add_argument("--check", action="store_true")
     parser.add_argument("--plugins", type=Path, default=PLUGINS)
     parser.add_argument("--results", type=Path, default=RESULTS_FILE)
-    parser.add_argument("--only", help="one case id; prints, does not write results")
+    parser.add_argument("--only", help="with --run, one case id; prints, does not write results")
     args = parser.parse_args()
-    suite = json.loads(SUITE_FILE.read_text())
-    if args.only:
-        suite["cases"] = [c for c in suite["cases"] if c["id"] == args.only]
-        if not suite["cases"]:
-            parser.error(f"--only {args.only!r} is not a case id in {SUITE_FILE}")
-    if args.run:
-        results = measure(suite, args.plugins.resolve())
-        for case, hits in results["hits"].items():
-            print(f"  {case}: {hits}")
-        if not args.only:
-            args.results.write_text(json.dumps(results, indent=2) + "\n")
-    elif not args.results.exists():
-        print(f"error: {args.results} is missing, expected a `--run` result")
-        return 1
-    else:
-        results = json.loads(args.results.read_text())
+    if args.only and args.check:
+        parser.error("--only goes with --run: the recorded results cover the full suite")
+    return args
+
+
+def select(suite: dict[str, Any], only: str | None) -> dict[str, Any]:
+    cases = [c for c in suite["cases"] if only in (None, c["id"])]
+    if not cases:
+        raise SystemExit(f"--only {only!r} is not a case id in {SUITE_FILE}")
+    return {**suite, "cases": cases}
+
+
+def load_results(args: argparse.Namespace, suite: dict[str, Any]) -> dict[str, Any]:
+    if args.check:
+        if not args.results.exists():
+            raise SystemExit(f"error: {args.results} is missing, expected a `--run` result")
+        return json.loads(args.results.read_text())
+    version = subprocess.run(["claude", "--version"], capture_output=True, text=True, check=True).stdout.split()[0]
+    results = measure(suite, args.plugins.resolve(), run_case, version)
+    for case, hits in results["hits"].items():
+        print(f"  {case}: {hits}")
+    if not args.only:
+        args.results.write_text(json.dumps(results, indent=2) + "\n")
+    return results
+
+
+def main() -> int:
+    args = parse_args()
+    suite = select(json.loads(SUITE_FILE.read_text()), args.only)
+    results = load_results(args, suite)
     found = problems(suite, results, fingerprint(suite, args.plugins.resolve()))
     for problem in found:
         print(f"error: {problem}")

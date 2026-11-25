@@ -86,4 +86,11 @@ jobs:
       - name: Install every plugin from the published marketplace
         run: |
           npm install -g "@anthropic-ai/claude-code@$CLAUDE_CODE_VERSION"
+          # A re-run after a newer merge would compare main with an old commit.
+          head=$(git ls-remote --exit-code origin refs/heads/main)
+          head=${head%%[[:space:]]*}
+          if [ "$head" != "$GITHUB_SHA" ]; then
+            echo "main is at $head; the run of that commit checks the deploy"
+            exit 0
+          fi
           sh scripts/install_smoke.sh "https://github.com/$GITHUB_REPOSITORY.git" "$GITHUB_SHA"

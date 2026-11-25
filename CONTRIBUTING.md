@@ -66,7 +66,8 @@ git config core.hooksPath .githooks
 
 - `pre-commit` (seconds): gitleaks on the staged changes, then
   `sync.py --check`. Without gitleaks installed it warns and the scan runs in CI.
-- `pre-push` (about 15 s): `scripts/check.sh`, the same gate CI runs.
+- `pre-push` (about 15 s): `scripts/check.sh`, the gate CI runs, minus the
+  secret scan and the install smoke.
 
 Work on a branch, never on `main`; `main` requires the `validate` check. Open
 PRs with the `ship` project skill (`.claude/skills/ship/`): it runs the gate,

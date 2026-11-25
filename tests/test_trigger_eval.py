@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 import tempfile
+import time
 import unittest
 from pathlib import Path
 
@@ -44,6 +46,23 @@ class ClassifyRunTest(unittest.TestCase):
         lines = [tool("Write", file_path="a"), tool("Skill", skill=ROUTER)]
         self.assertIs(te.classify(lines, ROUTER), False)
 
+    def test_code_written_through_the_shell_before_the_router_is_a_miss(self) -> None:
+        for command in ("cat > app/page.tsx <<'EOF'\nx\nEOF", "echo x >> a.css", "echo x | tee a.css",
+                        "sed -i 's/a/b/' a.css", "npx create-next-app x > log.txt 2>&1"):
+            lines = [tool("Bash", command=command), tool("Skill", skill=ROUTER)]
+            self.assertIs(te.classify(lines, ROUTER), False, command)
+
+    def test_exploring_through_the_shell_before_the_router_is_a_hit(self) -> None:
+        for command in ("ls -la 2>/dev/null", "cat README.md > /dev/null 2>&1", "grep -n '=>' a.ts || true",
+                        "find . -name '*.tsx' &>/dev/null", "sed -n 1,5p a.css"):
+            lines = [tool("Bash", command=command), tool("Skill", skill=ROUTER)]
+            self.assertIs(te.classify(lines, ROUTER), True, command)
+
+    def test_subagent_events_do_not_decide(self) -> None:
+        for name, value in (("Skill", {"skill": ROUTER}), ("Write", {"file_path": "a"})):
+            event = {**json.loads(tool(name, **value)), "parent_tool_use_id": "toolu_1"}
+            self.assertIsNone(te.classify([json.dumps(event)], ROUTER))
+
     def test_turn_limit_without_the_router_is_a_miss(self) -> None:
         self.assertIs(te.classify([tool("Bash"), result("error_max_turns", True)], ROUTER), False)
 
@@ -75,6 +94,36 @@ class CheckTest(unittest.TestCase):
 
     def test_other_model_fails(self) -> None:
         self.assertIn("model", te.problems(SUITE, {**recorded(), "model": "opus"}, "abc")[0])
+
+
+class MeasureTest(unittest.TestCase):
+    def test_description_edited_during_the_run_is_not_recorded(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            skill = Path(tmp, "p", "skills", "s", "SKILL.md")
+            skill.parent.mkdir(parents=True)
+            skill.write_text("---\nname: s\ndescription: one\n---\n")
+
+            def fake_edit_during_run(suite: dict, prompt: str, plugins: Path) -> bool:
+                skill.write_text("---\nname: s\ndescription: two\n---\n")
+                return True
+
+            with self.assertRaises(RuntimeError):
+                te.measure(SUITE, Path(tmp), fake_edit_during_run, "1.0.0")
+
+
+class StopTest(unittest.TestCase):
+    def test_children_of_the_run_are_stopped_too(self) -> None:
+        process = subprocess.Popen(["sh", "-c", "sleep 60 & echo $!; wait"], stdout=subprocess.PIPE,
+                                   text=True, start_new_session=True)
+        child = int(process.stdout.readline())
+        te.stop(process)
+        process.stdout.close()
+        for _ in range(50):
+            stat = Path(f"/proc/{child}/stat")
+            if not stat.exists() or stat.read_text().split(")")[1].split()[0] == "Z":
+                return
+            time.sleep(0.02)
+        self.fail(f"child {child} is still running")
 
 
 class FingerprintTest(unittest.TestCase):
