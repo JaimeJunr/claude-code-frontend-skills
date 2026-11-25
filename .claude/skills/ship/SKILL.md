@@ -17,6 +17,8 @@ skip it.
    set it (CONTRIBUTING, "Commit, push and PR").
 4. **Gate.** `sh scripts/check.sh` must pass. It is the same gate as the
    required `validate` check.
+   When it says the trigger results are stale, run
+   `python3 scripts/trigger_eval.py --run` and commit `results.json`.
 5. **Behavior check.** A change to what a skill, agent or reference makes the
    agent do needs a run of `.claude/skills/verify/` (or the user's `/verify`)
    first; say in the PR what was run and what it showed.

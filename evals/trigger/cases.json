@@ -1,0 +1,18 @@
+{
+  "model": "sonnet",
+  "runs": 3,
+  "min_hits_when_expected": 2,
+  "max_hits_when_not_expected": 1,
+  "router": "frontend-stack:frontend-stack",
+  "cases": [
+    {"id": "refs-landing", "expect": true, "prompt": "Quero criar a landing page do zero do Notaviva, nosso app desktop que transcreve reuniões e sugere respostas ao vivo. Antes de qualquer código, quais sites de referência você usaria, o que aprender de cada um e o que evitar?"},
+    {"id": "refs-dashboard", "expect": true, "prompt": "Que apps eu devia olhar como inspiração visual pro dashboard do Notaviva?"},
+    {"id": "refs-pricing-en", "expect": true, "prompt": "We are about to redesign our pricing page. Which sites do it well, and what should we not copy from them?"},
+    {"id": "build-landing", "expect": true, "prompt": "Cria a landing page do Notaviva."},
+    {"id": "settings-en", "expect": true, "prompt": "Add a settings screen to our desktop app."},
+    {"id": "looks-generic", "expect": true, "prompt": "A tela inicial do Notaviva tá feia, parece feita por IA. Melhora isso."},
+    {"id": "backend-queue", "expect": false, "prompt": "Quais bibliotecas de fila para Node você usaria como referência, e o que evitar?"},
+    {"id": "sql-migration-en", "expect": false, "prompt": "Write a SQL migration that adds a created_at column to the meetings table."},
+    {"id": "pricing-business", "expect": false, "prompt": "Quais concorrentes do Notaviva eu devia estudar para definir quanto cobrar por mês?"}
+  ]
+}
