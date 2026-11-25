@@ -6,9 +6,10 @@ so a direction can learn the mechanism without copying the look.
 
 Inspected in a 1440px browser on 2026-10-12: computed fonts, background
 colors, heading outline and desktop captures. The payments, education and
-Clonvo entries were inspected the same way on 2026-11-15. Sites change;
-recheck an entry before citing it as visual evidence, and record what you
-re-inspected.
+Clonvo entries were inspected the same way on 2026-11-15; MeetAssist,
+TechScreen and Natively were added, and Perssua and Interview Coder
+re-inspected, on 2026-11-24 (1440px, plus the first screen at 390px). Sites change; recheck an
+entry before citing it as visual evidence, and record what you re-inspected.
 
 Not inspected: Revolut and Codecademy answered with a bot check (HTTP 403)
 on 2026-11-15, so they have no entry. App-first products (Nubank, Monzo)
@@ -35,7 +36,9 @@ real app captures, not this file.
 | The product is invisible (API, infra, agent) | Vercel AI Gateway, Cloudflare AI Gateway, Rerun, Modal |
 | One system must hold home, docs and blog together | Next.js |
 | Too many options to explain (catalog, models, plans) | OpenRouter, Vercel AI Gateway |
-| One promise needs to feel tangible | Perssua, Cluely, Interview Coder (mechanics only) |
+| One promise needs to feel tangible | Perssua, Cluely, TechScreen and Interview Coder (mechanics only) |
+| Two people see different things (privacy, roles, before/after) | TechScreen, MeetAssist, Natively, Cluely |
+| Reviews must be checkable | MeetAssist |
 | The product is a loop of steps, not one feature | Final Round AI |
 | A consumer feature needs warmth | ChatGPT dots, Mercury |
 | Selling to many teams at once | OpenAI Business |
@@ -191,7 +194,16 @@ real app captures, not this file.
 - Lesson: "Veja o Perssua em ação" is a tabbed scenario demo (technical
   interview, cold call, 1:1, call in English); each tab shows the heard
   question and the suggested answer, so the promise is shown in context.
-  Download buttons name the visitor's OS and package format.
+  Download buttons name the visitor's OS and package format, and an
+  "unstable" badge sits inside each Linux button.
+- Also: the live-translation section is a working-looking session panel
+  (original line, translation under it, one audio meter per speaker, the
+  `⌘+D` action), so a listener reads both sides at once. The H1's object is
+  typed and replaced ("suas reuniões", "suas ch…"); keep a static full
+  sentence for reduced motion and screen readers.
+- Watch: the cookie card covers the lower-left demo at 1440px and the bottom
+  half of the first screen at 390px. Check consent UI in the first-viewport
+  capture.
 
 **[Cluely](https://cluely.com/)** · real-time meeting assistant
 - Signature: white Geist body, an 80px EB Garamond (serif) H1 in white over a
@@ -224,6 +236,69 @@ real app captures, not this file.
   "#1" claims have no source; do not imitate them without real data. Same
   premise caution as Cluely and Interview Coder.
 
+**[MeetAssist](https://meetassist.io/)** · interview copilot
+- Signature: a near-black hero with a purple glow and a curved bottom edge,
+  Russo One 56px for the H1 only, Inter for the rest, then pale
+  `rgb(245,245,247)` sections and one violet action `rgb(124,58,237)`.
+- Lesson: proof you can check. Reviews carry their source and month ("Chrome
+  Web Store · Apr 2026"), the rating is an ordinary 4.1 with its count (27),
+  and a line under the wall says how quotes were handled (word for word,
+  support-chat names withheld). An imperfect rating with a source beats
+  five stars without one.
+- Limits sit beside the offer: "(visible on screen share)" next to the
+  Chrome extension link, "No auto-renewal" on every paid plan, and a closing
+  "Use it where it's welcome" note.
+- Learn the move: H2s in two voices, the claim in full color and the
+  explanation in gray in the same heading, with no eyebrow. Audio sources,
+  model choice and the answer window are joined by one dotted line, so the
+  pipeline is the picture. The FAQ has a topic list beside it.
+- Watch: the purple glow and floating glyphs are the generic AI look (see
+  the accent row below); usage counters have no source. Product images did
+  not load in this capture, so they are not judged. Same premise caution as
+  Cluely and Interview Coder.
+
+**[TechScreen](https://techscreen.app/)** · interview copilot
+- Signature: near-black `rgb(8,9,12)`, Geist only, an 82px H1 at weight 500
+  with -3.9px tracking, half of each H2 in gray, white pill as the one loud
+  action, periwinkle kept for the logo and ticks.
+- Lesson: one draggable divider over one call, "What you see" on the left
+  and "What they see" on the right. The visitor operates the promise
+  instead of reading it. Works for any two-view product: draft/published,
+  admin/customer, original/redacted.
+- The feature list is one vertical sequence with a product fragment per
+  step, and settings and shortcuts appear as the real panels. Pricing is a
+  single three-column table with shared borders; only the middle column
+  changes surface, and each plan says whom it fits ("1-2 interviews /
+  month").
+- Watch: features and text rest at very low contrast until their scroll
+  reveal, and several demo panels captured almost blank. "Perfect interface"
+  and "Zero detection incidents" are comparison rows nobody can check, and
+  many quotes are anonymous. Same premise caution as Cluely and Interview
+  Coder.
+
+**[Natively](https://heynatively.com/)** · meeting and interview copilot
+- Signature: white to lilac, PP Neue Montreal 70px weight 500 with the second
+  H1 line in a violet italic serif, a violet mountain range in mist, and the
+  product overlay resting on the peak.
+- Lesson: one overlay, the same in every scene. The bar with its five actions
+  (What to answer?, Clarify, Recap, Follow Up Question, Answer) appears in the
+  hero, inside a scroll-opened laptop and in each feature card, so the page
+  teaches the interface by repetition.
+- "Four ways" is a sequence of offset cards with a side index that marks the
+  current step; each card holds a filled-in artifact (summary, action items,
+  a ready follow-up email), not an empty panel. "Nine modes" shows the actual
+  prompt behind each mode.
+- Learn the move: "View on GitHub" is the hero's second action, so the open
+  code is a check the visitor can make before installing.
+- Learn the move: testimonials are a pulled phrase at heading size with the
+  whole quote beside it, alternating sides.
+- Watch: headings and quotes are painted word by word on scroll, so captures
+  catch half-gray text; the primary button is pale violet on lilac and weaker
+  than the art. Serif italic on a landscape is close to Cluely's device. The
+  "0 security breaches" and user counters have no source, and quotes are
+  unnamed ("Premium user"). FAQ and footer were not captured. Same premise
+  caution as Cluely and Interview Coder.
+
 **[ChatGPT dots](https://chatgpt.com/pt-BR/features/dots/)** · always-on agents
 - Signature: OpenAI Sans, black page, each feature row on its own saturated
   gradient tile (orange, blue, violet) with real UI in front.
@@ -243,10 +318,14 @@ real app captures, not this file.
 - Learn the conversion mechanics only: one yellow accent `rgb(239,200,58)`,
   Geist at 85px, OS-specific download buttons, a "how it works" list where
   each claim is a concrete behavior, and a competitor matrix that demos a
-  row on click.
+  row on click. The status list (number, app, "last updated", state) borrows
+  the status-page form; use it only over real checks.
+- Rhythm: sand bands break the black page for proof and the closing CTA, so
+  a long page has three landmarks without a second accent.
 - Do not learn its proof: repeated "Anonymous User" testimonials and
-  absolute "100%" claims are exactly what `devtool-landing.md` forbids. Its
-  product premise (hiding AI use during interviews) is not an endorsement.
+  absolute "100%" claims (both still there on 2026-11-24) are exactly what
+  `devtool-landing.md` forbids. Its product premise (hiding AI use during
+  interviews) is not an endorsement.
 
 ### Product UI and fintech
 
@@ -427,13 +506,15 @@ real app captures, not this file.
 | Live usage numbers as proof | OpenRouter, Rerun | the data is real and current | numbers are placeholders |
 | Node graph of the product's logic | Cloudflare | edges carry real conditions | it is a decorative flowchart |
 | One accent color on near-black | OpenRouter, Cloudflare, Modal, Interview Coder | the accent marks the one action | the accent is a generic "AI" purple |
+| Draggable divider between two views | TechScreen, MeetAssist, Natively, Interview Coder | both sides are the same moment and the handle works by keyboard | it compares a mockup with an empty box |
+| Two-tone heading (claim, then gray) | TechScreen, MeetAssist, Natively, Rerun | the gray half still passes contrast and adds information | the gray half is filler or unreadable |
 | Mono face as a secondary voice | Vercel, Cloudflare, Rerun, Linear | it carries real code, identifiers and values | it decorates section labels and eyebrows (see the mono-labels ruling in `conflicts.md`) |
-| Scroll-revealed sections | Cloudflare, Linear, Perssua, Clonvo | content still loads without motion | screenshots and reduced-motion users see blank space |
+| Scroll-revealed sections | Cloudflare, Linear, Perssua, Clonvo, TechScreen, Natively | content still loads without motion | screenshots and reduced-motion users see blank space |
 | One identity field in the hero (CPF, email) | Nubank, Mercado Pago, Ramp | the next step is short and the consent is visible | it hides a long form behind "Continuar" |
 | Cost shown before the action | Wise, Clonvo, Stripe | fee, rate and total are in the same card as the button | the fee appears only on the last step |
 | Sign-up split by role | Khan Academy, Brilliant | each role gets a different path | the cards lead to the same form |
 | Countdown to a price | Udemy, Alura | a real, dated campaign end | the deadline resets or never ends |
 
-The last row is a finish-gate issue: several of these pages captured blank
-until their reveal ran. Build reveals so content is visible without
+The scroll-reveal row is a finish-gate issue: several of these pages captured
+blank until their reveal ran. Build reveals so content is visible without
 animation, and wait for loaded content before the screenshot gate.
