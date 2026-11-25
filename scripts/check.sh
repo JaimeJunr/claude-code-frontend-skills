@@ -1,11 +1,13 @@
 #!/bin/sh
-# The same gate as CI's `validate` job, in the same order (cheap first).
+# The same gate as CI's `validate` job, in the same order (cheap first), minus
+# the secret scan (pre-commit) and the install smoke (CI only).
 # Used by the pre-push hook and by hand: sh scripts/check.sh
 set -e
 cd "$(dirname "$0")/.."
 
 python3 scripts/sync.py --check
 python3 -m unittest discover -s tests -q
+python3 scripts/trigger_eval.py --check
 
 # token_budget needs tiktoken; PEP 668 systems block a global pip install.
 if python3 -c "import tiktoken" 2>/dev/null; then

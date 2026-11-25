@@ -1,0 +1,53 @@
+{
+  "fingerprint": "64cfc5891cf51ef2fdeba7a80da30428a931799eccda97ac34f9d4fe007490aa",
+  "model": "sonnet",
+  "claude_code": "2.1.323",
+  "measured": "2026-11-25",
+  "hits": {
+    "refs-landing": [
+      true,
+      true,
+      true
+    ],
+    "refs-dashboard": [
+      true,
+      true,
+      true
+    ],
+    "refs-pricing-en": [
+      true,
+      true,
+      true
+    ],
+    "build-landing": [
+      true,
+      true,
+      true
+    ],
+    "settings-en": [
+      true,
+      true,
+      true
+    ],
+    "looks-generic": [
+      true,
+      true,
+      true
+    ],
+    "backend-queue": [
+      false,
+      false,
+      false
+    ],
+    "sql-migration-en": [
+      false,
+      false,
+      false
+    ],
+    "pricing-business": [
+      false,
+      false,
+      false
+    ]
+  }
+}
